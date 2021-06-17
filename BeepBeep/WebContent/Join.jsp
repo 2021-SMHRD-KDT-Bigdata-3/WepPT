@@ -6,108 +6,241 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 
-<style>
+    <style>
+ 
+:root{
 
-	body{
-	}
 
-	#a{    display: inline-block;
-    vertical-align: top;
-    text-align: center;
+}
+ *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: SCDream1;
+}
+
+.page-container{
+  
+    width: 100vw;
+    height: 100vh;
+    background: #eff0f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.shadow{
+    -webkit-box-shadow: 27px 43px 43px -26px rgba(89,89,89,0.39);
+    -moz-box-shadow: 27px 43px 43px -26px rgba(89,89,89,0.39);
+    box-shadow: 27px 43px 43px -26px rgba(89,89,89,0.39);
+}
+.login-form-container{
+ 
+    background:#f5f5f5 ;
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 10px black;
+    border-radius: 10px;
+
+}
+.login-form-right-side{
+    width: 50%; 
+    border-radius: 10px 0px 0px 10px;
+    padding:75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-image: 
+  radial-gradient(ellipse farthest-corner at 0 140%, #5d9dff 0%, #2178ff 70%, #3585ff 70%);
+}
+.login-form-right-side h1{
+    color: white;
+    width:100%;
+    text-align: right;
+    opacity: 0.9;
+
+}
+.login-form-right-side p{
+    padding-top: 50px;
+    font-size:12px;
+    text-align: right;
+    opacity: 0.8;
+}
+.login-form-left-side{
     width: 50%;
-    max-width: 700px;
-    height:800px;
-    padding: 60px 70px;
+    border-radius: 0px 10px 10px 0px;
+    display: flex;
+	
+	rigth : 0px;
+    flex-direction: column;
+    align-items: center;
+    padding:40px;
+    background: rgb(255,255,255);
+	background: linear-gradient(287deg, rgba(255,255,255,1) 0%, rgba(243,244,244,1) 0%, rgba(255,255,255,1) 100%);
+	}
+.login-form-left-side .login-top-wrap{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width:100%;
+}
+.login-form-left-side .login-top-wrap span{
+    color: gray;
     font-size: 20px;
-    box-sizing: border-box;
-    font-family:굴림;
-	}	
-	
-	#b{    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-    width: 100%;
-    max-width: 700px;
-    height:800px;
-    padding: 60px 70px;
-    font-size: 20px;
-    box-sizing: border-box;
-    font-family:굴림;
-    border:2px solid black;
-	background-color:white;
-	}	
-	
-	
-	
-	
-	 .info{
-		width:500px;
-		height:80px;
-		font-size:1em;
-		border-width:0px 0px 1px 0px;
-	}
-	
-	
-	.join, .cancel{
-		width:260px;
-		height:50px;
-		background-color:white;
-	}
-	
-	.img {
-		height:600px;
-		
-	}
+    padding-right:20px;
 
-</style>
+}
+.login-form-left-side .login-top-wrap .create-account-btn {
+    background: white;
+    border:  0;
+    width:100px;
+    height: 38px;
+    font-size: 18px;
+    color: #2178ff;
+    border-radius: 3px;
 
+}
+.login-input-container{
+    padding-top:220px;
+    width:300px;
+    font-size: 60px;
+}
+.login-input-container .login-input-wrap{
+    width:450px;
+    height: 82px;
+    margin-top: 40px;
+    border-radius: 2px;
+    border-bottom: solid 2px #2178ff;
+    display: flex;
+    
+   
+}
+.far, .fas{
+	line-height: unset;
+}
+.login-input-container .login-input-wrap i{
+    color: #2178ff;
+}
+
+.login-input-container .login-input-wrap input{
+    background: none;
+    font-size:25px;
+   
+    border: none;
+    line-height: 45px;
+    padding-left:10px;
+    width:267px;
+}
+.login-input-container .login-input-wrap input:focus{
+    outline: none;
+}
+.login-btn-wrap{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;;
+}
+.login-btn-wrap .login-btn{
+    width:455px;
+    height:55px;
+    color:white;
+    border: 0;
+    font-size:21px;
+    border-radius: 4px;
+    font-size:28px;
+    margin-left:150px;
+
+    background: rgb(105,163,255);
+background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 50%, rgba(43,125,254,1) 100%);
+}
+.login-btn-wrap a{
+    margin-top:10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: gray;
+    margin-left: 160px;
+    margin-top: 12px;
+
+}
+.pt{
+	font-size: 48px;
+	font-family: 'SCDream1';
+}
+.ptt{
+	font-size: 18px;
+}
+    </style>
 
 
 </head>
 <body align = 'center'>
-
-<br>
-<br>
-<br>
-<br>
-
-	<div>
-	
-		<div id = 'a'>
-		<img src = "images/exercise.jpg" width = '400px' height = '500px'>
-		<br>
-		<br>
-		서비스로고 및 서비스명
-		</div>
-		
-		<div id = 'b'> 
-		<h1>회원가입</h1>
-			<p>ㅤ</p>
-		<!-- 사용자가 입력한 값을 JoinService 로 보낼 수 있게 수정 -->
-		<form action="JoinServiceCon.do" method="post">
-			<input class = 'info' type="text" name="id" placeholder=" ID을 입력하세요">
-			<p></p>
-			<input class = 'info'  type="password" name="pw" placeholder=" PW를 입력하세요">
-			<p></p>
-			<input class = 'info'  type="text" name="tel" placeholder=" 전화번호를 입력하세요">
-			<p></p>
-			<input class = 'info'  type="text" name="address" placeholder=" 집주소를 입력하세요">
-			<p>ㅤ</p>
-			<input  class = 'join'  type="submit" value="가입하기" class="button fit">
-			<input  class = 'cancel' type="submit" value="취소" class="button fit">
-		</form>
-		</div>
-		
-	</div>
-	<p>ㅤ</p>
-	<p>ㅤ</p>
-	<p>ㅤ</p>
-	<p>ㅤ</p>
-	
-	<hr color = 'lightgray'>
-	<p>이용약관  개인정보 처리방침  운영정책  고객센터  공지사항  한국어△</p>
-	<p>Copyright Service Corp. All rights reserved</p>
-
+ <div class="page-container">
+        <div class="login-form-container shadow">
+            <div class="login-form-right-side">
+                <div class="top-logo-wrap">
+                    
+                </div>
+                <h2 class = "pt">아직도 돈을 주고 pt를 하고 있으신가요?</h2>
+                <h2 class = "pt">집에서 홈트레이닝을 하고 있으신가요?</h2>
+                <p>                   </p>
+                <h2 class = "ptt">무료로 당신의 건강과 식습관을 챙겨드립니다.</h2>
+            </div>
+            <div class="login-form-left-side">
+                <div class="login-top-wrap">
+                </div>
+                <div class="login-input-container">
+                    <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input name = 'id' placeholder="아이디" type="text">
+                    </div>
+                    <div class="login-input-wrap input-password">
+                        <i class="fas fa-key"></i>
+                        <input name = 'pw' placeholder="비밀번호"  type="password">
+                    </div>
+                     <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input name = 'name' placeholder="이름" type="text">
+                    </div>
+                     <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <table>
+                        <tr style = 'font-size:20px; writhing-mode:horizontal-tb;'>
+                        <td>남성</td><td><input name ='gender' value="man" type="radio"></td>
+                        <td>여성</td><td><input name = 'gender' value = 'women' type="radio"></td>
+                        </tr>
+                        </table>
+                    </div>
+                     <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input name = 'height' placeholder="키" type="text">
+                    </div>
+                     <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input name = 'weight' placeholder="몸무게" type="text">
+                    </div>
+                     <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input name = 'bmi' placeholder="BMI" type="text">
+                    </div>
+                     <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input name = 'tel' placeholder="000-0000-0000" type="text">
+                    </div>
+                     <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input name = 'email' placeholder="e-mail" type="text">
+                    </div>
+                </div>
+                <div class="login-btn-wrap">
+                    <button class="login-btn">회 원 가 입</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
