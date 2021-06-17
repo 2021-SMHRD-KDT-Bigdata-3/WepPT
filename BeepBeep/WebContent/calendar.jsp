@@ -20,7 +20,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="images/hehe.png" alt="" /></span><span class="title">Phantom</span>
 								</a>
 
 							<!-- Nav -->

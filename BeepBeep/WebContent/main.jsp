@@ -10,11 +10,12 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 		body{
-		zoom: 67% !important;
+		zoom: 80% !important;
 		}
 		
 		</style>
 </head>
+
 <body>
 
 		<!-- Wrapper -->
@@ -27,7 +28,7 @@
 							
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="images/hehe.png" alt="" /></span><span class="title">돼지시키들</span>
 								</a>
 
 							<!-- Nav -->
@@ -70,45 +71,46 @@
 							<section class="tiles">
 								<article class="style1">
 									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
+								<!-- 	185x158 사진크기 -->
+										<img src="images/video.jpg" alt="" />
 									</span>
 									<a href="video.jsp">
 										<h2>영상</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>최적의 알고리즘으로 당신의 운동을 추천해줍니다.</p>
 										</div>
 									</a>
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
+										<img src="images/recommend.jpg" alt="" />
 									</span>
 									<a href="recommend.jsp">
 										<h2>제품추천</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>당신의 건강한 식습관을 개선해드립니다.</p>
 										</div>
 									</a>
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
+										<img src="images/meal.jpg" alt="" />
 									</span>
 									<a href="meal.jsp">
 										<h2>식단</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>먹는것 하나하나 성분과 칼로리를 계산해드립니다.</p>
 										</div>
 									</a>
 								</article>
 								<article class="style4">
 									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
+										<img src="images/calendar.png" alt="" />
 									</span>
 									<a href="calendar.jsp">
 										<h2>캘린더</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>당신의 식단 일지 운동 기록등을 해줍니다.</p>
 										</div>
 									</a>
 								</article>
