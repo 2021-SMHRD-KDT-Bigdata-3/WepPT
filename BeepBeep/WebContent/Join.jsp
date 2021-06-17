@@ -8,7 +8,22 @@
 
 <style>
 
-	div{    display: inline-block;
+	body{
+	}
+
+	#a{    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 50%;
+    max-width: 700px;
+    height:800px;
+    padding: 60px 70px;
+    font-size: 20px;
+    box-sizing: border-box;
+    font-family:굴림;
+	}	
+	
+	#b{    display: inline-block;
     vertical-align: top;
     text-align: center;
     width: 100%;
@@ -17,20 +32,32 @@
     padding: 60px 70px;
     font-size: 20px;
     box-sizing: border-box;
-    border: 1px solid gray;
     font-family:굴림;
-    border:5px solid black;
-	border-radius:50px;
+    border:2px solid black;
+	background-color:white;
 	}	
 	
-	input {
+	
+	
+	
+	 .info{
 		width:500px;
 		height:80px;
 		font-size:1em;
-		border:1px solid;
-		border-radius:20px;
+		border-width:0px 0px 1px 0px;
 	}
 	
+	
+	.join, .cancel{
+		width:260px;
+		height:50px;
+		background-color:white;
+	}
+	
+	.img {
+		height:600px;
+		
+	}
 
 </style>
 
@@ -45,26 +72,41 @@
 <br>
 
 	<div>
-		<h1>회원가입 페이지</h1>
+	
+		<div id = 'a'>
+		<img src = "images/exercise.jpg" width = '400px' height = '500px'>
+		<br>
+		<br>
+		서비스로고 및 서비스명
+		</div>
+		
+		<div id = 'b'> 
+		<h1>회원가입</h1>
 			<p>ㅤ</p>
 		<!-- 사용자가 입력한 값을 JoinService 로 보낼 수 있게 수정 -->
 		<form action="JoinServiceCon.do" method="post">
-			<input type="text" name="id" placeholder=" ID을 입력하세요">
+			<input class = 'info' type="text" name="id" placeholder=" ID을 입력하세요">
 			<p></p>
-			<input type="password" name="pw" placeholder=" PW를 입력하세요">
+			<input class = 'info'  type="password" name="pw" placeholder=" PW를 입력하세요">
 			<p></p>
-			<input type="text" name="tel" placeholder=" 전화번호를 입력하세요">
+			<input class = 'info'  type="text" name="tel" placeholder=" 전화번호를 입력하세요">
 			<p></p>
-			<input type="text" name="address" placeholder=" 집주소를 입력하세요">
+			<input class = 'info'  type="text" name="address" placeholder=" 집주소를 입력하세요">
 			<p>ㅤ</p>
-			<input type="submit" value="JoinUs" class="button fit">
+			<input  class = 'join'  type="submit" value="가입하기" class="button fit">
+			<input  class = 'cancel' type="submit" value="취소" class="button fit">
 		</form>
-
-
+		</div>
+		
 	</div>
-
-
-
+	<p>ㅤ</p>
+	<p>ㅤ</p>
+	<p>ㅤ</p>
+	<p>ㅤ</p>
+	
+	<hr color = 'lightgray'>
+	<p>이용약관  개인정보 처리방침  운영정책  고객센터  공지사항  한국어△</p>
+	<p>Copyright Service Corp. All rights reserved</p>
 
 
 
