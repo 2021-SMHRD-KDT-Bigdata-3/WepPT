@@ -64,7 +64,8 @@
 							<section class="tiles">
 								<article class="style1">
 									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
+								<!-- 	185x158 사진크기 -->
+										<img src="images/video.jpg" alt="" />
 									</span>
 									<a href="video.jsp">
 										<h2>영상</h2>
@@ -75,7 +76,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
+										<img src="images/recommend.jpg" alt="" />
 									</span>
 									<a href="recommend.jsp">
 										<h2>제품추천</h2>
@@ -86,7 +87,7 @@
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
+										<img src="images/meal.jpg" alt="" />
 									</span>
 									<a href="meal.jsp">
 										<h2>식단</h2>
@@ -97,7 +98,7 @@
 								</article>
 								<article class="style4">
 									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
+										<img src="images/calendar.png" alt="" />
 									</span>
 									<a href="calendar.jsp">
 										<h2>캘린더</h2>
