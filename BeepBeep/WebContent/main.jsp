@@ -10,17 +10,12 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 		body{
-		zoom: 67% !important;
+		zoom: 80% !important;
 		}
 		
 		</style>
 </head>
-<style>
-      body{
-      zoom: 80% !important;
-      }
-      
-      </style>
+
 <body>
 
 		<!-- Wrapper -->
