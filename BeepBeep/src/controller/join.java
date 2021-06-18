@@ -34,8 +34,6 @@ public class join extends HttpServlet {
 		float weight = Float.parseFloat(request.getParameter("weight"));
 		
 		
-		memberDTO dto = new memberDTO(id, pw, name, age, name, email, tel, height, weight);
-		
 		memberDAO memberdao = new memberDAO();
 		
 		int cnt = memberdao.join(id, pw, name, age, gender, email, tel, height, weight);

@@ -1,3 +1,6 @@
+<%@page import="model.youtubeDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.youtubeDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -49,6 +52,11 @@ li a:hover:not(.active) {
 <body>
 	
 
+<%
+	youtubeDAO dao = new youtubeDAO();
+	ArrayList<youtubeDTO> al =  dao.select();
+%>
+
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -96,14 +104,7 @@ li a:hover:not(.active) {
 		<li class = "gss"><a href="#about">°¡½¿</a></li>
 		<li class = "hss"><a href="#about">º¹±Ù</a></li>
 	</ul>
-				<iframe width="1344" height="600" src="https://www.youtube.com/embed/jBwTgquo7NA" 
-				title="YouTube video player" frameborder="0" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen></iframe>
-				<iframe width="1344" height="600" src="https://www.youtube.com/embed/gw0XqojnAcI" 
-				title="YouTube video player" frameborder="0" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-				allowfullscreen></iframe>
+
 				
 			</div>
 	</div>

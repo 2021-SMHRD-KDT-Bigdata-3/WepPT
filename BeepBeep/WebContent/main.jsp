@@ -11,7 +11,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 		body{
-		zoom: 90% !important;
+		zoom: 80% !important;
 		}
 		span.title{
    font-size : 50px;

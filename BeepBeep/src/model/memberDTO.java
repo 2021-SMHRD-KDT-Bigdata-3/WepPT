@@ -29,14 +29,8 @@ public class memberDTO {
 	}
 
 	public memberDTO(String id, String pw, float height, float weight) {
-		this.category = category;
 		this.id = id;
 		this.pw = pw;
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-		this.email = email;
-		this.tel = tel;
 		this.height = height;
 		this.weight = weight;
 		
