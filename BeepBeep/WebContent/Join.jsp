@@ -106,7 +106,7 @@
 }
 .container{
 	max-width: 100%;
-	height: 1077px;
+	height: 1211px;
 	margin: 0px;
 }
 .row{
@@ -146,6 +146,12 @@
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
+<<<<<<< HEAD
+=======
+                                        
+                                        <form action="join" method="post">
+                                        
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
                                             <input type="text" class="form-control" placeholder="ID" name="id" />
                                         </div>
                                         <div class="form-group">
@@ -160,11 +166,19 @@
                                         <div class="form-group">
                                             <div class="maxl" style = "font-size: 20px;">
                                                 <label class="radio inline"> 
+<<<<<<< HEAD
                                                     <input type="radio" name="gender" value="1" checked>
+=======
+                                                    <input type="radio" name="gender" value=1 checked>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
                                                     <span> 남자 </span> 
                                                 </label>
                                                 <label class="radio inline"> 
+<<<<<<< HEAD
                                                     <input type="radio" name="gender" value="2">
+=======
+                                                    <input type="radio" name="gender" value=0>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
                                                     <span>여자 </span> 
                                                 </label>
                                             </div>
@@ -175,7 +189,11 @@
                                             <input type="email" class="form-control" placeholder="Email" name="email" />
                                         </div>
                                         <div class="form-group">
+<<<<<<< HEAD
                                             <input type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함" name="email" />
+=======
+                                            <input type="text" minlength="11" maxlength="11" name="tel" class="form-control" placeholder="휴대폰 번호 - 미포함" />
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
                                         </div>
                                          <div class="form-group">
                                             <input type="text" class="form-control" placeholder="키" name="height" />
@@ -186,7 +204,13 @@
                                        
                                         
                                         <input type="submit" class="btnRegister"  value="확인"/>
+<<<<<<< HEAD
                                         </form>
+=======
+                                   
+                                    </form>
+                                    
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
                                     </div>
                                 </div>
                             </div>

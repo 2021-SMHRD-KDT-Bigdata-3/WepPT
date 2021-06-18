@@ -76,7 +76,39 @@ public class memberDAO {
 		}
 
 		
-		
+		// 회원가입
+		public int join(String id, String pw, String name, int age, int gender, String email, String tel, float height, float weight) {
+
+			// 런타임오류 : 실행했을 때 발생하는 오류 -> 예외처리
+			try {
+				conn();
+				
+				String sql = "insert into member values('b',?,?,?,?,?,?,?,?,?)";
+				// 3. sql문 실행객체(Prepared Statement)생성
+				pst = conn.prepareStatement(sql);
+
+				// 4. 바인드 변수 채우기
+				pst.setString(1, id);
+				pst.setString(2, pw);
+				pst.setString(3, name);
+				pst.setInt(4, age);
+				pst.setInt(5, gender);
+				pst.setString(6, email);
+				pst.setString(7, tel);
+				pst.setFloat(8, height);
+				pst.setFloat(9, weight);
+
+				// 5. sql문 실행하여 결과처리
+				cnt = pst.executeUpdate();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("memberDAO 오류");
+			} finally {
+				close();
+			}
+			return cnt;
+		}
 		
 		
 		
