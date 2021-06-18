@@ -198,6 +198,17 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
                     <span>아이디가 없으신가요?</span>
                     <button class="create-account-btn shadow-light">회원가입</button>
                 </div>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
+                <p>ㅤ</p>
                 <div class="login-input-container">
                     <div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>
