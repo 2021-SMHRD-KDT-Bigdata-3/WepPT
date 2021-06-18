@@ -12,7 +12,9 @@
 		body{
 		zoom: 90% !important;
 		}
-		
+		span.title{
+   font-size : 50px;
+}
 		</style>
 </head>
 
@@ -73,15 +75,10 @@ String id = (String)session.getAttribute("id");
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<header>
-								<h1>TEST<br/>
-								</h1>
-								<p></p>
-							</header>
 							<section class="tiles">
 								<article class="style1">
 									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
+										<img src="images/video.jpg" alt="" />
 									</span>
 									<a href="video.jsp">
 										<h2>영상</h2>
@@ -92,7 +89,7 @@ String id = (String)session.getAttribute("id");
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
+										<img src="images/recommend.jpg" alt="" />
 									</span>
 									<a href="recommend.jsp">
 										<h2>식단추천</h2>
@@ -103,7 +100,7 @@ String id = (String)session.getAttribute("id");
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
+										<img src="images/meal.jpg" alt="" />
 									</span>
 									<a href="meal.jsp">
 										<h2>식단</h2>
@@ -114,7 +111,7 @@ String id = (String)session.getAttribute("id");
 								</article>
 								<article class="style4">
 									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
+										<img src="images/calendar.png" alt="" />
 									</span>
 									<a href="calendar.jsp">
 										<h2>캘린더</h2>
@@ -128,47 +125,9 @@ String id = (String)session.getAttribute("id");
 						</div>
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>???</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-							</ul>
+				
 						</div>
-					</footer>
 
-			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

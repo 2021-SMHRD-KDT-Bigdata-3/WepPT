@@ -106,7 +106,7 @@
 }
 .container{
 	max-width: 100%;
-	height: 1077px;
+	height: 1211px;
 	margin: 0px;
 }
 .row{
