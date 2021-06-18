@@ -7,42 +7,65 @@ public class memberDTO {
 	private String pw;
 	private String name;
 	private int age;
-	private int tel;
+	private String gender;
 	private String email;
+	private int tel;
 	private float height;
 	private float weight;
-	private float bmi;
-	
-	
-	public memberDTO(String category, String id, String pw, String name, int age, int tel, String email, float height,
-			float weight, float bmi) {
+
+	//
+	public memberDTO(String category, String id, String pw, String name, int age, String gender, String email, int tel,
+			float height, float weight) {
 		this.category = category;
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.age = age;
-		this.tel = tel;
+		this.gender = gender;
 		this.email = email;
+		this.tel = tel;
 		this.height = height;
 		this.weight = weight;
-		this.bmi = bmi;
 	}
-	
-	
+
 	public memberDTO(String id, String pw) {
 		this.category = category;
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.age = age;
-		this.tel = tel;
+		this.gender = gender;
 		this.email = email;
+		this.tel = tel;
 		this.height = height;
 		this.weight = weight;
-		this.bmi = bmi;
 	}
-
-
+	
+	
+	
+	public memberDTO(String id, String pw, String name, int age, String gender, String email, int tel,
+			float height, float weight) {
+		this.category = category;
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.email = email;
+		this.tel = tel;
+		this.height = height;
+		this.weight = weight;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//
 	public String getCategory() {
 		return category;
 	}
@@ -93,13 +116,13 @@ public class memberDTO {
 	}
 
 
-	public int getTel() {
-		return tel;
+	public String getGender() {
+		return gender;
 	}
 
 
-	public void setTel(int tel) {
-		this.tel = tel;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 
@@ -110,6 +133,16 @@ public class memberDTO {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+
+	public int getTel() {
+		return tel;
+	}
+
+
+	public void setTel(int tel) {
+		this.tel = tel;
 	}
 
 
@@ -131,17 +164,11 @@ public class memberDTO {
 	public void setWeight(float weight) {
 		this.weight = weight;
 	}
-
-
-	public float getBmi() {
-		return bmi;
-	}
-
-
-	public void setBmi(float bmi) {
-		this.bmi = bmi;
-	}
-
+	
+	
+	
+	
+	
 	
 	
 	

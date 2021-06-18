@@ -21,8 +21,6 @@ public class login extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 			
-		memberDTO dto = new memberDTO(id, pw);
-		
 		memberDAO dao = new memberDAO();
 		
 		memberDTO get_dto = dao.login(id, pw);

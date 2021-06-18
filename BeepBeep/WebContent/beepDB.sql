@@ -63,7 +63,7 @@ create table food (
 
 select * from food;
 
-
+select * from member;
 
 
 
