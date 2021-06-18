@@ -10,7 +10,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 		body{
-		zoom: 80% !important;
+		zoom: 90% !important;
 		}
 		
 		</style>
