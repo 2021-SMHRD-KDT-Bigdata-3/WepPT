@@ -8,6 +8,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<style>
+		<!-- 화면비율고정 -->
+		body{
+		zoom: 67% !important;
+		}
+		</style>
+		
 </head>
 <body>
 
@@ -20,7 +28,8 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/mainimage.png" alt="" /></span><span class="title">WebPT</span>
+									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
+									<span class="title">MyPage</span>
 								</a>
 
 							<!-- Nav 옆에 세줄로 된 메뉴바 -->
@@ -45,19 +54,10 @@
 						</ul>
 					</nav>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>My Page</h1>
-							<span class="image main"><img src="images/blue.png" alt="" /></span>
-							<p>
-						</div>
-					</div>
-					
 				<!-- 개인정보 보여주는 공간 -->
 					<div id="mypage">
 						<div class = "inner">
-							<table>
+							<table id = "mypage_table" >
 								<tr>
 									<td>닉네임</td>
 									<td>태희</td>
@@ -83,7 +83,7 @@
 									<td>랄라</td>
 								</tr>
 							</table>
-							<table>
+							<table id="private">
 								<tr><td><input type="button" value="개인정보변경"></td></tr>
 							</table>
 						</div>
