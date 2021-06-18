@@ -52,7 +52,7 @@ public class memberDAO {
 				
 			    String sql = "select * from member where id = ? and pw = ?";
 			    pst = conn.prepareStatement(sql);
-			    pst.setString(1, id);
+			    pst.setString(1, id);  
 			    pst.setString(2, pw);
 			    
 			    rs = pst.executeQuery();
@@ -60,9 +60,12 @@ public class memberDAO {
 			    if ( rs.next() ) {
 			    	String get_id = rs.getString("id");
 			    	String get_pw = rs.getString("pw");
+			    	float get_height = rs.getFloat("height");
+			    	float get_weight = rs.getFloat("weight");
+			    	//1.내가 더 가지고 오고 싶은 행이 있다면 rs.getString(행이름)
 			    	
-			    	dto = new memberDTO(get_id, get_pw);
-			    	
+			    	dto = new memberDTO(get_id, get_pw, get_height, get_weight);
+			    	//2.dto안에 생성자로 더 가지고 오고싶은 데이터들을 넣어주기!
 			    	System.out.println("로그인 성공");
 			    }
 			}catch(Exception e) {

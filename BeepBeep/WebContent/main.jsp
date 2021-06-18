@@ -24,9 +24,7 @@
 
 
 <%
-
-memberDTO dto =(memberDTO)session.getAttribute("info");
-
+		memberDTO dto = (memberDTO)session.getAttribute("info");
 %>
 
 
@@ -47,7 +45,7 @@ memberDTO dto =(memberDTO)session.getAttribute("info");
 								<nav style = 'right:0'>
 									<ul>
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
-										<% if ( dto.getId() == null ) {
+										<% if (dto == null) {
 											out.print("<button><a href = 'Login.jsp'>로그인</a></button>");
 											out.print("<span>ㅤ</span>");
 										    out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");

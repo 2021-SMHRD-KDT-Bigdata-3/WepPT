@@ -42,7 +42,7 @@ public class join extends HttpServlet {
 		
 		if(cnt>0) {
 			System.out.println("회원가입 성공");
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("Login.jsp");
 		}else {
 			System.out.println("회원가입 실패");
 			response.sendRedirect("Join.jsp");

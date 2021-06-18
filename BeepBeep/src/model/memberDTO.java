@@ -28,7 +28,7 @@ public class memberDTO {
 		this.weight = weight;
 	}
 
-	public memberDTO(String id, String pw) {
+	public memberDTO(String id, String pw, float height, float weight) {
 		this.category = category;
 		this.id = id;
 		this.pw = pw;
@@ -39,13 +39,13 @@ public class memberDTO {
 		this.tel = tel;
 		this.height = height;
 		this.weight = weight;
+		
 	}
 	
 	
 	
 	public memberDTO(String id, String pw, String name, int age, String gender, String email, String tel,
 			float height, float weight) {
-		this.category = category;
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
