@@ -178,6 +178,7 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
     </style>
 </head>
 <body>
+   <form action = "login" method = "post">
     <div class="page-container">
         <div class="login-form-container shadow">
             <div class="login-form-right-side">
@@ -192,7 +193,7 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
             <div class="login-form-left-side">
                 <div class="login-top-wrap">
                     <span>아이디가 없으신가요?</span>
-                    <button class="create-account-btn shadow-light">회원가입</button>
+                    <a style = 'font-size:20px'href ='Join.jsp'>회원가입</a>
                 </div>
                 <p>ㅤ</p>
                 <p>ㅤ</p>
@@ -205,22 +206,24 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
                 <p>ㅤ</p>
                 <p>ㅤ</p>
                 <p>ㅤ</p>
+          
                 <div class="login-input-container">
                     <div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>
-                        <input placeholder="아이디" type="text">
+                        <input name = "id" placeholder="아이디" type="text">
                     </div>
                     <div class="login-input-wrap input-password">
                         <i class="fas fa-key"></i>
-                        <input placeholder="비밀번호"  type="password">
+                        <input name = "pw"  placeholder="비밀번호"  type="password">
                     </div>
                 </div>
                 <div class="login-btn-wrap">
-                    <button class="login-btn">로  그  인</button>
+                    <button type = "submit" class="login-btn">로  그  인</button>
                     <a href="#" >회원가입은 하셨나요?</a>
                 </div>
             </div>
         </div>
     </div>
+              </form>
 </body>
 </html>
