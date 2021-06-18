@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.memberDAO;
 import model.memberDTO;
@@ -32,6 +33,8 @@ public class join extends HttpServlet {
 		float height = Float.parseFloat(request.getParameter("height"));
 		float weight = Float.parseFloat(request.getParameter("weight"));
 		
+		
+		memberDTO dto = new memberDTO(id, pw, name, age, name, email, tel, height, weight);
 		
 		memberDAO memberdao = new memberDAO();
 		

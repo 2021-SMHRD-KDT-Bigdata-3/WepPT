@@ -28,8 +28,7 @@ public class login extends HttpServlet {
 		if ( get_dto != null) {
 			System.out.println("로그인 성공");
 			HttpSession session =  request.getSession();
-			session.setAttribute("id", get_dto.getId());
-			
+			session.setAttribute("info", get_dto);
 			response.sendRedirect("main.jsp");
 		}else {
 			System.out.println("로그인 실패");

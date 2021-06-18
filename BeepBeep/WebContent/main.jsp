@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -22,7 +24,9 @@
 
 
 <%
-String id = (String)session.getAttribute("id");
+
+memberDTO dto =(memberDTO)session.getAttribute("info");
+
 %>
 
 
@@ -43,7 +47,7 @@ String id = (String)session.getAttribute("id");
 								<nav style = 'right:0'>
 									<ul>
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
-										<% if ( id == null ) {
+										<% if ( dto.getId() == null ) {
 											out.print("<button><a href = 'Login.jsp'>로그인</a></button>");
 											out.print("<span>ㅤ</span>");
 										    out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
