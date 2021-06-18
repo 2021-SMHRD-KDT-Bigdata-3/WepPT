@@ -5,109 +5,192 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-
 <style>
 
-	body{
-	}
-
-	#a{    display: inline-block;
-    vertical-align: top;
+	.register{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
+}
+.register-left{
     text-align: center;
-    width: 50%;
-    max-width: 700px;
-    height:800px;
-    padding: 60px 70px;
-    font-size: 20px;
-    box-sizing: border-box;
-    font-family:굴림;
-	}	
-	
-	#b{    display: inline-block;
-    vertical-align: top;
+    color: #fff;
+    margin-top: 4%;
+}
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.btnRegister{
+    float: right;
+    margin-top: 11%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 1%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 556;
+    width: 40%;
+    cursor: pointer;
+    font-size: 22px;
+}
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+.register .nav-tabs .nav-link{
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #0062cc;
+    border: 2px solid #0062cc;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
     text-align: center;
-    width: 100%;
-    max-width: 700px;
-    height:800px;
-    padding: 60px 70px;
-    font-size: 20px;
-    box-sizing: border-box;
-    font-family:굴림;
-    border:2px solid black;
-	background-color:white;
-	}	
-	
-	
-	
-	
-	 .info{
-		width:500px;
-		height:80px;
-		font-size:1em;
-		border-width:0px 0px 1px 0px;
-	}
-	
-	
-	.join, .cancel{
-		width:260px;
-		height:50px;
-		background-color:white;
-	}
-	
-	.img {
-		height:600px;
-		
-	}
-
+    margin-top: 8%;
+    margin-bottom: -13%;
+    color: #495057;
+    font-size: 35px;
+}
+.container{
+	max-width: 100%;
+	height: 1077px;
+	margin: 0px;
+}
+.row{
+	margin-top: 135px;
+}
+.form-control{
+	height: 55px;
+}
 </style>
-
-
-
 </head>
-<body align = 'center'>
 
-<br>
-<br>
-<br>
-<br>
 
-	<div>
-	
-		<div id = 'a'>
-		<img src = "images/exercise.jpg" width = '400px' height = '500px'>
-		<br>
-		<br>
-		서비스로고 및 서비스명
-		</div>
-		
-		<div id = 'b'> 
-		<h1>회원가입</h1>
-			<p>ㅤ</p>
-		<!-- 사용자가 입력한 값을 JoinService 로 보낼 수 있게 수정 -->
-		<form action="JoinServiceCon.do" method="post">
-			<input class = 'info' type="text" name="id" placeholder=" ID을 입력하세요">
-			<p></p>
-			<input class = 'info'  type="password" name="pw" placeholder=" PW를 입력하세요">
-			<p></p>
-			<input class = 'info'  type="text" name="tel" placeholder=" 전화번호를 입력하세요">
-			<p></p>
-			<input class = 'info'  type="text" name="address" placeholder=" 집주소를 입력하세요">
-			<p>ㅤ</p>
-			<input  class = 'join'  type="submit" value="가입하기" class="button fit">
-			<input  class = 'cancel' type="submit" value="취소" class="button fit">
-		</form>
-		</div>
-		
-	</div>
-	<p>ㅤ</p>
-	<p>ㅤ</p>
-	<p>ㅤ</p>
-	<p>ㅤ</p>
-	
-	<hr color = 'lightgray'>
-	<p>이용약관  개인정보 처리방침  운영정책  고객센터  공지사항  한국어△</p>
-	<p>Copyright Service Corp. All rights reserved</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
+<div class="container register" style="max-width: 100%;">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>헬창의길로</h3>
+                        <p>운동은 먹기 위해서 하는것이다</p>
+                        <input type="submit" name="" value="Login"/><br/>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">당신의 정보를 입력해주세요</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="ID" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="password" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="이름" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="나이" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="maxl" style = "font-size: 20px;">
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="male" checked>
+                                                    <span> 남자 </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="female">
+                                                    <span>여자 </span> 
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함" value="" />
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="키" value="" />
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="몸무게" value="" />
+                                        </div>
+                                       
+                                        
+                                        <input type="submit" class="btnRegister"  value="확인"/>
+                                    </div>
+                                </div>
+                            </div>
+                           
+
+            </div>
 
 
 
