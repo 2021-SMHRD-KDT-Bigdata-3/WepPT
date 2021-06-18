@@ -51,7 +51,7 @@ public class memberDAO {
 				conn();
 			    String sql = "select * from member where id = ? and pw = ?";
 			    pst = conn.prepareStatement(sql);
-			    pst.setString(1, id);
+			    pst.setString(1, id);  
 			    pst.setString(2, pw);
 			    rs = pst.executeQuery();
 			    if ( rs.next() ) {
@@ -65,6 +65,8 @@ public class memberDAO {
 			    	float height = rs.getFloat("height");
 			    	float weight = rs.getFloat("weight");
 			    	
+			    	
+			    	//1.내가 더 가지고 오고 싶은 행이 있다면 rs.getString(행이름)
 			    	dto = new memberDTO(get_id, get_pw, name, age, gender, email, tel, height, weight);
 			    	
 			    	System.out.println("로그인 성공");

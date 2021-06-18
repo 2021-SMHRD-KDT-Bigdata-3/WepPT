@@ -21,9 +21,10 @@
 
 <body>
 
-	<%
+
+<%
 		memberDTO dto = (memberDTO)session.getAttribute("info");
-	%>
+%>
 
 
 		<!-- Wrapper -->
@@ -43,8 +44,8 @@
 								<nav style = 'right:0'>
 									<ul>
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
-										<% if (dto==null){
-											System.out.println("빈값");
+
+										<% if (dto == null) {
 											out.print("<button><a href = 'login'>로그인</a></button>");
 											out.print("<span>ㅤ</span>");
 											out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");

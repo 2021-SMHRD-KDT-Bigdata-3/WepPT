@@ -19,13 +19,14 @@ public class login extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
 			
 		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+ 		String pw = request.getParameter("pw");
 			
 		
 		
 		memberDAO dao = new memberDAO();
-		
 		memberDTO get_dto = dao.login(id, pw);
+		
+
 		
 		if ( get_dto != null) {
 			System.out.println("로그인 성공");
