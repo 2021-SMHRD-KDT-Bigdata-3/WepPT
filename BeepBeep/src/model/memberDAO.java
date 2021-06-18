@@ -77,7 +77,7 @@ public class memberDAO {
 
 		
 		// 회원가입
-		public int join(String id, String pw, String name, int age, String gender, String email, int tel, float height, float weight) {
+		public int join(String id, String pw, String name, int age, int gender, String email, String tel, float height, float weight) {
 
 			// 런타임오류 : 실행했을 때 발생하는 오류 -> 예외처리
 			try {
@@ -92,9 +92,9 @@ public class memberDAO {
 				pst.setString(2, pw);
 				pst.setString(3, name);
 				pst.setInt(4, age);
-				pst.setString(5, gender);
+				pst.setInt(5, gender);
 				pst.setString(6, email);
-				pst.setInt(7, tel);
+				pst.setString(7, tel);
 				pst.setFloat(8, height);
 				pst.setFloat(9, weight);
 

@@ -26,9 +26,9 @@ public class join extends HttpServlet {
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
-		String gender = request.getParameter("gender");
+		int gender = Integer.parseInt(request.getParameter("gender"));
 		String email = request.getParameter("email");
-		int tel = Integer.parseInt(request.getParameter("tel"));
+		String tel = request.getParameter("tel");
 		float height = Float.parseFloat(request.getParameter("height"));
 		float weight = Float.parseFloat(request.getParameter("weight"));
 		

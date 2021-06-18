@@ -5,18 +5,19 @@ drop table member cascade constraints;
 
 
 create table member (
-    category varchar2(50) not null,
+    category varchar2(50),
     id varchar2(50) UNIQUE,
     pw varchar2(50) not null,
     name varchar2(50) not null ,
     age number not null,
-    tel varchar2(50) not null,
+    gender number not null,
     email varchar2(100) not null,
+    tel varchar2(50) not null,
     height float not null,
     weight float not null,
-    bmi float not null,
     constraint wmember_pk primary key(category)
 );
+
 
 
 
