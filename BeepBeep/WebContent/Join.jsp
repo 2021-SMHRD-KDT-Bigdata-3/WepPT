@@ -139,31 +139,32 @@
                             <li class="nav-item">
                             </li>
                         </ul>
+                        <form action="http://127.0.0.1:5000/" method="post">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">당신의 정보를 입력해주세요</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="ID" value="" />
+                                            <input type="text" class="form-control" placeholder="ID" name="id" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="password" value="" />
+                                            <input type="password" class="form-control" placeholder="password" name="pw" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="이름" value="" />
+                                            <input type="text" class="form-control" placeholder="이름" name="name" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="나이" value="" />
+                                            <input type="text" class="form-control"  placeholder="나이" name="age" />
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl" style = "font-size: 20px;">
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="male" checked>
+                                                    <input type="radio" name="gender" value="1" checked>
                                                     <span> 남자 </span> 
                                                 </label>
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="female">
+                                                    <input type="radio" name="gender" value="2">
                                                     <span>여자 </span> 
                                                 </label>
                                             </div>
@@ -171,20 +172,21 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email" value="" />
+                                            <input type="email" class="form-control" placeholder="Email" name="email" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함" value="" />
+                                            <input type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함" name="email" />
                                         </div>
                                          <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="키" value="" />
+                                            <input type="text" class="form-control" placeholder="키" name="height" />
                                         </div>
                                          <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="몸무게" value="" />
+                                            <input type="text" class="form-control" placeholder="몸무게" name="weight" />
                                         </div>
                                        
                                         
                                         <input type="submit" class="btnRegister"  value="확인"/>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
