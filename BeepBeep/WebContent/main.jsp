@@ -9,15 +9,20 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-		<!-- 화면비율고정 -->
 		body{
-		zoom: 67% !important;
+		zoom: 90% !important;
 		}
 		
 		</style>
 </head>
 
 <body>
+
+
+<%
+String id = (String)session.getAttribute("id");
+%>
+
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -28,20 +33,24 @@
 							
 							
 							<!-- Logo -->
-								<a href="" class="logo">
-									<span class="symbol"><img src="images/hehe.png" alt="" /></span>
-									<span class="title">WebPT</span>
+								<a href="main.jsp" class="logo">
+									<span class="symbol"><img src="images/hehe.png" alt="" /></span><span class="title">돼지시키들</span>
 								</a>
 
 							<!-- Nav -->
 								<nav style = 'right:0'>
 									<ul>
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
-										<button><a href = 'Login.jsp'>로그인</a></button>
+										<% if ( id == null ) {
+											out.print("<button><a href = 'Login.jsp'>로그인</a></button>");
+											out.print("<span>ㅤ</span>");
+										    out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
+										}else {
+											out.print("<button><a href = 'logout'>로그아웃</a></button>");
+											out.print("<span>ㅤ</span>");
+									   		out.print("<button><a href = 'mypage.jsp'>마이페이지</a></button>");
+										}%>
 										<span>ㅤ</span>
-										<button><a href = 'Join.jsp'>회원가입</a></button>
-										<span>ㅤ</span>
-									
 										<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>
@@ -55,10 +64,9 @@
 						<ul>
 							<li><a href="main.jsp">메인화면으로</a></li>
 							<li><a href="video.jsp">영상</a></li>
-							<li><a href="recommend.jsp">제품추천</a></li>
+							<li><a href="recommend.jsp">식단추천</a></li>
 							<li><a href="meal.jsp">식단</a></li>
 							<li><a href="calendar.jsp">캘린더</a></li>
-							<li><a href="#">로그아웃</a></li>
 						</ul>
 					</nav>
 
@@ -70,10 +78,52 @@
 								</h1>
 								<p></p>
 							</header>
-							<section>
-								<div id="mainimg">
-									<img src="images/mainimg.png" width=3000px height=500px>
-								</div>
+							<section class="tiles">
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic01.jpg" alt="" />
+									</span>
+									<a href="video.jsp">
+										<h2>영상</h2>
+										<div class="content">
+											<p>최적의 알고리즘으로 당신의 운동을 추천해줍니다.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="images/pic02.jpg" alt="" />
+									</span>
+									<a href="recommend.jsp">
+										<h2>식단추천</h2>
+										<div class="content">
+											<p>당신의 건강한 식습관을 개선해드립니다.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="images/pic03.jpg" alt="" />
+									</span>
+									<a href="meal.jsp">
+										<h2>식단</h2>
+										<div class="content">
+											<p>먹는것 하나하나 성분과 칼로리를 계산해드립니다.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="images/pic04.jpg" alt="" />
+									</span>
+									<a href="calendar.jsp">
+										<h2>캘린더</h2>
+										<div class="content">
+											<p>당신의 식단 일지 운동 기록등을 해줍니다.</p>
+										</div>
+									</a>
+								</article>
+							
 							</section>
 						</div>
 					</div>
@@ -114,7 +164,6 @@
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>

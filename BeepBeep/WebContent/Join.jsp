@@ -5,242 +5,195 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<style>
 
-    <style>
- 
-:root{
-
-
+	.register{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
 }
- *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: SCDream1;
+.register-left{
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
 }
-
-.page-container{
-  
-    width: 100vw;
-    height: 100vh;
-    background: #eff0f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.shadow{
-    -webkit-box-shadow: 27px 43px 43px -26px rgba(89,89,89,0.39);
-    -moz-box-shadow: 27px 43px 43px -26px rgba(89,89,89,0.39);
-    box-shadow: 27px 43px 43px -26px rgba(89,89,89,0.39);
-}
-.login-form-container{
- 
-    background:#f5f5f5 ;
-    width:100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    box-shadow: 10px black;
-    border-radius: 10px;
-
-}
-.login-form-right-side{
-    width: 50%; 
-    border-radius: 10px 0px 0px 10px;
-    padding:75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-image: 
-  radial-gradient(ellipse farthest-corner at 0 140%, #5d9dff 0%, #2178ff 70%, #3585ff 70%);
-}
-.login-form-right-side h1{
-    color: white;
-    width:100%;
-    text-align: right;
-    opacity: 0.9;
-
-}
-.login-form-right-side p{
-    padding-top: 50px;
-    font-size:12px;
-    text-align: right;
-    opacity: 0.8;
-}
-.login-form-left-side{
-    width: 50%;
-    border-radius: 0px 10px 10px 0px;
-    display: flex;
-	
-	rigth : 0px;
-    flex-direction: column;
-    align-items: center;
-    padding:40px;
-    background: rgb(255,255,255);
-	background: linear-gradient(287deg, rgba(255,255,255,1) 0%, rgba(243,244,244,1) 0%, rgba(255,255,255,1) 100%);
-	}
-.login-form-left-side .login-top-wrap{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width:100%;
-}
-.login-form-left-side .login-top-wrap span{
-    color: gray;
-    font-size: 20px;
-    padding-right:20px;
-
-}
-.login-form-left-side .login-top-wrap .create-account-btn {
-    background: white;
-    border:  0;
-    width:100px;
-    height: 38px;
-    font-size: 18px;
-    color: #2178ff;
-    border-radius: 3px;
-
-}
-.login-input-container{
-    padding-top:220px;
-    width:300px;
-    font-size: 60px;
-}
-.login-input-container .login-input-wrap{
-    width:450px;
-    height: 82px;
-    margin-top: 40px;
-    border-radius: 2px;
-    border-bottom: solid 2px #2178ff;
-    display: flex;
-    
-   
-}
-.far, .fas{
-	line-height: unset;
-}
-.login-input-container .login-input-wrap i{
-    color: #2178ff;
-}
-
-.login-input-container .login-input-wrap input{
-    background: none;
-    font-size:25px;
-   
+.register-left input{
     border: none;
-    line-height: 45px;
-    padding-left:10px;
-    width:267px;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
 }
-.login-input-container .login-input-wrap input:focus{
-    outline: none;
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
 }
-.login-btn-wrap{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;;
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
 }
-.login-btn-wrap .login-btn{
-    width:455px;
-    height:55px;
-    color:white;
-    border: 0;
-    font-size:21px;
-    border-radius: 4px;
-    font-size:28px;
-    margin-left:150px;
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.btnRegister{
+    float: right;
+    margin-top: 11%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 1%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 556;
+    width: 40%;
+    cursor: pointer;
+    font-size: 22px;
+}
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+.register .nav-tabs .nav-link{
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #0062cc;
+    border: 2px solid #0062cc;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -13%;
+    color: #495057;
+    font-size: 35px;
+}
+.container{
+	max-width: 100%;
+	height: 1077px;
+	margin: 0px;
+}
+.row{
+	margin-top: 135px;
+}
+.form-control{
+	height: 55px;
+}
+</style>
 
-    background: rgb(105,163,255);
-background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 50%, rgba(43,125,254,1) 100%);
-}
-.login-btn-wrap a{
-    margin-top:10px;
-    text-decoration: none;
-    font-size: 18px;
-    color: gray;
-    margin-left: 160px;
-    margin-top: 12px;
-
-}
-.pt{
-	font-size: 48px;
-	font-family: 'SCDream1';
-}
-.ptt{
-	font-size: 18px;
-}
-    </style>
-
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 </head>
-<body align = 'center'>
- <div class="page-container">
-        <div class="login-form-container shadow">
-            <div class="login-form-right-side">
-                <div class="top-logo-wrap">
-                    
-                </div>
-                <h2 class = "pt">아직도 돈을 주고 pt를 하고 있으신가요?</h2>
-                <h2 class = "pt">집에서 홈트레이닝을 하고 있으신가요?</h2>
-                <p>                   </p>
-                <h2 class = "ptt">무료로 당신의 건강과 식습관을 챙겨드립니다.</h2>
+
+<body>
+<div class="container register" style="max-width: 100%;">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>헬창의길로</h3>
+                        <p>운동은 먹기 위해서 하는것이다</p>
+                        <input type="submit" name="" value="Login"/><br/>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">당신의 정보를 입력해주세요</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="ID" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="password" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="이름" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="나이" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="maxl" style = "font-size: 20px;">
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="male" checked>
+                                                    <span> 남자 </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="female">
+                                                    <span>여자 </span> 
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함" value="" />
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="키" value="" />
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="몸무게" value="" />
+                                        </div>
+                                       
+                                        
+                                        <input type="submit" class="btnRegister"  value="확인"/>
+                                    </div>
+                                </div>
+                            </div>
+                           
+
             </div>
-            <div class="login-form-left-side">
-                <div class="login-top-wrap">
-                </div>
-                <div class="login-input-container">
-                    <div class="login-input-wrap input-id">
-                        <i class="far fa-envelope"></i>
-                        <input name = 'id' placeholder="아이디" type="text">
-                    </div>
-                    <div class="login-input-wrap input-password">
-                        <i class="fas fa-key"></i>
-                        <input name = 'pw' placeholder="비밀번호"  type="password">
-                    </div>
-                     <div class="login-input-wrap input-id">
-                        <i class="far fa-envelope"></i>
-                        <input name = 'name' placeholder="이름" type="text">
-                    </div>
-                     <div class="login-input-wrap input-id">
-                        <i class="far fa-envelope"></i>
-                        <table>
-                        <tr style = 'font-size:20px; writhing-mode:horizontal-tb;'>
-                        <td>남성</td><td><input name ='gender' value="man" type="radio"></td>
-                        <td>여성</td><td><input name = 'gender' value = 'women' type="radio"></td>
-                        </tr>
-                        </table>
-                    </div>
-                     <div class="login-input-wrap input-id">
-                        <i class="far fa-envelope"></i>
-                        <input name = 'height' placeholder="키" type="text">
-                    </div>
-                     <div class="login-input-wrap input-id">
-                        <i class="far fa-envelope"></i>
-                        <input name = 'weight' placeholder="몸무게" type="text">
-                    </div>
-                     <div class="login-input-wrap input-id">
-                        <i class="far fa-envelope"></i>
-                        <input name = 'bmi' placeholder="BMI" type="text">
-                    </div>
-                     <div class="login-input-wrap input-id">
-                        <i class="far fa-envelope"></i>
-                        <input name = 'tel' placeholder="000-0000-0000" type="text">
-                    </div>
-                     <div class="login-input-wrap input-id">
-                        <i class="far fa-envelope"></i>
-                        <input name = 'email' placeholder="e-mail" type="text">
-                    </div>
-                </div>
-                <div class="login-btn-wrap">
-                    <button class="login-btn">회 원 가 입</button>
-                </div>
             </div>
-        </div>
-    </div>
+            </div>
+            </div>
 
 
 
