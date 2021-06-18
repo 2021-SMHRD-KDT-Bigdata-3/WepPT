@@ -373,8 +373,6 @@
   <div class="temporary_footer"></div>
 </div>
 
-
-
 <div class="icon_bar">
   <span><i id="h_footer" onclick="change_menu('h_footer','main_body1');" class="fas fa-home f_icon"></i></span>
   <span><i id="s_footer" onclick="change_menu('s_footer','main_body2');" class="fas fa-map-marked-alt f_icon"></i></span>

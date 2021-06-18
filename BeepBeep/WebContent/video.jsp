@@ -75,6 +75,7 @@ li a:hover:not(.active) {
 		<nav id="menu">
 			<h2>Menu</h2>
 			<ul>
+
 				<li><a href="main.jsp">메인화면으로</a></li>
 				<li><a href="video.jsp">영상</a></li>
 				<li><a href="recommend.jsp">식단추천</a></li>

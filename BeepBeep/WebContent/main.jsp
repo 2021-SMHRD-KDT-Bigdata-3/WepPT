@@ -20,6 +20,12 @@
 
 <body>
 
+
+<%
+String id = (String)session.getAttribute("id");
+%>
+
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -29,7 +35,7 @@
 							
 							
 							<!-- Logo -->
-								<a href="index.html" class="logo">
+								<a href="main.jsp" class="logo">
 									<span class="symbol"><img src="images/hehe.png" alt="" /></span><span class="title">돼지시키들</span>
 								</a>
 
@@ -37,11 +43,16 @@
 								<nav style = 'right:0'>
 									<ul>
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
-										<button><a href = 'Login.jsp'>로그인</a></button>
+										<% if ( id == null ) {
+											out.print("<button><a href = 'Login.jsp'>로그인</a></button>");
+											out.print("<span>ㅤ</span>");
+										    out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
+										}else {
+											out.print("<button><a href = 'logout'>로그아웃</a></button>");
+											out.print("<span>ㅤ</span>");
+									   		out.print("<button><a href = 'mypage.jsp'>마이페이지</a></button>");
+										}%>
 										<span>ㅤ</span>
-										<button><a href = 'Join.jsp'>회원가입</a></button>
-										<span>ㅤ</span>
-									
 										<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>
@@ -58,7 +69,6 @@
 							<li><a href="recommend.jsp">식단추천</a></li>
 							<li><a href="meal.jsp">식단</a></li>
 							<li><a href="calendar.jsp">캘린더</a></li>
-							<li><a href="#">로그아웃</a></li>
 						</ul>
 					</nav>
 
