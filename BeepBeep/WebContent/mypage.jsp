@@ -330,7 +330,7 @@ memberDTO dto =(memberDTO)session.getAttribute("info");
       <div class="user_detail">
         <div id="h_detail1">
           <div class="user_detail_head">ID
-            <span class="edit_detail">DB 에서 불러온값</span>
+            <span class="edit_detail"><%=dto.getId() %></span>
           </div>
           <div class="user_detail_head">PW
             <span class="edit_detail">DB 에서 불러온 값</span>
@@ -338,10 +338,10 @@ memberDTO dto =(memberDTO)session.getAttribute("info");
         </div>
         <div id="h_detail2">
           <div class="user_detail_head">몸무게
-            <span class="edit_detail">DB 에서 불러온 값</span>
+            <span class="edit_detail"><%=dto.getWeight() %></span>
           </div>
           <div class="user_detail_head">키
-            <span class="edit_detail">DB 에서 불러온 값</span>
+            <span class="edit_detail"><%=dto.getHeight() %></span>
           </div>
         </div>
         <div id="h_detail3">

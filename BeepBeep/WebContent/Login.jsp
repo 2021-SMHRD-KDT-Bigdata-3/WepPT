@@ -210,7 +210,6 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
                 <p>คิ</p>
                 <p>คิ</p>
                 <p>คิ</p>
-          
                 <div class="login-input-container">
                     <div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>

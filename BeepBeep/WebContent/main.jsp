@@ -1,4 +1,3 @@
-<%@page import="java.util.ArrayList"%>
 <%@page import="model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -22,12 +21,9 @@
 
 <body>
 
-
-<%
-
-memberDTO dto =(memberDTO)session.getAttribute("info");
-
-%>
+	<%
+		memberDTO dto = (memberDTO)session.getAttribute("info");
+	%>
 
 
 		<!-- Wrapper -->
@@ -47,16 +43,20 @@ memberDTO dto =(memberDTO)session.getAttribute("info");
 								<nav style = 'right:0'>
 									<ul>
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
-										<% if ( dto.getId() == null ) {
-											out.print("<button><a href = 'Login.jsp'>로그인</a></button>");
+										<% if (dto==null){
+											System.out.println("빈값");
+											out.print("<button><a href = 'login'>로그인</a></button>");
 											out.print("<span>ㅤ</span>");
-										    out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
-										}else {
+											out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
+											out.print("<span>ㅤ</span>");
+										} else if (dto.getId() != null) {
+											System.out.println("비어있지않음");
 											out.print("<button><a href = 'logout'>로그아웃</a></button>");
 											out.print("<span>ㅤ</span>");
-									   		out.print("<button><a href = 'mypage.jsp'>마이페이지</a></button>");
-										}%>
-										<span>ㅤ</span>
+											out.print("<button><a href = 'mypage.jsp'>마이페이지</a></button>");
+											out.print("<span>ㅤ</span>");
+										}
+										%>
 										<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>

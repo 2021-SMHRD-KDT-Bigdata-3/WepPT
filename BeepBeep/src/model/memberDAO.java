@@ -49,19 +49,23 @@ public class memberDAO {
 		public memberDTO login(String id, String pw) {
 			try{
 				conn();
-				
 			    String sql = "select * from member where id = ? and pw = ?";
 			    pst = conn.prepareStatement(sql);
 			    pst.setString(1, id);
 			    pst.setString(2, pw);
-			    
 			    rs = pst.executeQuery();
-			    
 			    if ( rs.next() ) {
 			    	String get_id = rs.getString("id");
 			    	String get_pw = rs.getString("pw");
+			    	String name = rs.getString("name");
+			    	int age = rs.getInt("age");
+			    	String gender = rs.getString("gender");
+			    	String email = rs.getString("email");
+			    	String tel = rs.getString("tel");
+			    	float height = rs.getFloat("height");
+			    	float weight = rs.getFloat("weight");
 			    	
-			    	dto = new memberDTO(get_id, get_pw);
+			    	dto = new memberDTO(get_id, get_pw, name, age, gender, email, tel, height, weight);
 			    	
 			    	System.out.println("로그인 성공");
 			    }
