@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-    <style>
- 
+     <style>
+    <!-- 화면비율고정 -->
+		body{
+		zoom: 67% !important;
+		}
+
 :root{
 
 

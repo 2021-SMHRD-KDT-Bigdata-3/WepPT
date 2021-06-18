@@ -10,7 +10,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 		body{
-		zoom: 80% !important;
+		zoom: 90% !important;
 		}
 		
 		</style>
@@ -64,7 +64,7 @@ String id = (String)session.getAttribute("id");
 						<ul>
 							<li><a href="main.jsp">메인화면으로</a></li>
 							<li><a href="video.jsp">영상</a></li>
-							<li><a href="recommend.jsp">제품추천</a></li>
+							<li><a href="recommend.jsp">식단추천</a></li>
 							<li><a href="meal.jsp">식단</a></li>
 							<li><a href="calendar.jsp">캘린더</a></li>
 						</ul>
@@ -81,8 +81,7 @@ String id = (String)session.getAttribute("id");
 							<section class="tiles">
 								<article class="style1">
 									<span class="image">
-								<!-- 	185x158 사진크기 -->
-										<img src="images/video.jpg" alt="" />
+										<img src="images/pic01.jpg" alt="" />
 									</span>
 									<a href="video.jsp">
 										<h2>영상</h2>
@@ -93,10 +92,10 @@ String id = (String)session.getAttribute("id");
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="images/recommend.jpg" alt="" />
+										<img src="images/pic02.jpg" alt="" />
 									</span>
 									<a href="recommend.jsp">
-										<h2>제품추천</h2>
+										<h2>식단추천</h2>
 										<div class="content">
 											<p>당신의 건강한 식습관을 개선해드립니다.</p>
 										</div>
@@ -104,7 +103,7 @@ String id = (String)session.getAttribute("id");
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="images/meal.jpg" alt="" />
+										<img src="images/pic03.jpg" alt="" />
 									</span>
 									<a href="meal.jsp">
 										<h2>식단</h2>
@@ -115,7 +114,7 @@ String id = (String)session.getAttribute("id");
 								</article>
 								<article class="style4">
 									<span class="image">
-										<img src="images/calendar.png" alt="" />
+										<img src="images/pic04.jpg" alt="" />
 									</span>
 									<a href="calendar.jsp">
 										<h2>캘린더</h2>
@@ -165,7 +164,6 @@ String id = (String)session.getAttribute("id");
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>
