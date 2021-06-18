@@ -58,30 +58,10 @@
 					<div id="mypage">
 						<div class = "inner">
 							<table id = "mypage_table" >
-								<tr>
+								<span>
 									<td>닉네임</td>
 									<td>태희</td>
-								</tr>
-								<tr>
-									<td>키</td>
-									<td>안뇽</td>
-								</tr>
-								<tr>
-									<td>몸무게</td>
-									<td>오늘은</td>
-								</tr>
-								<tr>
-									<td>나이</td>
-									<td>피자를 먹었어</td>
-								</tr>
-								<tr>
-									<td>기초대사량</td>
-									<td>맛있었지 룰루</td>
-								</tr>
-								<tr>
-									<td>BMI지수</td>
-									<td>랄라</td>
-								</tr>
+								</span>
 							</table>
 							<table id="private">
 								<tr><td><input type="button" value="개인정보변경"></td></tr>
