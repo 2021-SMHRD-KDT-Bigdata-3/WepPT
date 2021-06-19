@@ -163,11 +163,11 @@
                                         <div class="form-group">
                                             <div class="maxl" style = "font-size: 20px;">
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="1" checked>
+                                                    <input type="radio" name="gender" value="0" checked>
                                                     <span> 남자 </span> 
                                                 </label>
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="2">
+                                                    <input type="radio" name="gender" value="1">
                                                     <span>여자 </span> 
                                                 </label>
                                             </div>
