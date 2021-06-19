@@ -347,15 +347,18 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
             <span class="edit_detail"><%= dto.getHeight() %></span>
           </div>
         </div>
-        <div id="h_detail3">
-          <div class="user_detail_head">나의 상태
+         <div id="h_detail3">
+          <div class="user_detail_head">나의 상태 <!-- //-> 그룹 이름 유지어터 -->
             <span class="edit_detail">DB 에서 불러온 값</span>
           </div>
-          <div class="user_detail_head">과체중 저체중 이런것
+          <div class="user_detail_head"><!-- if문 돌려서 그룹2개 다이어터, 벌크업 -> 다이어트 = 과체중, 벌크업 = 저체중 단어가 뜨게-->  
             <span class="edit_detail">DB 에서 불러온 값</span>
           </div>
-          <div class="user_detail_head">감량해야하는 몸무게
+          <div class="user_detail_head">목표몸무게 <!-- 본인이 이루고 싶은 몸무게..받아와야하지 않나 회원가입에서 받아오기-->
             <span class="edit_detail">DB 에서 불러온 값</span>
+          </div>
+          <div class="user_detail_head">현재BMI지수 <!-- 몸무게와 키를 받아와서 보여주기 -->
+            <span class="edit_detail"><%= dto.getHeight()/(dto.getHeight()/100)*(dto.getHeight()/100) %></span>
           </div>
         </div>
         <div id="h_detail4">
