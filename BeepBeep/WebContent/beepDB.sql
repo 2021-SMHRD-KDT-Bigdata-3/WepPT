@@ -3,6 +3,7 @@ select * from member;
 ALTER TABLE member DROP PRIMARY KEY;
 drop table member cascade constraints;
 
+-- constraint wmember_pk primary key(category)
 
 create table member (
     category varchar2(50),
@@ -14,12 +15,13 @@ create table member (
     email varchar2(100) not null,
     tel varchar2(50) not null,
     height float not null,
-    weight float not null,
-    constraint wmember_pk primary key(category)
+    weight float not null
 );
 
-
-
+insert into member values ('0', 'kook', '123', 'kite', 20, '1', 'sdksf@#nag', 100, 100, 240);
+insert into member values ('0', 'kite', '123', 'kite', 20, '2', 'sdksf@#nag', 100, 100, 240);
+insert into member values ('3', 'kookie', '123', 'kite', 20, '1', 'sdksf@#nag', 100, 100, 240);
+insert into member values ('3', 'kind', '123', 'kite', 20, '2', 'sdksf@#nag', 100, 100, 240);
 
 insert into member values ('a', 'kite', '123', 'kite', 20, '0203120', 'sdksf@#nag', 100, 100, 240);
 
@@ -28,7 +30,8 @@ select * from member;
 select * from youtube;
 drop table youtube cascade constraints;
 ALTER TABLE youtube DROP PRIMARY KEY;
-
+-- À¯Æ©¹ö Á¾·ù 
+select distinct youtuber from youtube;
 
 
 create table youtube(

@@ -1,3 +1,4 @@
+<%@page import="model.memberDTO"%>
 <%@page import="model.youtubeDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.youtubeDAO"%>
@@ -53,10 +54,16 @@ li a:hover:not(.active) {
 	
 
 <%
+	memberDTO dto = (memberDTO)session.getAttribute("info");
+	System.out.print("카테고리 :" +dto.getCategory());
+	System.out.println("성별 :" + dto.getGender());
+	
+
 	youtubeDAO dao = new youtubeDAO();
+
 	ArrayList<youtubeDTO> al =  dao.select();
 	
-	System.out.println(al.get(3).getLink().split("=")[1]);
+	
 %>
 
 	<!-- Wrapper -->
@@ -106,9 +113,14 @@ li a:hover:not(.active) {
 		<li class = "gss"><a href="#about">가슴</a></li>
 		<li class = "hss"><a href="#about">복근</a></li>
 	</ul>
-			<% 	for (int i = 0; i<5; i++){
-				
-				
+	
+			
+			<% 	
+			
+			
+			if (dto.getCategory().equals("0")&&dto.getGender().equals("1")){
+			 for (int i = 0; i<al.size(); i++){
+				if ( al.get(i).getGender().equals(dto.getGender())){
 				out.print("<iframe width='809' height='455' src = ");
 				out.print("'https://www.youtube.com/embed/");
 				out.print(al.get(i).getLink().split("=")[1]);
@@ -118,7 +130,50 @@ li a:hover:not(.active) {
 				out.print("frameborder='0' ");
 				out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
 				out.print("allowfullscreen></iframe>");
-
+					}	
+				}
+			}else if (dto.getCategory().equals("0")&&dto.getGender().equals("2") ){
+				for (int i = 0; i<al.size(); i++){
+					if ( al.get(i).getGender().equals(dto.getGender())){
+					out.print("<iframe width='809' height='455' src = ");
+					out.print("'https://www.youtube.com/embed/");
+					out.print(al.get(i).getLink().split("=")[1]);
+					out.print("'");
+					//out.print(al.get(i).getLink());
+					out.print("title='YouTube video player' ");
+					out.print("frameborder='0' ");
+					out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
+					out.print("allowfullscreen></iframe>");
+						}	
+					}
+			}else if(dto.getCategory().equals("3")&&dto.getGender().equals("1")){
+				for (int i = 0; i<al.size(); i++){
+					if ( al.get(i).getGender().equals(dto.getGender())){
+					out.print("<iframe width='809' height='455' src = ");
+					out.print("'https://www.youtube.com/embed/");
+					out.print(al.get(i).getLink().split("=")[1]);
+					out.print("'");
+					//out.print(al.get(i).getLink());
+					out.print("title='YouTube video player' ");
+					out.print("frameborder='0' ");
+					out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
+					out.print("allowfullscreen></iframe>");
+					}				
+				}
+			}else if(dto.getCategory().equals("3")&&dto.getGender().equals("2")){
+				for (int i = 0; i<al.size(); i++){
+					if ( al.get(i).getGender().equals(dto.getGender())){
+					out.print("<iframe width='809' height='455' src = ");
+					out.print("'https://www.youtube.com/embed/");
+					out.print(al.get(i).getLink().split("=")[1]);
+					out.print("'");
+					//out.print(al.get(i).getLink());
+					out.print("title='YouTube video player' ");
+					out.print("frameborder='0' ");
+					out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
+					out.print("allowfullscreen></iframe>");
+					}				
+				}
 			}
 			%>
 				
