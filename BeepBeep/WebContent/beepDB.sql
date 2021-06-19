@@ -51,7 +51,6 @@ where table_name = 'member';
 
 
 
-
 drop table food;
 select * from food;
 
@@ -69,6 +68,20 @@ create table food (
 select * from food;
 
 select * from member;
+
+
+
+
+insert into member values ('a', 'kite', '123', 'kite', 20, '0203120', 'sdksf@#nag', 100, 100, 240);
+
+
+insert into member values ('')
+
+
+
+
+
+
 
 
 
