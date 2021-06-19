@@ -55,6 +55,8 @@ li a:hover:not(.active) {
 <%
 	youtubeDAO dao = new youtubeDAO();
 	ArrayList<youtubeDTO> al =  dao.select();
+	
+	System.out.println(al.get(3).getLink().split("=")[1]);
 %>
 
 	<!-- Wrapper -->
@@ -104,7 +106,21 @@ li a:hover:not(.active) {
 		<li class = "gss"><a href="#about">°¡½¿</a></li>
 		<li class = "hss"><a href="#about">º¹±Ù</a></li>
 	</ul>
+			<% 	for (int i = 0; i<5; i++){
+				
+				
+				out.print("<iframe width='809' height='455' src = ");
+				out.print("'https://www.youtube.com/embed/");
+				out.print(al.get(i).getLink().split("=")[1]);
+				out.print("'");
+				//out.print(al.get(i).getLink());
+				out.print("title='YouTube video player' ");
+				out.print("frameborder='0' ");
+				out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
+				out.print("allowfullscreen></iframe>");
 
+			}
+			%>
 				
 			</div>
 	</div>

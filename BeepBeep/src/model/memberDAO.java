@@ -28,6 +28,7 @@ public class memberDAO {
 				    conn = DriverManager.getConnection(url, user, password);
 			}catch(Exception e) {
 				e.printStackTrace();
+				
 			}
 		}
 		
