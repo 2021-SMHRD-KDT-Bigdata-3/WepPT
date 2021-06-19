@@ -42,6 +42,12 @@ create table youtube(
 
 
 
+
+select * from all_constraints
+where table_name = 'member';
+
+
+
 drop table food;
 select * from food;
 
