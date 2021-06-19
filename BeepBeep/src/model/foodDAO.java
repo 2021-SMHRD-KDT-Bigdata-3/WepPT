@@ -23,7 +23,7 @@ public class foodDAO {
 			// 1. JDBC 드라이버 동적로딩
 					Class.forName("oracle.jdbc.driver.OracleDriver");
 						
-					String url = "jdbc:oracle:thin:@localhost:1521:xe";
+					String url = "jdbc:oracle:thin:@221.156.142.70:1521:xe";
 					String user = "hr";
 					String password = "hr";
 						
