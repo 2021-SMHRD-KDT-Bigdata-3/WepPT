@@ -178,7 +178,7 @@
                                             <input type="email" class="form-control" placeholder="Email" name="email" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="11" maxlength="11" name="tel" class="form-control" placeholder="휴대폰 번호 - 미포함" />
+                                            <input type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함" name="email" />
                                         </div>
                                          <div class="form-group">
                                             <input type="text" class="form-control" placeholder="키" name="height" />
