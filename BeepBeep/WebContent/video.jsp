@@ -128,7 +128,7 @@ li a:hover:not(.active) {
 				out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
 				out.print("allowfullscreen></iframe>");
 			    }else {
-					out.print("<iframe width='809' height='455' src = ");
+			    	out.print("<iframe width='809' height='455' src = ");
 					out.print("'https://www.youtube.com/embed/");
 					out.print(al.get(i).getLink().split("=")[1]);
 					out.print("'");
@@ -137,12 +137,10 @@ li a:hover:not(.active) {
 					out.print("frameborder='0' ");
 					out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
 					out.print("allowfullscreen></iframe>");
-				}
-						
-				
-				}
+			    	
+			    }
 			 }
-			
+			}
 			%>
 				
 			</div>
