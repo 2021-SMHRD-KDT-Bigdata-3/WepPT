@@ -56,6 +56,7 @@ public class memberDAO {
 			    pst.setString(2, pw);
 			    rs = pst.executeQuery();
 			    if ( rs.next() ) {
+			    	String category = rs.getString("category");
 			    	String get_id = rs.getString("id");
 			    	String get_pw = rs.getString("pw");
 			    	String name = rs.getString("name");
@@ -68,7 +69,7 @@ public class memberDAO {
 			    	
 			    	
 			    	//1.내가 더 가지고 오고 싶은 행이 있다면 rs.getString(행이름)
-			    	dto = new memberDTO(get_id, get_pw, name, age, gender, email, tel, height, weight);
+			    	dto = new memberDTO(category, get_id, get_pw, name, age, gender, email, tel, height, weight);
 			    	
 			    	System.out.println("로그인 성공");
 			    }
