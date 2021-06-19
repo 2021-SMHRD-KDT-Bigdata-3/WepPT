@@ -49,7 +49,6 @@ public class youtubeDAO {
 		
 		
 
-
 		public ArrayList<youtubeDTO> select(String gender) {
 			
 			// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리

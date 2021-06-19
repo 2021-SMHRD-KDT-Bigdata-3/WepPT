@@ -45,7 +45,7 @@ li a:hover:not(.active) {
 	background-color: #111;
 }
 
-.active {
+.active:hover {
 	background-color: #4CAF50;
 }
 </style>
@@ -106,11 +106,11 @@ li a:hover:not(.active) {
 				<h1>영상추천 페이지</h1>
 				<ul class = "ass">
 		<li class = "bss"><a class="active" href="#home">어깨</a></li>
-		<li class = "css"><a href="#news">등</a></li>
-		<li class = "dss"><a href="#contact">하체</a></li>
-		<li class = "fss"><a href="#about">이두/삼두</a></li>
-		<li class = "gss"><a href="#about">가슴</a></li>
-		<li class = "hss"><a href="#about">복근</a></li>
+		<li class = "css"><a class="active" href="#news">등</a></li>
+		<li class = "dss"><a class="active" href="#contact">하체</a></li>
+		<li class = "fss"><a class="active" href="#about">이두/삼두</a></li>
+		<li class = "gss"><a class="active" href="#about">가슴</a></li>
+		<li class = "hss"><a class="active"  href="#about">복근</a></li>
 	</ul>
 	
 			
@@ -146,6 +146,8 @@ li a:hover:not(.active) {
 			</div>
 	</div>
 
+
+	
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
