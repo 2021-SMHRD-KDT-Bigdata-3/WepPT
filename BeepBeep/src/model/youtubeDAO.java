@@ -50,16 +50,18 @@ public class youtubeDAO {
 		
 
 
-		public ArrayList<youtubeDTO> select() {
+		public ArrayList<youtubeDTO> select(String gender) {
 			
 			// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리
 			try{
 				conn();
 				
-			    String sql = "select * from youtube";
+			    String sql = "select * from youtube where gender=?" ;
 			                                             // ? : 바인드 변수
 			    // 3. sql문 실행객체 ( PreparedStatement ) 생성
 			    pst = conn.prepareStatement(sql);
+			    
+			    pst.setString(1, gender);
 			    
 			    // 4. sql문 실행하기
 			    rs = pst.executeQuery();
@@ -68,10 +70,10 @@ public class youtubeDAO {
 			    	String category = rs.getString("category");
 			    	String link = rs.getString("link");
 			    	String part = rs.getString("part");
-			    	String gender = rs.getString("gender");
+			    	String get_gender = rs.getString("gender");
 			    	String youtuber = rs.getString("youtuber");
 			    	
-			    	dto =new youtubeDTO(category, link, part, gender, youtuber);
+			    	dto =new youtubeDTO(category, link, part, get_gender, youtuber);
 			    	
 			    	// 배열(범위 지정해야함) and Arraylist(범위지정 필요없음)
 			    	al.add(dto); // 어레이리스트에 계속 담아줌

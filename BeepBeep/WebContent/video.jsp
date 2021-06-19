@@ -58,12 +58,11 @@ li a:hover:not(.active) {
 	System.out.print("카테고리 :" +dto.getCategory());
 	System.out.println("성별 :" + dto.getGender());
 	
-
 	youtubeDAO dao = new youtubeDAO();
 
-	ArrayList<youtubeDTO> al =  dao.select();
+	ArrayList<youtubeDTO> al =  dao.select(dto.getGender());
 	
-	
+	System.out.println("유튜버 :" + al.get(1).getYoutuber() + "성별 : " +al.get(1).getGender());
 %>
 
 	<!-- Wrapper -->
@@ -115,12 +114,10 @@ li a:hover:not(.active) {
 	</ul>
 	
 			
-			<% 	
-			
-			
-			if (dto.getCategory().equals("0")&&dto.getGender().equals("1")){
-			 for (int i = 0; i<al.size(); i++){
-				if ( al.get(i).getGender().equals(dto.getGender())){
+			<% 		
+			if (dto.getCategory().equals("0") || dto.getCategory().equals("3")){
+			 for (int i = 0; i<2; i++){
+				if ( al.get(i).getGender().equals("1")){
 				out.print("<iframe width='809' height='455' src = ");
 				out.print("'https://www.youtube.com/embed/");
 				out.print(al.get(i).getLink().split("=")[1]);
@@ -130,11 +127,7 @@ li a:hover:not(.active) {
 				out.print("frameborder='0' ");
 				out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
 				out.print("allowfullscreen></iframe>");
-					}	
-				}
-			}else if (dto.getCategory().equals("0")&&dto.getGender().equals("2") ){
-				for (int i = 0; i<al.size(); i++){
-					if ( al.get(i).getGender().equals(dto.getGender())){
+			    }else {
 					out.print("<iframe width='809' height='455' src = ");
 					out.print("'https://www.youtube.com/embed/");
 					out.print(al.get(i).getLink().split("=")[1]);
@@ -144,37 +137,12 @@ li a:hover:not(.active) {
 					out.print("frameborder='0' ");
 					out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
 					out.print("allowfullscreen></iframe>");
-						}	
-					}
-			}else if(dto.getCategory().equals("3")&&dto.getGender().equals("1")){
-				for (int i = 0; i<al.size(); i++){
-					if ( al.get(i).getGender().equals(dto.getGender())){
-					out.print("<iframe width='809' height='455' src = ");
-					out.print("'https://www.youtube.com/embed/");
-					out.print(al.get(i).getLink().split("=")[1]);
-					out.print("'");
-					//out.print(al.get(i).getLink());
-					out.print("title='YouTube video player' ");
-					out.print("frameborder='0' ");
-					out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
-					out.print("allowfullscreen></iframe>");
-					}				
 				}
-			}else if(dto.getCategory().equals("3")&&dto.getGender().equals("2")){
-				for (int i = 0; i<al.size(); i++){
-					if ( al.get(i).getGender().equals(dto.getGender())){
-					out.print("<iframe width='809' height='455' src = ");
-					out.print("'https://www.youtube.com/embed/");
-					out.print(al.get(i).getLink().split("=")[1]);
-					out.print("'");
-					//out.print(al.get(i).getLink());
-					out.print("title='YouTube video player' ");
-					out.print("frameborder='0' ");
-					out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
-					out.print("allowfullscreen></iframe>");
-					}				
+						
+				
 				}
-			}
+			 }
+			
 			%>
 				
 			</div>

@@ -45,6 +45,9 @@ create table youtube(
 
 
 
+select * from youtube where gender='2';
+
+
 
 select * from all_constraints
 where table_name = 'member';
