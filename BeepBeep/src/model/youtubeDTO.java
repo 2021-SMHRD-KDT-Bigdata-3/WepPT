@@ -2,17 +2,18 @@ package model;
 
 public class youtubeDTO {
 	
-	
 	private String category;
 	private String link;
 	private String part;
 	private String gender;
+	private String youtuber;
 	
-	public youtubeDTO(String category, String link, String part, String gender) {
+	public youtubeDTO(String category, String link, String part, String gender, String youtuber) {
 		this.category = category;
 		this.link = link;
 		this.part = part;
 		this.gender = gender;
+		this.youtuber = youtuber;
 	}
 
 	public String getCategory() {
@@ -46,6 +47,17 @@ public class youtubeDTO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
+	public String getYoutuber() {
+		return youtuber;
+	}
+
+	public void setYoutuber(String youtuber) {
+		this.youtuber = youtuber;
+	}
+	
+
+	
 	
 	
 

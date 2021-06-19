@@ -69,8 +69,9 @@ public class youtubeDAO {
 			    	String link = rs.getString("link");
 			    	String part = rs.getString("part");
 			    	String gender = rs.getString("gender");
+			    	String youtuber = rs.getString("youtuber");
 			    	
-			    	dto =new youtubeDTO(category, link, part, gender);
+			    	dto =new youtubeDTO(category, link, part, gender, youtuber);
 			    	
 			    	// 배열(범위 지정해야함) and Arraylist(범위지정 필요없음)
 			    	al.add(dto); // 어레이리스트에 계속 담아줌
