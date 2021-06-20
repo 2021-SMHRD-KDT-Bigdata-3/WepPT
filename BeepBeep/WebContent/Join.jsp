@@ -130,7 +130,7 @@
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                         <h3>헬창의길로</h3>
                         <p>운동은 먹기 위해서 하는것이다</p>
-                        <input type="submit" name="" value="Login"/><br/>
+                        <a href="Login.jsp" ><input type="submit" name="" value="Login"/></a><br/>
                     </div>
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
