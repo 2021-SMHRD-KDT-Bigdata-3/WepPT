@@ -19,21 +19,23 @@ public class login extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
 			
 		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+ 		String pw = request.getParameter("pw");
 			
-		memberDAO dao = new memberDAO();
 		
+		
+		memberDAO dao = new memberDAO();
 		memberDTO get_dto = dao.login(id, pw);
+		
 		
 		if ( get_dto != null) {
 			System.out.println("로그인 성공");
+			System.out.println(id);
 			HttpSession session =  request.getSession();
-			session.setAttribute("id", get_dto.getId());
-			
+			session.setAttribute("info", get_dto);
 			response.sendRedirect("main.jsp");
 		}else {
 			System.out.println("로그인 실패");
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("Login.jsp");
 		}
 	
 	}

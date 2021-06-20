@@ -1,3 +1,4 @@
+<%@page import="model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -10,7 +11,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 		body{
-		zoom: 90% !important;
+		zoom: 80% !important;
 		}
 		span.title{
    font-size : 50px;
@@ -22,7 +23,7 @@
 
 
 <%
-String id = (String)session.getAttribute("id");
+		memberDTO dto = (memberDTO)session.getAttribute("info");
 %>
 
 
@@ -43,16 +44,20 @@ String id = (String)session.getAttribute("id");
 								<nav style = 'right:0'>
 									<ul>
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
-										<% if ( id == null ) {
-											out.print("<button><a href = 'Login.jsp'>로그인</a></button>");
+
+										<% if (dto == null) {
+											out.print("<button><a href = 'login'>로그인</a></button>");
 											out.print("<span>ㅤ</span>");
-										    out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
-										}else {
+											out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
+											out.print("<span>ㅤ</span>");
+										} else if (dto.getId() != null) {
+											System.out.println("비어있지않음");
 											out.print("<button><a href = 'logout'>로그아웃</a></button>");
 											out.print("<span>ㅤ</span>");
-									   		out.print("<button><a href = 'mypage.jsp'>마이페이지</a></button>");
-										}%>
-										<span>ㅤ</span>
+											out.print("<button><a href = 'mypage.jsp'>마이페이지</a></button>");
+											out.print("<span>ㅤ</span>");
+										}
+										%>
 										<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>

@@ -130,7 +130,7 @@
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                         <h3>헬창의길로</h3>
                         <p>운동은 먹기 위해서 하는것이다</p>
-                        <input type="submit" name="" value="Login"/><br/>
+                        <a href="Login.jsp" ><input type="submit" name="" value="Login"/></a><br/>
                     </div>
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -139,6 +139,7 @@
                             <li class="nav-item">
                             </li>
                         </ul>
+                        <form action="http://127.0.0.1:5000/" method="post">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">당신의 정보를 입력해주세요</h3>
@@ -162,11 +163,11 @@
                                         <div class="form-group">
                                             <div class="maxl" style = "font-size: 20px;">
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="male" checked>
+                                                    <input type="radio" name="gender" value="0" checked>
                                                     <span> 남자 </span> 
                                                 </label>
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="female">
+                                                    <input type="radio" name="gender" value="1">
                                                     <span>여자 </span> 
                                                 </label>
                                             </div>
@@ -177,7 +178,7 @@
                                             <input type="email" class="form-control" placeholder="Email" name="email" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="11" maxlength="11" name="tel" class="form-control" placeholder="휴대폰 번호 - 미포함" />
+                                            <input type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함" name="email" />
                                         </div>
                                          <div class="form-group">
                                             <input type="text" class="form-control" placeholder="키" name="height" />
@@ -188,6 +189,7 @@
                                        
                                         
                                         <input type="submit" class="btnRegister"  value="확인"/>
+                                        </form>
                                    
                                     </form>
                                     

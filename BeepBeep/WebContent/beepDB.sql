@@ -4,30 +4,37 @@ ALTER TABLE member DROP PRIMARY KEY;
 drop table member cascade constraints;
 
 
+-- constraint wmember_pk primary key(category)
+
 create table member (
-    category varchar2(50) not null,
+    category varchar2(50),
     id varchar2(50) UNIQUE,
     pw varchar2(50) not null,
     name varchar2(50) not null ,
     age number not null,
-    tel varchar2(50) not null,
+    gender number not null,
     email varchar2(100) not null,
+    tel varchar2(50) not null,
     height float not null,
-    weight float not null,
-    bmi float not null,
-    constraint wmember_pk primary key(category)
+    weight float not null
 );
 
-
+insert into member values ('0', 'man', '123', 'kite', 20, '1', 'sdksf@#nag', 100, 100, 240);
+insert into member values ('0', 'woman', '123', 'kite', 20, '2', 'sdksf@#nag', 100, 100, 240);
+insert into member values ('3', 'mem', '123', 'kite', 20, '1', 'sdksf@#nag', 100, 100, 240);
+insert into member values ('3', 'women', '123', 'kite', 20, '2', 'sdksf@#nag', 100, 100, 240);
 
 insert into member values ('a', 'kite', '123', 'kite', 20, '0203120', 'sdksf@#nag', 100, 100, 240);
 
 select * from member;
 
 select * from youtube;
+
 drop table youtube cascade constraints;
 ALTER TABLE youtube DROP PRIMARY KEY;
-
+-- À¯Æ©¹ö Á¾·ù 
+select distinct youtuber from youtube;
+select distinct part from youtube;
 
 
 create table youtube(
@@ -41,9 +48,12 @@ create table youtube(
 
 
 
+select * from youtube where gender='2';
 
 
 
+select * from all_constraints
+where table_name = 'member';
 
 
 
@@ -64,6 +74,20 @@ create table food (
 select * from food;
 
 select * from member;
+
+
+
+
+insert into member values ('a', 'kite', '123', 'kite', 20, '0203120', 'sdksf@#nag', 100, 100, 240);
+
+
+insert into member values ('')
+
+
+
+
+
+
 
 
 

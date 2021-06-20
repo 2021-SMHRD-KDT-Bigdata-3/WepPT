@@ -1,3 +1,8 @@
+<%@page import="java.util.Random"%>
+<%@page import="model.memberDTO"%>
+<%@page import="model.youtubeDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.youtubeDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -41,13 +46,26 @@ li a:hover:not(.active) {
 	background-color: #111;
 }
 
-.active {
+.active:hover {
 	background-color: #4CAF50;
 }
 </style>
 </head>
 <body>
 	
+
+<%
+	memberDTO dto = (memberDTO)session.getAttribute("info");
+	//System.out.print("카테고리 :" +dto.getCategory());
+	//System.out.println("성별 :" + dto.getGender());
+	
+	youtubeDAO dao = new youtubeDAO();
+
+	ArrayList<youtubeDTO> al =  dao.select(dto.getGender());
+	
+	//System.out.println("유튜버 :" + al.get(1).getYoutuber() 
+			//+ "성별 : " +al.get(1).getGender());
+%>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -90,24 +108,36 @@ li a:hover:not(.active) {
 				<h1>영상추천 페이지</h1>
 				<ul class = "ass">
 		<li class = "bss"><a class="active" href="#home">어깨</a></li>
-		<li class = "css"><a href="#news">등</a></li>
-		<li class = "dss"><a href="#contact">하체</a></li>
-		<li class = "fss"><a href="#about">이두/삼두</a></li>
-		<li class = "gss"><a href="#about">가슴</a></li>
-		<li class = "hss"><a href="#about">복근</a></li>
+		<li class = "css"><a class="active" href="#news">등</a></li>
+		<li class = "dss"><a class="active" href="#contact">하체</a></li>
+		<li class = "fss"><a class="active" href="#about">이두/삼두</a></li>
+		<li class = "gss"><a class="active" href="#about">가슴</a></li>
+		<li class = "hss"><a class="active"  href="#about">복근</a></li>
 	</ul>
-				<iframe width="1344" height="600" src="https://www.youtube.com/embed/jBwTgquo7NA" 
-				title="YouTube video player" frameborder="0" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen></iframe>
-				<iframe width="1344" height="600" src="https://www.youtube.com/embed/gw0XqojnAcI" 
-				title="YouTube video player" frameborder="0" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-				allowfullscreen></iframe>
+	
+			
+			<% 		
+			if (dto.getCategory().equals("0") || dto.getCategory().equals("3")){
+			 for (int i = 0; i<5; i++){
+				Random ran = new Random();
+				out.print("<iframe width='809' height='455' src = ");
+				out.print("'https://www.youtube.com/embed/");
+				out.print(al.get(ran.nextInt(al.size())).getLink().split("=")[1]);
+				out.print("'");
+				//out.print(al.get(i).getLink());
+				out.print("title='YouTube video player' ");
+				out.print("frameborder='0' ");
+				out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
+				out.print("allowfullscreen></iframe>");
+			 }
+			}
+			%>
 				
 			</div>
 	</div>
 
+
+	
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>

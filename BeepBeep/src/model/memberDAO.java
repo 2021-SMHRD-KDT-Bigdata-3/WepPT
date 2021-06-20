@@ -20,7 +20,7 @@ public class memberDAO {
 			// 1. JDBC 드라이버 동적로딩
 					Class.forName("oracle.jdbc.driver.OracleDriver");
 						
-					String url = "jdbc:oracle:thin:@localhost:1521:xe";
+					String url = "jdbc:oracle:thin:@221.156.142.70:1521:xe";
 					String user = "hr";
 					String password = "hr";
 						
@@ -28,6 +28,7 @@ public class memberDAO {
 				    conn = DriverManager.getConnection(url, user, password);
 			}catch(Exception e) {
 				e.printStackTrace();
+				
 			}
 		}
 		
@@ -49,19 +50,26 @@ public class memberDAO {
 		public memberDTO login(String id, String pw) {
 			try{
 				conn();
-				
 			    String sql = "select * from member where id = ? and pw = ?";
 			    pst = conn.prepareStatement(sql);
-			    pst.setString(1, id);
+			    pst.setString(1, id);  
 			    pst.setString(2, pw);
-			    
 			    rs = pst.executeQuery();
-			    
 			    if ( rs.next() ) {
+			    	String category = rs.getString("category");
 			    	String get_id = rs.getString("id");
 			    	String get_pw = rs.getString("pw");
+			    	String name = rs.getString("name");
+			    	int age = rs.getInt("age");
+			    	String gender = rs.getString("gender");
+			    	String email = rs.getString("email");
+			    	String tel = rs.getString("tel");
+			    	float height = rs.getFloat("height");
+			    	float weight = rs.getFloat("weight");
 			    	
-			    	dto = new memberDTO(get_id, get_pw);
+			    	
+			    	//1.내가 더 가지고 오고 싶은 행이 있다면 rs.getString(행이름)
+			    	dto = new memberDTO(category, get_id, get_pw, name, age, gender, email, tel, height, weight);
 			    	
 			    	System.out.println("로그인 성공");
 			    }
@@ -77,7 +85,7 @@ public class memberDAO {
 
 		
 		// 회원가입
-		public int join(String id, String pw, String name, int age, String gender, String email, int tel, float height, float weight) {
+		public int join(String id, String pw, String name, int age, int gender, String email, String tel, float height, float weight) {
 
 			// 런타임오류 : 실행했을 때 발생하는 오류 -> 예외처리
 			try {
@@ -92,9 +100,9 @@ public class memberDAO {
 				pst.setString(2, pw);
 				pst.setString(3, name);
 				pst.setInt(4, age);
-				pst.setString(5, gender);
+				pst.setInt(5, gender);
 				pst.setString(6, email);
-				pst.setInt(7, tel);
+				pst.setString(7, tel);
 				pst.setFloat(8, height);
 				pst.setFloat(9, weight);
 

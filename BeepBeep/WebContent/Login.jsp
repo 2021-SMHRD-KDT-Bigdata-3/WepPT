@@ -197,7 +197,7 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
             <div class="login-form-left-side">
                 <div class="login-top-wrap">
                     <span>아이디가 없으신가요?</span>
-                    <a style = 'font-size:20px'href ='Join.jsp'>회원가입</a>
+                    <a style = 'font-size:20px' href ='Join.jsp'>회원가입</a>
                 </div>
                 <p>ㅤ</p>
                 <p>ㅤ</p>
@@ -210,7 +210,6 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
                 <p>ㅤ</p>
                 <p>ㅤ</p>
                 <p>ㅤ</p>
-          
                 <div class="login-input-container">
                     <div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>

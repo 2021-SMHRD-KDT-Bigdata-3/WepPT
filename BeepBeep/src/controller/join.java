@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.memberDAO;
 import model.memberDTO;
@@ -26,9 +27,9 @@ public class join extends HttpServlet {
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
-		String gender = request.getParameter("gender");
+		int gender = Integer.parseInt(request.getParameter("gender"));
 		String email = request.getParameter("email");
-		int tel = Integer.parseInt(request.getParameter("tel"));
+		String tel = request.getParameter("tel");
 		float height = Float.parseFloat(request.getParameter("height"));
 		float weight = Float.parseFloat(request.getParameter("weight"));
 		
@@ -39,7 +40,7 @@ public class join extends HttpServlet {
 		
 		if(cnt>0) {
 			System.out.println("회원가입 성공");
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("Login.jsp");
 		}else {
 			System.out.println("회원가입 실패");
 			response.sendRedirect("Join.jsp");
