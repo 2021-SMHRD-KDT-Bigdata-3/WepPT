@@ -34,6 +34,7 @@ drop table youtube cascade constraints;
 ALTER TABLE youtube DROP PRIMARY KEY;
 -- À¯Æ©¹ö Á¾·ù 
 select distinct youtuber from youtube;
+select distinct part from youtube;
 
 
 create table youtube(

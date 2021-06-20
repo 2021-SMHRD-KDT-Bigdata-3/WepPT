@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <%@page import="model.memberDTO"%>
 <%@page import="model.youtubeDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -118,9 +119,10 @@ li a:hover:not(.active) {
 			<% 		
 			if (dto.getCategory().equals("0") || dto.getCategory().equals("3")){
 			 for (int i = 0; i<5; i++){
+				Random ran = new Random();
 				out.print("<iframe width='809' height='455' src = ");
 				out.print("'https://www.youtube.com/embed/");
-				out.print(al.get(i).getLink().split("=")[1]);
+				out.print(al.get(ran.nextInt(al.size())).getLink().split("=")[1]);
 				out.print("'");
 				//out.print(al.get(i).getLink());
 				out.print("title='YouTube video player' ");
