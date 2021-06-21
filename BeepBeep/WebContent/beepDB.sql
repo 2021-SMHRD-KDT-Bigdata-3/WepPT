@@ -105,4 +105,4 @@ create table community (
 
 drop sequence num_board;
 
-
+select * from COMMUNITY;

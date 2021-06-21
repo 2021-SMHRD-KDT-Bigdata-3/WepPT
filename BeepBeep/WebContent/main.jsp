@@ -105,10 +105,10 @@
 									<span class="image">
 										<img src="images/meal.jpg" alt="" />
 									</span>
-									<a href="meal.jsp">
-										<h2>식단</h2>
-										<div class="content">
-											<p>먹는것 하나하나 성분과 칼로리를 계산해드립니다.</p>
+									<a href="Community.jsp">
+										<h2>커뮤니티</h2>
+										<div class="Community">
+											<p>회원들과 운동일지를 공유해 보아요!</p>
 										</div>
 									</a>
 								</article>
