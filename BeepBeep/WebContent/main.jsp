@@ -51,7 +51,6 @@
 											out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
 											out.print("<span>ㅤ</span>");
 										} else if (dto.getId() != null) {
-											System.out.println("비어있지않음");
 											out.print("<button><a href = 'logout'>로그아웃</a></button>");
 											out.print("<span>ㅤ</span>");
 											out.print("<button><a href = 'mypage.jsp'>마이페이지</a></button>");

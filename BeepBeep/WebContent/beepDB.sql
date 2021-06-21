@@ -36,6 +36,10 @@ ALTER TABLE youtube DROP PRIMARY KEY;
 select distinct youtuber from youtube;
 select distinct part from youtube;
 
+select distinct part from youtube where gender = '1';
+select distinct part from youtube where gender = '2';
+
+
 
 create table youtube(
  category varchar2(50),

@@ -48,19 +48,22 @@ public class youtubeDAO {
 		}
 		
 		
-
-		public ArrayList<youtubeDTO> select(String gender) {
+		
+		
+		
+	public ArrayList<youtubeDTO> select(String gender) {
 			
 			// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리
 			try{
 				conn();
 				
-			    String sql = "select * from youtube where gender=?" ;
+			    String sql = "select * from youtube where gender=? " ;
 			                                             // ? : 바인드 변수
 			    // 3. sql문 실행객체 ( PreparedStatement ) 생성
 			    pst = conn.prepareStatement(sql);
 			    
 			    pst.setString(1, gender);
+			  
 			    
 			    // 4. sql문 실행하기
 			    rs = pst.executeQuery();
@@ -68,11 +71,11 @@ public class youtubeDAO {
 			    while ( rs.next() ) {
 			    	String category = rs.getString("category");
 			    	String link = rs.getString("link");
-			    	String part = rs.getString("part");
+			    	String get_part = rs.getString("part");
 			    	String get_gender = rs.getString("gender");
 			    	String youtuber = rs.getString("youtuber");
 			    	
-			    	dto =new youtubeDTO(category, link, part, get_gender, youtuber);
+			    	dto =new youtubeDTO(category, link, get_part, get_gender, youtuber);
 			    	
 			    	// 배열(범위 지정해야함) and Arraylist(범위지정 필요없음)
 			    	al.add(dto); // 어레이리스트에 계속 담아줌
@@ -88,6 +91,52 @@ public class youtubeDAO {
 			return al;
 		}
 		
+		
+		
+	public ArrayList<youtubeDTO> select2(String gender, String part) {
+		
+		// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리
+		try{
+			conn();
+			
+		    String sql = "select * from youtube where gender=? and part = ? " ;
+		                                             // ? : 바인드 변수
+		    // 3. sql문 실행객체 ( PreparedStatement ) 생성
+		    pst = conn.prepareStatement(sql);
+		    
+		    pst.setString(1, gender);
+		    pst.setString(2, part);
+		  
+		    
+		    // 4. sql문 실행하기
+		    rs = pst.executeQuery();
+		    
+		    while ( rs.next() ) {
+		    	String category = rs.getString("category");
+		    	String link = rs.getString("link");
+		    	String get_part = rs.getString("part");
+		    	String get_gender = rs.getString("gender");
+		    	String youtuber = rs.getString("youtuber");
+		    	
+		    	dto =new youtubeDTO(category, link, get_part, get_gender, youtuber);
+		    	
+		    	// 배열(범위 지정해야함) and Arraylist(범위지정 필요없음)
+		    	al.add(dto); // 어레이리스트에 계속 담아줌
+		    	
+		    }
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("fail");
+		}finally {
+			// 열려있으면 닫아줄 수 없으므로 예외문 한번더
+				close();
+	}
+		return al;
+	}
+	
+		
+		
+
 		
 		
 		

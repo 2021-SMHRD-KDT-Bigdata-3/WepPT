@@ -270,7 +270,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 						<div class="inner" style = "margin-left: 0px; padding-left: 0px;">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
+								<a href="main.jsp" class="logo">
 									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
 									<span class="title">MyPage</span>
 								</a>
