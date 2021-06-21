@@ -152,7 +152,6 @@ li a:hover:not(.active) {
 					 }
 					}else{
 				
-				
 				for(int j = 0; j <10; j++){
 				Random ran = new Random();
 				out.print("<iframe width='809' height='455' src = ");
