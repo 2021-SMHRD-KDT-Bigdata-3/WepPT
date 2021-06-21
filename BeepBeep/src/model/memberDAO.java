@@ -62,11 +62,7 @@ public class memberDAO {
 			    	String name = rs.getString("name");
 			    	int age = rs.getInt("age");
 			    	String gender = rs.getString("gender");
-<<<<<<< HEAD
 			    	String target = rs.getString("target");
-=======
-			    	int target = rs.getInt("target");
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
 			    	String tel = rs.getString("tel");
 			    	float height = rs.getFloat("height");
 			    	float weight = rs.getFloat("weight");
@@ -89,11 +85,7 @@ public class memberDAO {
 
 		
 		// 회원가입
-<<<<<<< HEAD
 		public int join(String id, String pw, String name, int age, int gender, String target, String tel, float height, float weight) {
-=======
-		public int join(String id, String pw, String name, int age, int gender, int target, String tel, float height, float weight) {
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
 
 			// 런타임오류 : 실행했을 때 발생하는 오류 -> 예외처리
 			try {
@@ -109,11 +101,7 @@ public class memberDAO {
 				pst.setString(3, name);
 				pst.setInt(4, age);
 				pst.setInt(5, gender);
-<<<<<<< HEAD
 				pst.setString(6, target);
-=======
-				pst.setInt(6, target);
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
 				pst.setString(7, tel);
 				pst.setFloat(8, height);
 				pst.setFloat(9, weight);

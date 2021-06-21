@@ -312,8 +312,8 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
       <div class="profile_detail">
         <h2><%=dto.getWeight() %></h2>
         <div class="profiles">
-        <p><%= dto.getEmail() %></p>
-        <p>목표까지 : <%= Integer.parseInt(dto.getEmail()) - dto.getWeight() %></p>
+        <p><%= dto.getTarget() %></p>
+        <p>목표까지 : <%= Integer.parseInt(dto.getTarget()) - dto.getWeight() %></p>
           <p><%
           if(dto.getCategory().equals("0")){
       		out.print("벌크업");

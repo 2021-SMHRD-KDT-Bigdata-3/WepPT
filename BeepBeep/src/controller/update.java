@@ -28,7 +28,7 @@ public class update extends HttpServlet {
 		int cnt = dao.update(dto.getId(), pw, weight, height, target);
 		if(cnt > 0) {
 			response.sendRedirect("mypage.jsp");
-			dto.setEmail(target);
+			dto.setTarget(target);
 			dto.setPw(pw);
 			dto.setHeight(height);
 			dto.setWeight(weight);

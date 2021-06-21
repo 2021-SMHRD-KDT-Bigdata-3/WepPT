@@ -328,13 +328,8 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
       <div class="profile_detail">
         <h3>ㅤ<%=dto.getWeight() %></h3>
         <div class="profiles">
-<<<<<<< HEAD
-        <p><%=dto.getEmail() %></p>
-        <p>목표까지 : <%= Integer.parseInt(dto.getEmail()) - dto.getWeight() %></p>
-=======
-        <h3>목표 : 100</h3><br>
-        <h3>목표까지! <%= 100 - dto.getWeight() %></h3><br>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
+        <p><%=dto.getTarget() %></p>
+        <p>목표까지 : <%= Integer.parseInt(dto.getTarget()) - dto.getWeight() %></p>
           <p><%
           if(dto.getCategory().equals("0")){
       		out.print("<h3>벌크업</h3>");
@@ -395,11 +390,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
             %></span>
           </div>
           <div class="user_detail_head">목표몸무게 <!-- 본인이 이루고 싶은 몸무게..받아와야하지 않나 회원가입에서 받아오기-->
-<<<<<<< HEAD
-            <span class="edit_detail"><%= dto.getEmail() %></span>
-=======
             <span class="edit_detail"><%= dto.getTarget() %></span>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
           </div>
           <div class="user_detail_head">현재BMI지수 <!-- 몸무게와 키를 받아와서 보여주기 -->
             <span class="edit_detail"><%= dto.getWeight()/(dto.getHeight()/100)*(dto.getHeight()/100) %></span>
