@@ -370,7 +370,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
             <span class="edit_detail">DB 에서 불러온 값</span>
           </div>
           <div class="user_detail_head">현재BMI지수 <!-- 몸무게와 키를 받아와서 보여주기 -->
-            <span class="edit_detail"><%= dto.getHeight()/(dto.getHeight()/100)*(dto.getHeight()/100) %></span>
+            <span class="edit_detail"><%= dto.getWeight()/(dto.getHeight()/100)*(dto.getHeight()/100) %></span>
           </div>
         </div>
         <div id="h_detail4">
