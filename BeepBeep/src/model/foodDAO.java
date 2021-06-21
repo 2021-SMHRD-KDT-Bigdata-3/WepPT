@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class foodDAO {
 
@@ -45,7 +46,34 @@ public class foodDAO {
 					e.printStackTrace();
 				}
 		}
-		
+		 public ArrayList<foodDTO> getFood_info() {
+	            ArrayList<foodDTO> arr = new ArrayList<foodDTO>();
+	             try {
+	                conn();
+	                
+	                String sql = "select * from food";
+	                pst = conn.prepareStatement(sql);
+	                
+	                rs = pst.executeQuery();
+	                
+	                while(rs.next()) {
+	                   String product_name = rs.getString("product_name");
+	                   int product_cal = rs.getInt("product_cal");
+	                   int product_carb = rs.getInt("product_carb");
+	                   int product_prot = rs.getInt("product_prot");
+	                   int product_fat = rs.getInt("produc_fat");
+	                   
+	                   arr.add(new foodDTO(product_name, product_cal, product_carb, product_prot, product_fat));
+	                }
+	                
+	             } catch (Exception e) {
+	                e.printStackTrace();
+	             } finally {
+	                close();
+	             }
+	             return arr;
+	          }
+	   
 	
 	
 	
