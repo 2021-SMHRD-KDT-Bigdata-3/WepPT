@@ -298,6 +298,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 					</nav>
 	<!-- 회원정보칸 -->
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<form action = "update" method="post">
 <div class="back_profile" style="background-color: ghostwhite;">
   <div class="back_img" style="background-image: url('http://file.trip-term.com:81/bamboo.jpg')"></div>
   
@@ -311,7 +312,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
       <div class="profile_detail">
         <h2><%=dto.getWeight() %></h2>
         <div class="profiles">
-        <p><%=dto.getEmail() %></p>
+        <p><%= dto.getEmail() %></p>
         <p>목표까지 : <%= Integer.parseInt(dto.getEmail()) - dto.getWeight() %></p>
           <p><%
           if(dto.getCategory().equals("0")){
@@ -342,15 +343,21 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
             <span class="edit_detail"><%= dto.getId() %></span>
           </div>
           <div class="user_detail_head">PW
-            <span class="edit_detail"><%= dto.getPw() %></span>
+            <span class="edit_detail">
+            	<input type="text" name = 'pw'>
+            </span>
           </div>
         </div>  
         <div id="h_detail2">
           <div class="user_detail_head">몸무게
-            <span class="edit_detail"><%= dto.getWeight() %></span>
+            <span class="edit_detail">
+            	<input type="text" name = "weight">
+            </span>
           </div>
           <div class="user_detail_head">키
-            <span class="edit_detail"><%= dto.getHeight() %></span>
+            <span class="edit_detail">
+            	<input type="text" name = "height">
+            </span>
           </div>
         </div>
          <div id="h_detail3">
@@ -373,7 +380,9 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
             %></span>
           </div>
           <div class="user_detail_head">목표몸무게 <!-- 본인이 이루고 싶은 몸무게..받아와야하지 않나 회원가입에서 받아오기-->
-            <span class="edit_detail"><%= dto.getEmail() %></span>
+            <span class="edit_detail">
+            	<input type="text" name = "target">
+            </span>
           </div>
           <div class="user_detail_head">현재BMI지수 <!-- 몸무게와 키를 받아와서 보여주기 -->
             <span class="edit_detail"><%= dto.getWeight()/(dto.getHeight()/100)*(dto.getHeight()/100) %></span>
@@ -399,9 +408,8 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
       </div>
     </div>
   </div>
-  <div>
-      <button><a href="mypage_update.jsp">정보 수정</a></button>
-  </div>
+  <input type="submit" value="정보 수정">
+  </form>
 </div>
   <div class="temporary_footer"></div>
 </div>
