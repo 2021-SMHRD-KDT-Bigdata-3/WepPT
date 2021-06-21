@@ -8,12 +8,12 @@ public class memberDTO {
 	private String name;
 	private int age;
 	private String gender;
-	private int target;
+	private String target;
 	private String tel;
 	private float height;
 	private float weight;
 	
-	public memberDTO(String category, String id, String pw, String name, int age, String gender, int target, String tel,
+	public memberDTO(String category, String id, String pw, String name, int age, String gender, String target, String tel,
 			float height, float weight) {
 		this.category = category;
 		this.id = id;
@@ -75,11 +75,11 @@ public class memberDTO {
 		this.gender = gender;
 	}
 
-	public int getTarget() {
+	public String getTarget() {
 		return target;
 	}
 
-	public void setTarget(int target) {
+	public void setTarget(String target) {
 		this.target = target;
 	}
 

@@ -183,11 +183,12 @@
                                             <div class="maxl" style = "font-size: 20px;">
                                                 <label class="radio inline"> 
                                                     <span>ㅤㅤㅤㅤ 남자ㅤ </span> 
-                                                    <input style="font-size:17px; width:23px;height:23px" type="radio" name="gender" value="0" checked>
+                                                    <input style="font-size:17px; width:23px;height:23px" type="radio" name="gender" value="1" checked>
                                                 </label>
                                                 <label class="radio inline"> 
                                                     <span>ㅤㅤ여자ㅤ </span> 
-                                                    <input style="font-size:17px; width:23px;height:23px" type="radio" name="gender" value="1">
+                                                    <input style="font-size:17px; width:23px;height:23px" type="radio" name="gender" value="2">
+
                                                 </label>
                                             </div>
                                         </div>
