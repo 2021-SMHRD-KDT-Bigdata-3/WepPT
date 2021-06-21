@@ -349,10 +349,22 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
         </div>
          <div id="h_detail3">
           <div class="user_detail_head">나의 상태 <!-- //-> 그룹 이름 유지어터 -->
-            <span class="edit_detail">DB 에서 불러온 값</span>
+            <span class="edit_detail"><%
+            	if(dto.getCategory().equals("0")){
+            		out.print("벌크업이 필요해요!");
+            	} else if(dto.getCategory().equals("3")){
+            		out.print("다이어트가 필요해요!");
+            	}
+            %></span>
           </div>
           <div class="user_detail_head"><!-- if문 돌려서 그룹2개 다이어터, 벌크업 -> 다이어트 = 과체중, 벌크업 = 저체중 단어가 뜨게-->  
-            <span class="edit_detail">DB 에서 불러온 값</span>
+            <span class="edit_detail"><%
+            		if(dto.getCategory().equals("0")){
+                		out.print("저체중");
+                	} else if(dto.getCategory().equals("3")){
+                		out.print("과제충");
+                	}
+            %></span>
           </div>
           <div class="user_detail_head">목표몸무게 <!-- 본인이 이루고 싶은 몸무게..받아와야하지 않나 회원가입에서 받아오기-->
             <span class="edit_detail">DB 에서 불러온 값</span>
