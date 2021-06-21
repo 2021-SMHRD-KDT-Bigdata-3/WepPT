@@ -1,3 +1,4 @@
+<%@page import="controller.youtube"%>
 <%@page import="java.util.Random"%>
 <%@page import="model.memberDTO"%>
 <%@page import="model.youtubeDTO"%>
@@ -61,7 +62,7 @@ li a:hover:not(.active) {
 	
 	youtubeDAO dao = new youtubeDAO();
 
-	ArrayList<youtubeDTO> al =  dao.select(dto.getGender());
+	//ArrayList<youtubeDTO> al =  dao.select(dto.getGender());
 	
 	//System.out.println("유튜버 :" + al.get(1).getYoutuber() 
 			//+ "성별 : " +al.get(1).getGender());
@@ -107,32 +108,91 @@ li a:hover:not(.active) {
 			<div class="inner">
 				<h1>영상추천 페이지</h1>
 				<ul class = "ass">
-		<li class = "bss"><a class="active" href="#home">어깨</a></li>
-		<li class = "css"><a class="active" href="#news">등</a></li>
-		<li class = "dss"><a class="active" href="#contact">하체</a></li>
-		<li class = "fss"><a class="active" href="#about">이두/삼두</a></li>
-		<li class = "gss"><a class="active" href="#about">가슴</a></li>
-		<li class = "hss"><a class="active"  href="#about">복근</a></li>
+				
+		<% if(dto.getGender().equals("1")){ %>
+			<form action="video.jsp">
+				<input type="submit" name="part" value="back">
+				<input type="submit" name="part" value="shoulder">
+				<input type="submit" name="part" value="legs">
+				<input type="submit" name="part" value="abs">
+				<input type="submit" name="part" value="chest">
+			</form>
+		<%} else{%>
+			<form action="video.jsp">
+				<input type="submit" name="part" value="shoulder">
+				<input type="submit" name="part" value="abs">
+				<input type="submit" name="part" value="arm">
+				<input type="submit" name="part" value="hip">
+				<input type="submit" name="part" value="stretchingr">
+				</form>
+		<%} %>
 	</ul>
 	
+				
 			
-			<% 		
-			if (dto.getCategory().equals("0") || dto.getCategory().equals("3")){
-			 for (int i = 0; i<5; i++){
-				Random ran = new Random();
+				
+				<%
+				youtube Youtube = new youtube(request, session);
+				ArrayList<youtubeDTO> al = Youtube.getAl();
+				ArrayList<youtubeDTO> al2 =  dao.select(dto.getGender(), "abs");
+				System.out.println(al.size());
+				System.out.println(al2.size());
+				
+				
+				if(dto.getGender().equals("1")){
+					//남
+					
+					
+					
+					
+				}else{
+					//여
+					
+					
+					
+					
+				}
+		
+				//if (al.get(0).getPart()==null){
+				if (al.size()==0){
+					 for (int i = 0; i<5; i++){
 				out.print("<iframe width='809' height='455' src = ");
 				out.print("'https://www.youtube.com/embed/");
-				out.print(al.get(ran.nextInt(al.size())).getLink().split("=")[1]);
-				out.print("'");
-				//out.print(al.get(i).getLink());
-				out.print("title='YouTube video player' ");
+                out.print(al2.get(i).getLink().split("=")[1]);
+                out.print("'");
 				out.print("frameborder='0' ");
 				out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
 				out.print("allowfullscreen></iframe>");
-			 }
-			}
-			%>
+						 
+						 
+						 
+			/* 			 
+						Random ran = new Random();
+						
+						
+						
+						
+						out.print("'https://www.youtube.com/embed/");
+						out.print(al.get(ran.nextInt(al.size())).getLink().split("=")[1]);
+						out.print("'");
+						//out.print(al.get(i).getLink());
+						out.print("title='YouTube video player' "); */
+					 }
+					}else{
 				
+				
+				for(int j = 0; j <5; j++){
+				out.print("<iframe width='809' height='455' src = ");
+				out.print("'https://www.youtube.com/embed/");
+                out.print(al.get(j).getLink().split("=")[1]);
+                out.print("'");
+				out.print("frameborder='0' ");
+				out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
+				out.print("allowfullscreen></iframe>");
+				}
+					}
+				%>
+
 			</div>
 	</div>
 
