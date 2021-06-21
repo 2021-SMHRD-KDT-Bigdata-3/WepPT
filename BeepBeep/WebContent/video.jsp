@@ -99,7 +99,7 @@ li a:hover:not(.active) {
 				<li><a href="video.jsp">영상</a></li>
 				<li><a href="recommend.jsp">식단추천</a></li>
 				<li><a href="meal.jsp">식단</a></li>
-				<li><a href="calendar.jsp">캘린더</a></li>
+				<li><a href="caltest.html">캘린더</a></li>
 			</ul>
 		</nav>
 
@@ -138,20 +138,6 @@ li a:hover:not(.active) {
 				System.out.println(al.size());
 				System.out.println(al2.size());
 				
-				
-				if(dto.getGender().equals("1")){
-					//남
-					
-					
-					
-					
-				}else{
-					//여
-					
-					
-					
-					
-				}
 		
 				//if (al.get(0).getPart()==null){
 				if (al.size()==0){
