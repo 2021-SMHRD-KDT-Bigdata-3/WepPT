@@ -9,7 +9,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap" rel="stylesheet">
+
+
+
+
 <style>
+
+
 		* {
   margin:0px;
   padding:0px;
@@ -225,6 +234,13 @@
     display:none;
   }
 }
+
+img {
+	height:200px;
+	width:200px;
+	border:1px;
+	border-radius:50%;
+}
 .
 		</style>
 		
@@ -270,7 +286,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 						<div class="inner" style = "margin-left: 0px; padding-left: 0px;">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
+								<a href="main.jsp" class="logo">
 									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
 									<span class="title">MyPage</span>
 								</a>
@@ -305,19 +321,25 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
   <div class="profile_bar">
     <div class="profile_img">
       <span class="p_img" style="background-image: url('http://file.trip-term.com:81/sample.jpg">
+      <img src = 'images/dog.jpg'>
       </span>
     </div>
     <div class="profiles">
       <div class="profile_detail">
-        <h2><%=dto.getWeight() %></h2>
+        <h3>ㅤ<%=dto.getWeight() %></h3>
         <div class="profiles">
+<<<<<<< HEAD
         <p><%=dto.getEmail() %></p>
         <p>목표까지 : <%= Integer.parseInt(dto.getEmail()) - dto.getWeight() %></p>
+=======
+        <h3>목표 : 100</h3><br>
+        <h3>목표까지! <%= 100 - dto.getWeight() %></h3><br>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
           <p><%
           if(dto.getCategory().equals("0")){
-      		out.print("벌크업");
+      		out.print("<h3>벌크업</h3>");
       	} else if(dto.getCategory().equals("3")){
-      		out.print("다이어트");
+      		out.print("<h3>다이어트</h3>");
       	}
           %></p>
         </div>
@@ -373,7 +395,11 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
             %></span>
           </div>
           <div class="user_detail_head">목표몸무게 <!-- 본인이 이루고 싶은 몸무게..받아와야하지 않나 회원가입에서 받아오기-->
+<<<<<<< HEAD
             <span class="edit_detail"><%= dto.getEmail() %></span>
+=======
+            <span class="edit_detail"><%= dto.getTarget() %></span>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
           </div>
           <div class="user_detail_head">현재BMI지수 <!-- 몸무게와 키를 받아와서 보여주기 -->
             <span class="edit_detail"><%= dto.getWeight()/(dto.getHeight()/100)*(dto.getHeight()/100) %></span>

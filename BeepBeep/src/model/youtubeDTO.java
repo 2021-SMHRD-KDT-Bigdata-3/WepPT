@@ -15,6 +15,12 @@ public class youtubeDTO {
 		this.gender = gender;
 		this.youtuber = youtuber;
 	}
+	
+	
+	
+	public youtubeDTO(String part) {
+		this.part = part;
+	}
 
 	public String getCategory() {
 		return category;

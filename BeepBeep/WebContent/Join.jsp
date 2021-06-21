@@ -175,7 +175,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
+<<<<<<< HEAD
                                             <input type="text" class="form-control" placeholder="Email" name="email" />
+=======
+                                            <input type="email" class="form-control" placeholder="목표 몸무게" name="target" />
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
                                         </div>
                                         <div class="form-group">
                                             <input type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함" name="email" />

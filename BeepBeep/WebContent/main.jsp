@@ -8,6 +8,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		
 		<style>
 		body{
 		zoom: 80% !important;
@@ -50,7 +52,6 @@
 											out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
 											out.print("<span>ㅤ</span>");
 										} else if (dto.getId() != null) {
-											System.out.println("비어있지않음");
 											out.print("<button><a href = 'logout'>로그아웃</a></button>");
 											out.print("<span>ㅤ</span>");
 											out.print("<button><a href = 'mypage.jsp'>마이페이지</a></button>");
@@ -106,10 +107,10 @@
 									<span class="image">
 										<img src="images/meal.jpg" alt="" />
 									</span>
-									<a href="meal.jsp">
-										<h2>식단</h2>
-										<div class="content">
-											<p>먹는것 하나하나 성분과 칼로리를 계산해드립니다.</p>
+									<a href="Community.jsp">
+										<h2>커뮤니티</h2>
+										<div class="Community">
+											<p>회원들과 운동일지를 공유해 보아요!</p>
 										</div>
 									</a>
 								</article>

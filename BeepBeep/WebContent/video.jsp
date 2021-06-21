@@ -127,8 +127,6 @@ li a:hover:not(.active) {
 				</form>
 		<%} %>
 	</ul>
-	
-				
 			
 				
 				<%
@@ -141,7 +139,8 @@ li a:hover:not(.active) {
 		
 				//if (al.get(0).getPart()==null){
 				if (al.size()==0){
-					 for (int i = 0; i<5; i++){
+					 for (int i = 0; i<10; i++){
+						 Random ran = new Random();
 				out.print("<iframe width='809' height='455' src = ");
 				out.print("'https://www.youtube.com/embed/");
                 out.print(al2.get(i).getLink().split("=")[1]);
@@ -149,25 +148,12 @@ li a:hover:not(.active) {
 				out.print("frameborder='0' ");
 				out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
 				out.print("allowfullscreen></iframe>");
-						 
-						 
-						 
-			/* 			 
-						Random ran = new Random();
-						
-						
-						
-						
-						out.print("'https://www.youtube.com/embed/");
-						out.print(al.get(ran.nextInt(al.size())).getLink().split("=")[1]);
-						out.print("'");
-						//out.print(al.get(i).getLink());
-						out.print("title='YouTube video player' "); */
+		
 					 }
 					}else{
 				
-				
-				for(int j = 0; j <5; j++){
+				for(int j = 0; j <10; j++){
+				Random ran = new Random();
 				out.print("<iframe width='809' height='455' src = ");
 				out.print("'https://www.youtube.com/embed/");
                 out.print(al.get(j).getLink().split("=")[1]);
