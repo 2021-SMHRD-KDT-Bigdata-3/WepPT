@@ -16,7 +16,23 @@
 
 
 
+
+
+
 <style>
+
+
+@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family:'twayair';
+	font-size:30px;
+}
 
 
 		* {
@@ -312,11 +328,12 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 							<li><a href="caltest.html">캘린더</a></li>
 						</ul>
 					</nav>
+					
 	<!-- 회원정보칸 -->
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <div class="back_profile" style="background-color: ghostwhite;">
   <div class="back_img" style="background-image: url('http://file.trip-term.com:81/bamboo.jpg')"></div>
-  
+  <p>ㅤ</p>
 <div class="profile_page">
   <div class="profile_bar">
     <div class="profile_img">
@@ -326,24 +343,26 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
     </div>
     <div class="profiles">
       <div class="profile_detail">
-        <h3>ㅤ<%=dto.getWeight() %></h3>
+        <h3>현재 몸무게 : <%=dto.getWeight() %></h3>
         <div class="profiles">
-        <h3>목표 : 100</h3><br>
-        <h3>목표까지! <%= 100 - dto.getWeight() %></h3><br>
+        <h3>목표 : <%= dto.getTarget()  %></h3><br>
+        <h3>목표까지! <%= dto.getTarget() - dto.getWeight() %></h3><br>
           <p><%
           if(dto.getCategory().equals("0")){
-      		out.print("<h3>벌크업</h3>");
+      		out.print("<h3>Type : 벌크업</h3>");
       	} else if(dto.getCategory().equals("3")){
-      		out.print("<h3>다이어트</h3>");
+      		out.print("<h3>Type : 다이어트</h3>");
       	}
           %></p>
         </div>
       </div>
     </div>
   </div>
+      <p>ㅤ</p>
   <div class="user_data">
     <div class="user_basic_header">
     </div>
+
     <div class="user_basic">
       <div class="user_category">
         <ul>

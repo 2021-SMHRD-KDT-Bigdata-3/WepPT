@@ -18,12 +18,30 @@
 	<link rel="stylesheet" href="assets/css/noscript.css" />
 </noscript>
 <style>
+
+@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family:'twayair';
+	font-size:30px;
+}
+
+input {
+	font-family:'ROKABold';
+	font-size:30px;
+	color : white;
+}
+
 .ass {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	background-color: #333;
-}
+	background-color: white;
 
 .ass:after {
 	content: '';
@@ -36,7 +54,6 @@ li {
 }
 
 li a {
-	display: block;
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
@@ -77,7 +94,7 @@ li a:hover:not(.active) {
 
 				<!-- Logo -->
 				<a href="main.jsp" class="logo"> <span class="symbol"><img
-						src="images/hehe.png" alt="" /></span><span class="title">영상추천칸</span>
+						src="images/hehe.png" alt="" /></span><span class="title">Web & PT</span>
 				</a>
 
 				<!-- Nav -->
@@ -106,23 +123,23 @@ li a:hover:not(.active) {
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-				<h1>영상추천 페이지</h1>
+				<h1>부 위 별ㅤ영 상ㅤ추 천</h1>
 				<ul class = "ass">
 				
 		<% if(dto.getGender().equals("1")){ %>
 			<form action="video.jsp">
-				<input type="submit" name="part" value="back">
-				<input type="submit" name="part" value="shoulder">
-				<input type="submit" name="part" value="legs">
-				<input type="submit" name="part" value="abs">
+				<input type="submit" name="part" value="back"><span>ㅤ</span>
+				<input type="submit" name="part" value="shoulder"><span>ㅤ</span>
+				<input type="submit" name="part" value="legs"><span>ㅤ</span>
+				<input type="submit" name="part" value="abs"><span>ㅤ</span>
 				<input type="submit" name="part" value="chest">
 			</form>
 		<%} else{%>
 			<form action="video.jsp">
-				<input type="submit" name="part" value="shoulder">
-				<input type="submit" name="part" value="abs">
-				<input type="submit" name="part" value="arm">
-				<input type="submit" name="part" value="hip">
+				<input type="submit" name="part" value="shoulder"><span>ㅤ</span>
+				<input type="submit" name="part" value="abs"><span>ㅤ</span>
+				<input type="submit" name="part" value="arm"><span>ㅤ</span>
+				<input type="submit" name="part" value="hip"><span>ㅤ</span>
 				<input type="submit" name="part" value="stretchingr">
 				</form>
 		<%} %>
@@ -139,9 +156,9 @@ li a:hover:not(.active) {
 		
 				//if (al.get(0).getPart()==null){
 				if (al.size()==0){
-					 for (int i = 0; i<10; i++){
+					 for (int i = 0; i<5; i++){
 						 Random ran = new Random();
-				out.print("<iframe width='809' height='455' src = ");
+				out.print("<iframe width='1344' height='700' src = ");
 				out.print("'https://www.youtube.com/embed/");
                 out.print(al2.get(i).getLink().split("=")[1]);
                 out.print("'");
@@ -152,9 +169,9 @@ li a:hover:not(.active) {
 					 }
 					}else{
 				
-				for(int j = 0; j <10; j++){
+				for(int j = 0; j <5; j++){
 				Random ran = new Random();
-				out.print("<iframe width='809' height='455' src = ");
+				out.print("<iframe width='1344' height='700' src = ");
 				out.print("'https://www.youtube.com/embed/");
                 out.print(al.get(j).getLink().split("=")[1]);
                 out.print("'");

@@ -19,6 +19,15 @@
 
 
 }
+
+@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
  *{
     padding: 0;
     margin: 0;
@@ -84,7 +93,8 @@
 
     flex-direction: column;
     align-items: center;
-    padding:40px;
+    padding-left:0px;
+    padding-right:150px;
     background: rgb(255,255,255);
 background: linear-gradient(287deg, rgba(255,255,255,1) 0%, rgba(243,244,244,1) 0%, rgba(255,255,255,1) 100%);
 }
@@ -138,7 +148,8 @@ background: linear-gradient(287deg, rgba(255,255,255,1) 0%, rgba(243,244,244,1) 
    
     border: none;
     line-height: 45px;
-    padding-left:10px;
+    padding-left:60px;
+    padding-bottom:20px;
     width:267px;
 }
 .login-input-container .login-input-wrap input:focus{
@@ -189,15 +200,16 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
                 <div class="top-logo-wrap">
                     
                 </div>
-                <h2 class = "pt">아직도 돈을 주고 pt를 하고 있으신가요?</h2>
-                <h2 class = "pt">집에서 홈트레이닝을 하고 있으신가요?</h2>
-                <p>                   </p>
-                <h2 class = "ptt">무료로 당신의 건강과 식습관을 챙겨드립니다.</h2>
+                <h2 style = 'font-size:60px;' class = "pt">아직도 돈을 주고 pt를 하고 있으신가요?</h2>
+                <p>ㅤ</p>
+                <h2 style = 'font-size:50px;' class = "pt">집에서 홈트레이닝을 하고 있으신가요?</h2>
+                <p>ㅤ</p>
+                <h2 style = 'font-size:35px; word-spacing: 5px;' class = "ptt">무료로 당신의 건강과 식습관을 챙겨드립니다!</h2>
+                <p>ㅤ</p>
+                <h2 style = 'font-size:45px;' class = "ptt">WEB & PT</h2>
             </div>
             <div class="login-form-left-side">
                 <div class="login-top-wrap">
-                    <span>아이디가 없으신가요?</span>
-                    <a style = 'font-size:20px' href ='Join.jsp'>회원가입</a>
                 </div>
                 <p>ㅤ</p>
                 <p>ㅤ</p>
@@ -213,16 +225,17 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
                 <div class="login-input-container">
                     <div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>
-                        <input name = "id" placeholder="아이디" type="text">
+                        <input  style = 'font-size:45px;' name = "id" placeholder="  아이디" type="text">
                     </div>
                     <div class="login-input-wrap input-password">
                         <i class="fas fa-key"></i>
-                        <input name = "pw"  placeholder="비밀번호"  type="password">
+                        <input  style = 'font-size:45px;' name = "pw"  placeholder="  비밀번호"  type="password">
                     </div>
                 </div>
                 <div class="login-btn-wrap">
                     <button type = "submit" class="login-btn">로  그  인</button>
-                    <a href="#" >회원가입은 하셨나요?</a>
+                     <p>ㅤ</p>
+                      <a style = 'font-size:20px; color:blue;  text-decoration: underline;' href ='Join.jsp'>회원가입은 하셨나요?</a>
                 </div>
             </div>
         </div>

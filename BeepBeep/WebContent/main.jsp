@@ -11,8 +11,24 @@
 		
 		
 		<style>
+	
+		
+	@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2 {
+	font-family:'twayair';
+	font-size:100px;
+}
+		
+		
+		
 		body{
-		zoom: 80% !important;
+		zoom: 100% !important;
 		}
 		span.title{
    font-size : 50px;
@@ -47,14 +63,14 @@
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
 
 										<% if (dto == null) {
-											out.print("<button><a href = 'login'>로그인</a></button>");
+											out.print("<button><a style = 'font-size:30px;' href = 'login'>LOGIN</a></button>");
 											out.print("<span>ㅤ</span>");
-											out.print("<button><a href = 'Join.jsp'>회원가입</a></button>");
+											out.print("<button><a style = 'font-size:30px;' href = 'Join.jsp'>JOIN</a></button>");
 											out.print("<span>ㅤ</span>");
 										} else if (dto.getId() != null) {
-											out.print("<button><a href = 'logout'>로그아웃</a></button>");
+											out.print("<button><a style = 'font-size:30px;' href = 'logout'>LOGOUT</a></button>");
 											out.print("<span>ㅤ</span>");
-											out.print("<button><a href = 'mypage.jsp'>마이페이지</a></button>");
+											out.print("<button><a style = 'font-size:30px;' href = 'mypage.jsp'>MY PAGE</a></button>");
 											out.print("<span>ㅤ</span>");
 										}
 										%>
@@ -109,7 +125,7 @@
 									</span>
 									<a href="Community.jsp">
 										<h2>커뮤니티</h2>
-										<div class="Community">
+										<div class="content">
 											<p>회원들과 운동일지를 공유해 보아요!</p>
 										</div>
 									</a>
