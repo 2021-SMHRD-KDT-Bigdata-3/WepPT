@@ -10,6 +10,26 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 <style>
+
+
+@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family:'twayair';
+	font-size:30px;
+}
+
+
+		body{
+		align:'center';
+		}
+
+
 		* {
   margin:0px;
   padding:0px;
@@ -299,31 +319,11 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 	<!-- 회원정보칸 -->
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <form action = "update" method="post">
-<div class="back_profile" style="background-color: ghostwhite;">
+<div class="back_profile" style="background-color: ghostwhite; padding-bottom:100px;">
   <div class="back_img" style="background-image: url('http://file.trip-term.com:81/bamboo.jpg')"></div>
   
-<div class="profile_page">
   <div class="profile_bar">
-    <div class="profile_img">
-      <span class="p_img" style="background-image: url('http://file.trip-term.com:81/sample.jpg">
-      </span>
-    </div>
-    <div class="profiles">
-      <div class="profile_detail">
-        <h2><%=dto.getWeight() %></h2>
-        <div class="profiles">
-        <p><%= dto.getTarget() %></p>
-        <p>목표까지 : <%= Integer.parseInt(dto.getTarget()) - dto.getWeight() %></p>
-          <p><%
-          if(dto.getCategory().equals("0")){
-      		out.print("벌크업");
-      	} else if(dto.getCategory().equals("3")){
-      		out.print("다이어트");
-      	}
-          %></p>
-        </div>
-      </div>
-    </div>
+    <h2> WEB & PT 회원정보 수정</h2>
   </div>
   <div class="user_data">
     <div class="user_basic_header">
@@ -334,7 +334,6 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           <li id="h_category1" onclick="change_category('h_category1','h_detail1')">개인정보</li>
           <li id="h_category2" onclick="change_category('h_category2','h_detail2')">회원정보</li>
           <li id="h_category3" onclick="change_category('h_category3','h_detail3')">나의상태</li>
-          <li id="h_category4" onclick="change_category('h_category4','h_detail4')">알림설정</li>
         </ul>
       </div>
       <div class="user_detail">
@@ -344,19 +343,19 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           </div>
           <div class="user_detail_head">PW
             <span class="edit_detail">
-            	<input type="text" name = 'pw'>
+            	<input style = 'height:30px;' type="text" name = 'pw' placeholder = "변경할 비밀번호 입력">
             </span>
           </div>
         </div>  
         <div id="h_detail2">
           <div class="user_detail_head">몸무게
             <span class="edit_detail">
-            	<input type="text" name = "weight">
+            	<input style = 'height:30px;' type="text" name = "weight" placeholder = "몸무게 입력">
             </span>
           </div>
           <div class="user_detail_head">키
             <span class="edit_detail">
-            	<input type="text" name = "height">
+            	<input style = 'height:30px;' type="text" name = "height" placeholder = "키 입력">
             </span>
           </div>
         </div>
@@ -381,7 +380,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           </div>
           <div class="user_detail_head">목표몸무게 <!-- 본인이 이루고 싶은 몸무게..받아와야하지 않나 회원가입에서 받아오기-->
             <span class="edit_detail">
-            	<input type="text" name = "target">
+            	<input style = 'height:30px;' type="text" name = "target" placeholder = "목표 몸무게 입력">
             </span>
           </div>
           <div class="user_detail_head">현재BMI지수 <!-- 몸무게와 키를 받아와서 보여주기 -->
@@ -389,26 +388,24 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           </div>
         </div>
         <div id="h_detail4">
-          <div class="user_detail_head">알람설정(그냥 보기용)
-            <span class="edit_detail">DB 에서 불러온 값</span>
+          <div class="user_detail_head">
+            <span class="edit_detail"></span>
           </div>
-          <div class="user_detail_head">푸쉬알람
-            <span class="edit_detail">DB 에서 불러온 값</span>
+          <div class="user_detail_head">
+            <span class="edit_detail"></span>
           </div>
-          <div class="user_detail_head">식사시간알람
-            <span class="edit_detail">DB 에서 불러온 값</span>
+          <div class="user_detail_head">
+            <span class="edit_detail"></span>
           </div>
-          <div class="user_detail_head">체중측정알람
-            <span class="edit_detail">DB 에서 불러온 값</span>
-          </div>
-          <div class="user_detail_head">제품추천알람
-            <span class="edit_detail">DB 에서 불러온 값</span>
+          <div class="user_detail_head">
+            <span class="edit_detail">D</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <input type="submit" value="정보 수정">
+    <p style = 'height:50px'>ㅤ</p>
+  <input style = 'margin-left:800px; height:100px' type="submit" value="정보수정 완료">
   </form>
 </div>
   <div class="temporary_footer"></div>
@@ -424,7 +421,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 			
 			
 				<!-- Footer -->
-					<footer id="footer">
+					<footer id="footer" style = 'padding-left:100px; '>
 						<div class="inner">
 							<section>
 								<h2>불편사항을 적어주세요</h2>

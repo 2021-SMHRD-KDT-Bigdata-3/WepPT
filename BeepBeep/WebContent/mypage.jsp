@@ -298,8 +298,8 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header" style = "padding-top: 0px;">
-						<div class="inner" style = "margin-left: 0px; padding-left: 0px;">
+					<header id="header" style = "padding-left: -500px;">
+						<div class="inner" style = "text-align: right; margin-left: 0px; padding-left: 0px;">
 
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">
@@ -437,7 +437,8 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
   </div>
   <p>ㅤ</p>
   <div>
-      <button style = 'font-size:30px; margin-left:50px;'><a href="mypage_update.jsp">정보 수정</a></button>
+      <button style = 'font-size:30px; margin-left:150px;'><a href="logout">로그아웃</a></button>
+      <button style = 'font-size:30px; margin-left:100px;'><a href="mypage_update.jsp">정보 수정</a></button>
   </div>
 </div>
   <div class="temporary_footer"></div>
@@ -454,19 +455,19 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 			
 				<!-- Footer -->
 					<footer id="footer">
-						<div class="inner">
+						<div class="inner" >
 							<section>
 								<h2>불편사항을 적어주세요</h2>
 								<form method="post" action="#">
 									<div class="fields">
 										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="회원 ID" />
+											<input style = 'font-size:30px' type="text" name="name" id="name"  placeholder=<%= dto.getId() %> />
 										</div>
 										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="제목" />
+											<input style = 'font-size:30px' type="email" name="email" id="email" placeholder="제목" />
 										</div>
 										<div class="field">
-											<textarea name="message" id="message" placeholder="내용"></textarea>
+											<textarea style = 'font-size:30px; margin-bottom:10px;' name="message" id="message" placeholder="내용"></textarea>
 										</div>
 									</div>
 									<ul class="actions">
@@ -497,7 +498,6 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 

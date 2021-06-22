@@ -151,10 +151,10 @@ li a:hover:not(.active) {
 						<div class="inner" style = 'height:50px;'>
 							
 								
-    <table id = "testTable" class="sortable" border="1px">
-        <tr>
-            <th>img</th>
-            <th>name</th>
+    <table id = "testTable" class="sortable" border="1px" >
+        <tr  align = 'center'>
+            <th >제품사진</th>
+            <th>제품명</th>
             <th>칼로리</th>  
             <th>탄수화물</th>
             <th>단백질</th>
