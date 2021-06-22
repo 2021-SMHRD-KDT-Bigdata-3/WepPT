@@ -9,10 +9,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
 <style>
+
+
+@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, input {
+	font-family:'twayair';
+	font-size:30px;
+}
+
+
 		* {
   margin:0px;
   padding:0px;
+  align:center;
 }
 
 .back_profile{
@@ -225,6 +251,7 @@
     display:none;
   }
 }
+<<<<<<< HEAD
 img {
 	height:200px;
 	width:200px;
@@ -232,6 +259,18 @@ img {
 	border-radius:50%;
 }
 .
+=======
+
+img {
+	height:200px;
+	width:200px;
+	border:1px;
+	border-radius:50%;
+}
+input {
+margin:0 auto;
+}
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
 		</style>
 		
 		<script>
@@ -272,13 +311,13 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header" style = "padding-top: 0px;">
-						<div class="inner" style = "margin-left: 0px; padding-left: 0px;">
+					<header id="header" style = "padding-left: -500px;">
+						<div class="inner" style = "width:900px; ">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
+								<a href="main.jsp" class="logo">
 									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
-									<span class="title">MyPage</span>
+									<span class="title">회원 정보 수정</span>
 								</a>
 
 							<!-- Nav 옆에 세줄로 된 메뉴바 -->
@@ -302,8 +341,10 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 							<li><a href="caltest.html">캘린더</a></li>
 						</ul>
 					</nav>
+					
 	<!-- 회원정보칸 -->
 
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <div class="back_profile" style="background-color: ghostwhite;">
   <div class="back_img" style="background-image: url('http://file.trip-term.com:81/bamboo.jpg')"></div>
 <div class="profile_page">
@@ -422,10 +463,26 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
   </div>
   <button type="submit" formaction = "update"
 				formmethod = "post" form="userInfo">정보 수정</button>
+=======
+  
+  
+  <form action = "update" method="post">
+  <p>ㅤ</p>
+  <input style = 'width: 300px; height:100px;' type="text" name = 'pw' placeholder = "변경할 비밀번호 입력">
+  <p>ㅤ</p>
+  <input style = ' width: 300px; height:100px;' type="text" name = "weight" placeholder = "몸무게 입력">
+  <p>ㅤ</p>
+  <input style = 'width: 300px; height:100px;' type="text" name = "height" placeholder = "키 입력">
+  <p>ㅤ</p>
+  <input style = 'width: 300px; height:100px;' type="text" name = "target" placeholder = "목표 몸무게 입력">
+  <p>ㅤ</p>
+  <input style = 'margin-left:1050px; width: 350px; height:100px' type="submit" value="정보수정 완료">
+  <p>ㅤ</p>
   </form>
 </div>
   <div class="temporary_footer"></div>
 </div>
+
 <div class="icon_bar">
   <span><i id="h_footer" onclick="change_menu('h_footer','main_body1');" class="fas fa-home f_icon"></i></span>
   <span><i id="s_footer" onclick="change_menu('s_footer','main_body2');" class="fas fa-map-marked-alt f_icon"></i></span>
@@ -435,52 +492,13 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 			
 			
 			
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>불편사항을 적어주세요</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="회원 ID" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="제목" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="내용"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="전송" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>pt 소셜</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-							</ul>
-						</div>
-					</footer>
+			
 
 			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 

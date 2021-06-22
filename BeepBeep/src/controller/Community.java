@@ -17,12 +17,12 @@ import model.CommunityDAO;
 import model.CommunityDTO;
 import model.memberDTO;
 
-
 @WebServlet("/Community")
 public class Community extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		request.setCharacterEncoding("EUC-KR");
 
 		// 파일 경로, 파일 크기, 파일 이름 ==> 인코딩
@@ -38,21 +38,17 @@ public class Community extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		// 값 받아오기
-		String title = request.getParameter("title");
-		String id = request.getParameter("id");
-		String filename = URLEncoder.encode(multi.getFilesystemName("filename"), "EUC-KR");
-		String content = request.getParameter("content");
-		
-		//dto, dao
+		String title = multi.getParameter("title");
+		String id = multi.getParameter("id");
+		String filename = URLEncoder.encode(multi.getFilesystemName("fileName"), "EUC-KR");
+		String content = multi.getParameter("content");
 
 		// dto, dao 생성
 		CommunityDTO commudto = new CommunityDTO(title, id, filename, content);
-		CommunityDAO commudao =  new CommunityDAO();
-		
+		CommunityDAO commudao = new CommunityDAO();
 
 		// dao호출 및 사용
 		int cnt = commudao.CommuWrite(commudto);
-		
 
 		if (cnt > 0) {
 			System.out.println("커뮤니티 글 작성 성공(｡･∀･)ﾉﾞ");

@@ -143,7 +143,7 @@ li a:hover:not(.active) {
 				ArrayList<youtubeDTO> al = Youtube.getAl();
 				
 				youtubeDAO dao = new youtubeDAO();
-				ArrayList<youtubeDTO> al2 =  dao.select(dto.getGender(), "chest");
+				ArrayList<youtubeDTO> al2 =  dao.select(dto.getGender(), "abs");
 				
 				System.out.println(al.size());
 				System.out.println(al2.size());

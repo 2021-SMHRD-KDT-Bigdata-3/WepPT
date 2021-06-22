@@ -173,21 +173,7 @@ h2 {
 		
 		
 		
-		<script>// 왜 안뜨지?...
-		let article = document.getElementsByClassName("article");
-		
-			article.onclick = function () {
-			
-			<% if( dto == null ){   %>
-            alert("로그인 후 이용 가능합니다");
-            <%
-            
-			}%>
-    }
 	
-		
-		
-		</script>
 		
 		
 		

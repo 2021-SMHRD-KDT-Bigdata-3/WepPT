@@ -8,18 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
-
-	<div id = "Community"> 
-=======
 	
 	<%
 	memberDTO dto = (memberDTO)session.getAttribute("info");
 	%>
 	
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
-				<form action="Community" method="post" enctype="multipart/form-data">
-	<div id = "Community">  
+		<form action="Community" method="post" enctype="multipart/form-data">
+			<div id = "Community">  
 				<table id="list">
 					<tr>
 						<td>ì œëª©</td>
@@ -33,18 +28,8 @@
 						<td colspan="2">ë‚´ìš©</td>
 					</tr>
 					<tr>
-<<<<<<< HEAD
 						<td colspan="2">
-							<input name="filename" type="file" style="float: right;">			
-=======
-<<<<<<< HEAD
-						<td colspan="2"> <!-- º¯¼öÁßº¹?????¾îµð¼­ º¯¼ö¶û Áßº¹ÀÌ¶ó´Â °Å¾ß¾îµð¾îµð¾îµð¾îµð -->
 							<input name="fileName" type="file" style="float: right;">			
-=======
-						<td colspan="2">
-							<input name="filename" type="file" style="float: right;">			
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/WepPT.git
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
 							<textarea name="content" rows="10" style="resize: none;"></textarea>	
 						</td>
 					</tr>
@@ -56,6 +41,6 @@
 					</tr>
 				</table>
 			</div>
-				</form>
+		</form>
 </body>
 </html>
