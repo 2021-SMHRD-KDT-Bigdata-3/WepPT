@@ -6,7 +6,6 @@
 <meta charset="EUC-KR">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
      <style>
@@ -225,15 +224,15 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
                 <div class="login-input-container">
                     <div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>
-                        <input  style = 'font-size:45px;' name = "id" placeholder="  아이디" type="text">
+                        <input id='id'  style = 'font-size:45px;' name = "id" placeholder="  아이디" type="text" autofocus = 'True'>
                     </div>
                     <div class="login-input-wrap input-password">
                         <i class="fas fa-key"></i>
-                        <input  style = 'font-size:45px;' name = "pw"  placeholder="  비밀번호"  type="password">
+                        <input id='pw'  style = 'font-size:45px;' name = "pw"  placeholder="  비밀번호"  type="password">
                     </div>
                 </div>
                 <div class="login-btn-wrap">
-                    <button type = "submit" class="login-btn">로  그  인</button>
+                    <button id = 'btn' type = "submit" class="login-btn">로  그  인</button>
                      <p>ㅤ</p>
                       <a style = 'font-size:20px; color:blue;  text-decoration: underline;' href ='Join.jsp'>회원가입은 하셨나요?</a>
                 </div>
@@ -242,4 +241,19 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
     </div>
               </form>
 </body>
+
+		<script>
+					let id = document.getElementById('id');
+					let pw = document.getElementById('pw');
+					let btn = document.getElementById('btn');
+					
+					 btn.onclick = function () {
+			                if ( id.value =="" || pw.value =="")
+			                alert("아이디 혹은 비밀번호를 확인해주세요");
+			        }
+					
+					
+					
+		</script>
+
 </html>
