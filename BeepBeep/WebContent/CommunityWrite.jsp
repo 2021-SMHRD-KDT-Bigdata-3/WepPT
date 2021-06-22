@@ -10,7 +10,8 @@
 
 	<div id = "Community">  
 				<form action="Community" method="post" enctype="multipart/form-data">
-				<table id="list">
+				<table id="list">submit
+
 					<tr>
 						<td>제목</td>
 						<td><input type="text" name="title"> </td>
@@ -31,7 +32,7 @@
 					<tr>
 						<td colspan="2">
 							<input type="reset" value="초기화">
-							<input type="submit" value="작성하기">
+							<input type="submit" value="저장하기">
 						</td>
 					</tr>
 				</table>
