@@ -8,13 +8,12 @@ public class memberDTO {
 	private String name;
 	private int age;
 	private String gender;
-	private String email;
+	private String target;
 	private String tel;
 	private float height;
 	private float weight;
-
-	//
-	public memberDTO(String category, String id, String pw, String name, int age, String gender, String email, String tel,
+	
+	public memberDTO(String category, String id, String pw, String name, int age, String gender, String target, String tel,
 			float height, float weight) {
 		this.category = category;
 		this.id = id;
@@ -22,30 +21,7 @@ public class memberDTO {
 		this.name = name;
 		this.age = age;
 		this.gender = gender;
-		this.email = email;
-		this.tel = tel;
-		this.height = height;
-		this.weight = weight;
-	}
-
-	public memberDTO(String id, String pw, float height, float weight) {
-		this.id = id;
-		this.pw = pw;
-		this.height = height;
-		this.weight = weight;
-		
-	}
-	
-	
-	
-	public memberDTO(String id, String pw, String name, int age, String gender, String email, String tel,
-			float height, float weight) {
-		this.id = id;
-		this.pw = pw;
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-		this.email = email;
+		this.target = target;
 		this.tel = tel;
 		this.height = height;
 		this.weight = weight;
@@ -99,12 +75,12 @@ public class memberDTO {
 		this.gender = gender;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getTarget() {
+		return target;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setTarget(String target) {
+		this.target = target;
 	}
 
 	public String getTel() {
@@ -130,6 +106,8 @@ public class memberDTO {
 	public void setWeight(float weight) {
 		this.weight = weight;
 	}
+
+	
 	
 	
 	

@@ -28,7 +28,7 @@ public class join extends HttpServlet {
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
 		int gender = Integer.parseInt(request.getParameter("gender"));
-		String email = request.getParameter("email");
+		String target = request.getParameter("target");
 		String tel = request.getParameter("tel");
 		float height = Float.parseFloat(request.getParameter("height"));
 		float weight = Float.parseFloat(request.getParameter("weight"));
@@ -36,7 +36,7 @@ public class join extends HttpServlet {
 		
 		memberDAO memberdao = new memberDAO();
 		
-		int cnt = memberdao.join(id, pw, name, age, gender, email, tel, height, weight);
+		int cnt = memberdao.join(id, pw, name, age, gender, target, tel, height, weight);
 		
 		if(cnt>0) {
 			System.out.println("회원가입 성공");

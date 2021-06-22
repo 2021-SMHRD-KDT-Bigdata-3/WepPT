@@ -20,8 +20,9 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/hehe.png" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img  src="images/hehe.png" alt="" /></span><span class="title">Phantom</span>
 								</a>
+								
 
 							<!-- Nav -->
 								<nav>
@@ -41,7 +42,7 @@
 							<li><a href="video.jsp">영상</a></li>
 							<li><a href="recommend.jsp">제품추천</a></li>
 							<li><a href="meal.jsp">식단</a></li>
-							<li><a href="calendar.jsp">캘린더</a></li>
+							<li><a href="caltest.html">캘린더</a></li>
 						</ul>
 					</nav>
 
