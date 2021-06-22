@@ -299,7 +299,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 
 				<!-- Header -->
 					<header id="header" style = "padding-left: -500px;">
-						<div class="inner" style = "text-align: right; margin-left: 0px; padding-left: 0px;">
+						<div class="inner" style = "width:900px; ">
 
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">
@@ -364,7 +364,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
     </div>
 
     <div class="user_basic">
-      <div class="user_category">
+      <div style = 'height:500px;' class="user_category">
         <ul>
           <li id="h_category1" onclick="change_category('h_category1','h_detail1')">개인정보</li>
           <li id="h_category2" onclick="change_category('h_category2','h_detail2')">회원정보</li>
@@ -372,7 +372,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           <li id="h_category4" onclick="change_category('h_category4','h_detail4')">알림설정</li>
         </ul>
       </div>
-      <div class="user_detail">
+      <div style = 'height:500px;' class="user_detail">
         <div id="h_detail1">
           <div class="user_detail_head">ID
             <span class="edit_detail"><%= dto.getId() %></span>

@@ -27,7 +27,7 @@
 			CommunityDAO commudao = new CommunityDAO();
 			%>
 			<tr>
-				<td><%= %></td> <!-- communityDTO에서 받아오기 -->
+				<td></td> <!-- communityDTO에서 받아오기 -->
 				<td></td>
 				<td></td>
 				<td></td>
