@@ -248,8 +248,8 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
 					let btn = document.getElementById('btn');
 					
 					 btn.onclick = function () {
-			                if ( id.value =="" || pw.value =="")
-			                alert("아이디 혹은 비밀번호를 확인해주세요");
+			                if ( id.value =="" || pw.value ==""){
+			                alert("아이디 혹은 비밀번호를 확인해주세요");}
 			        }
 					
 					

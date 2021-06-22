@@ -1,3 +1,4 @@
+<%@page import="model.CommunityDAO"%>
 <%@page import="model.CommunityDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -8,40 +9,42 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- <%
-CommunityDTO communitydto = new CommunityDTO();
+<%
+int get_num = Integer.parseInt(request.getParameter("num"));
 
+CommunityDAO commudao = new CommunityDAO();
+CommunityDTO commudto = commudao.oneSelect(get_num);
 
 %>
 
 
-	<div id = "board">
+	<div id = "community">
 				<table id="list">
 					<tr>
 						<td>제목</td>
-						<td><%= communitydto.getTitle() %></td>
+						<td><%= commudto.getTitle() %></td>
 					</tr>
 					<tr>
 						<td>아이디</td>
-						<td><%= communitydto.getId() %></td>
+						<td><%= commudto.getId() %></td>
 					</tr>
 					<tr>
 						<td colspan="2">내용</td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<img src="img/<%=%>">
-							<%= communitydto.getContent() %>
+							<img src="img/<%= commudto.getFilename() %>">
+							<%= commudto.getContent() %>
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2"><a href="boardMain.jsp"><button>뒤로가기</button></a></td>
+						<td colspan="2"><a href="Community.jsp"><button>뒤로가기</button></a></td>
 					</tr>
 				</table>
 			</div>
 			
 			
-			 --%>
+			
 			
 </body>
 </html>

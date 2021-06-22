@@ -38,8 +38,8 @@ public class Community extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		// 값 받아오기
-		String title = request.getParameter("title");
-		String id = request.getParameter("id");
+		String title = multi.getParameter("title");
+		String id = multi.getParameter("id");
 		String filename = URLEncoder.encode(multi.getFilesystemName("fileName"), "EUC-KR");
 		String content = multi.getParameter("content");
 

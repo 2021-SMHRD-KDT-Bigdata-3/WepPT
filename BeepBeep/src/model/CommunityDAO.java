@@ -14,6 +14,7 @@ public class CommunityDAO {
 	Connection conn = null;
 	PreparedStatement pst = null;
 	ArrayList<CommunityDTO> al = new ArrayList<CommunityDTO>();
+	CommunityDTO commudto = null;
 	memberDTO dto =null;
 	int cnt=0;
 	
@@ -88,7 +89,7 @@ public class CommunityDAO {
 			
 			
 			
-			
+			// 언제쓸까아아아?
 			public ArrayList<CommunityDTO> select() {
 				try {
 					conn();
@@ -120,6 +121,43 @@ public class CommunityDAO {
 				return al;
 			}	
 
+			
+			
+			public CommunityDTO oneSelect(int num) {
+
+				try {
+					conn();
+
+					String sql = "select * from community where num=?";
+
+					pst = conn.prepareStatement(sql);
+
+					pst.setInt(1, num);
+
+					rs = pst.executeQuery();
+
+					if (rs.next()) {
+						int get_num = rs.getInt("num");
+						String title = rs.getString("title");
+						String id = rs.getString("id");
+						String fileName = rs.getString("fileName");
+						String content = rs.getString("content");
+						String day = rs.getString("day");
+						
+						commudto = new CommunityDTO(get_num, title, id, fileName, content, day);
+						
+						System.out.println("커뮤니티 글 작성 성공");
+					} else {
+						System.out.println("커뮤니티 글 작성 실패");
+					}
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+				return commudto;
+			}
 			
 			
 }
