@@ -1,3 +1,4 @@
+<%@page import="model.CommunityDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -17,10 +18,10 @@
 				<td>날짜</td>
 			</tr>
 			<%
-			
+			CommunityDAO commudao = new CommunityDAO();
 			%>
 			<tr>
-				<td></td> <!-- communityDTO에서 받아오기 -->
+				<td><%=num %></td> <!-- communityDTO에서 받아오기 -->
 				<td></td>
 				<td></td>
 				<td></td>
