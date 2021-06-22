@@ -1,3 +1,4 @@
+<%@page import="model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -7,6 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+<%
+	memberDTO dto = (memberDTO)session.getAttribute("info");
+	%>
 	
 	<div>
 		<table>

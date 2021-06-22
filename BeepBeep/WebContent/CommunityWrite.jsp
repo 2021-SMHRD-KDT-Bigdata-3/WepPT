@@ -1,5 +1,6 @@
+<%@page import="model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,36 +8,39 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<div id = "Community">  
+	
+	<%
+	memberDTO dto = (memberDTO)session.getAttribute("info");
+	%>
+	
 				<form action="Community" method="post" enctype="multipart/form-data">
-				<table id="list">submit
-
+	<div id = "Community">  
+				<table id="list">
 					<tr>
-						<td>Á¦¸ñ</td>
+						<td>ì œëª©</td>
 						<td><input type="text" name="title"> </td>
 					</tr>
 					<tr>
-						<td>¾ÆÀÌµğ</td>
+						<td>ì•„ì´ë””</td>
 						<td><input  type="text" name="id"> </td>
 					</tr>
 					<tr>
-						<td colspan="2">³»¿ë</td>
+						<td colspan="2">ë‚´ìš©</td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input name="fileName" type="file" style="float: right;">			
+							<input name="filename" type="file" style="float: right;">			
 							<textarea name="content" rows="10" style="resize: none;"></textarea>	
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="reset" value="ÃÊ±âÈ­">
-							<input type="submit" value="ÀúÀåÇÏ±â">
+							<input type="reset" value="ì´ˆê¸°í™”">
+							<input type="submit" value="ì €ì¥í•˜ê¸°">
 						</td>
 					</tr>
 				</table>
-				</form>
 			</div>
+				</form>
 </body>
 </html>
