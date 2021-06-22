@@ -251,7 +251,6 @@ body, input {
     display:none;
   }
 }
-<<<<<<< HEAD
 img {
 	height:200px;
 	width:200px;
@@ -259,14 +258,6 @@ img {
 	border-radius:50%;
 }
 .
-=======
-
-img {
-	height:200px;
-	width:200px;
-	border:1px;
-	border-radius:50%;
-}
 input {
 margin:0 auto;
 }

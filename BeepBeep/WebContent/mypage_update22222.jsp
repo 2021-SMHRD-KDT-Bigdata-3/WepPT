@@ -242,6 +242,12 @@ body {
     display:none;
   }
 }
+img {
+	height:200px;
+	width:200px;
+	border:1px;
+	border-radius:50%;
+}
 .
 		</style>
 		
@@ -321,6 +327,16 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
   
   <div class="profile_bar">
     <h2> WEB & PT 회원정보 수정</h2>
+    <div class="profile_img">
+      <span class="p_img" style="background-image: url('http://file.trip-term.com:81/sample.jpg">
+      <img src = "profile/<%= dto.getProfile()%>" onerror = "this.src = 'images/dog.jpg'">
+      </span>
+    </div>
+    	<form id = "profile">
+		<input type="file" accept="jpg" name = "fileName">
+		<button type="submit" formaction = "updateProfile"
+				formmethod = "post" formenctype="multipart/form-data" form ="profile">프로필 사진 변경</button>
+		</form>
   </div>
   <div class="user_data">
     <div class="user_basic_header">
