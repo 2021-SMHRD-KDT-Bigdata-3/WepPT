@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +13,7 @@ public class CommunityDAO {
 	ResultSet rs = null;
 	Connection conn = null;
 	PreparedStatement pst = null;
+	ArrayList<CommunityDTO> al = new ArrayList<CommunityDTO>();
 	memberDTO dto =null;
 	int cnt=0;
 	
@@ -56,8 +58,6 @@ public class CommunityDAO {
 				try {
 					conn();
 					
-					
-					
 					String sql = "insert into community values(num_board.nextval, ?,?,?,?, sysdate )";
 					// 3. sql巩 角青按眉(Prepared Statement)积己
 					pst = conn.prepareStatement(sql);
@@ -89,10 +89,37 @@ public class CommunityDAO {
 			
 			
 			
-			
-			
-			
-			
-			
+			public ArrayList<CommunityDTO> select() {
+				try {
+					conn();
+					
+					String sql = "select * from Community";
+					
+					pst = conn.prepareStatement(sql);
+					
+					rs = pst.executeQuery();
+					
+					while(rs.next()){
+						int num = rs.getInt("num");
+						String title = rs.getString("title");
+						String id = rs.getString("id");
+						String filename = rs.getString("filename");
+						String content = rs.getString("content");
+						String day = rs.getString("day");
+						
+						CommunityDTO dto = new CommunityDTO(num, title, id, filename, content, day);
+						
+						al.add(dto);
+						
+					}		
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				return al;
+			}	
 
+			
+			
 }

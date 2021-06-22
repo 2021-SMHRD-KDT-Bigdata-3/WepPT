@@ -28,8 +28,13 @@
 						<td colspan="2">ë‚´ìš©</td>
 					</tr>
 					<tr>
+<<<<<<< HEAD
+						<td colspan="2"> <!-- º¯¼öÁßº¹?????¾îµð¼­ º¯¼ö¶û Áßº¹ÀÌ¶ó´Â °Å¾ß¾îµð¾îµð¾îµð¾îµð -->
+							<input name="fileName" type="file" style="float: right;">			
+=======
 						<td colspan="2">
 							<input name="filename" type="file" style="float: right;">			
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/WepPT.git
 							<textarea name="content" rows="10" style="resize: none;"></textarea>	
 						</td>
 					</tr>

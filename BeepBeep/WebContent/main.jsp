@@ -85,6 +85,7 @@ h2 {
 				<!-- Menu -->
 					<nav id="menu">
 						<h2 style = 'font-size:50px'>Menu</h2>
+						
 						<ul>
 							<li><a href="main.jsp">메인화면으로</a></li>
 							<li><a href="video.jsp">영상</a></li>
