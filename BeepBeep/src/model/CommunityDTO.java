@@ -10,6 +10,15 @@ public class CommunityDTO {
 	private String day;
 	
 	
+	//community write
+	public CommunityDTO(String title, String id, String filename, String content) {
+		this.title = title;
+		this.id = id;
+		this.filename = filename;
+		this.content = content;
+	}
+	
+	
 	public CommunityDTO(int num, String title, String id, String filename, String content, String day) {
 		this.num = num;
 		this.title = title;

@@ -10,8 +10,8 @@ public class CommunityDAO {
 	ResultSet rs = null;
 	Connection conn = null;
 	PreparedStatement pst = null;
-	int cnt=0;
 	memberDTO dto =null;
+	int cnt=0;
 	
 	
 	
@@ -48,22 +48,21 @@ public class CommunityDAO {
 
 			
 			//커뮤니티 글작성
-			public int CommunityPlus(int num, String title, String id, String filename, String content) {
+			public int CommuWrite(CommunityDTO commudto) {
 
 				// 런타임오류 : 실행했을 때 발생하는 오류 -> 예외처리
 				try {
 					conn();
 					
-					String sql = "insert into member values(?,?,?,?,?)";
+					String sql = "insert into member values(?,?,?,?)";
 					// 3. sql문 실행객체(Prepared Statement)생성
 					pst = conn.prepareStatement(sql);
 
 					// 4. 바인드 변수 채우기
-					pst.setInt(1, num);
-					pst.setString(2, title);
-					pst.setString(3, id);
-					pst.setString(4, filename);
-					pst.setString(5, content);
+					pst.setString(1, commudto.getTitle());
+					pst.setString(2, commudto.getId());
+					pst.setString(3, commudto.getFilename());
+					pst.setString(4, commudto.getContent());
 					
 					
 					// 5. sql문 실행하여 결과처리
@@ -71,7 +70,7 @@ public class CommunityDAO {
 
 				} catch (Exception e) {
 					e.printStackTrace();
-					System.out.println("memberDAO 오류");
+					System.out.println("커뮤니티 작성 오류ㅠ");
 				} finally {
 					close();
 				}
