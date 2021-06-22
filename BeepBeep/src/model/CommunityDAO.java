@@ -56,13 +56,7 @@ public class CommunityDAO {
 				try {
 					conn();
 					
-<<<<<<< HEAD
-					String sql = "insert into community values(?,?,?,?)";
-=======
-					
-					
 					String sql = "insert into community values(num_board.nextval, ?,?,?,?, sysdate )";
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/WepPT.git
 					// 3. sql巩 角青按眉(Prepared Statement)积己
 					pst = conn.prepareStatement(sql);
 					
