@@ -18,6 +18,8 @@ create table member (
     height float not null,
     weight float not null
 );
+-- 포르필 사진 경로 저장을 위한 컬럼 추가
+alter table member add profile varchar2(50);
 
 insert into member values ('0', 'man', '123', 'kite', 20, '1', 60, 100, 100, 80);
 insert into member values ('0', 'woman', '123', 'kite', 20, '2', 60, 100, 100, 80);
@@ -25,6 +27,7 @@ insert into member values ('3', 'mem', '123', 'kite', 20, '1', 60, 100, 100, 80)
 insert into member values ('3', 'women', '123', 'kite', 20, '2', 60, 100, 100, 80);
 
 insert into member values ('a', 'kite', '123', 'kite', 20, '0203120', 'sdksf@#nag', 100, 100, 240);
+
 
 select * from member;
 

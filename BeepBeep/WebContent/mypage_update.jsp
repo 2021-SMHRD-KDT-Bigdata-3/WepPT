@@ -225,6 +225,12 @@
     display:none;
   }
 }
+img {
+	height:200px;
+	width:200px;
+	border:1px;
+	border-radius:50%;
+}
 .
 		</style>
 		
@@ -250,7 +256,7 @@
 			  document.getElementById(sideLine).classList.add('active_category');
 			}
 		</script>
-		
+		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
 
@@ -297,20 +303,19 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 						</ul>
 					</nav>
 	<!-- 회원정보칸 -->
-	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-<form action = "update" method="post">
+<form name = "profile" enctype="multipart/form-data">
 <div class="back_profile" style="background-color: ghostwhite;">
   <div class="back_img" style="background-image: url('http://file.trip-term.com:81/bamboo.jpg')"></div>
-  
 <div class="profile_page">
   <div class="profile_bar">
     <div class="profile_img">
       <span class="p_img" style="background-image: url('http://file.trip-term.com:81/sample.jpg">
+      <img src = "<%= dto.getProfile()%>" onerror = "this.src = 'images/dog.jpg'">
       </span>
     </div>
     <div class="profiles">
       <div class="profile_detail">
-        <h2><%=dto.getWeight() %></h2>
+        <h3><%=dto.getWeight() %></h3>
         <div class="profiles">
         <p><%= dto.getTarget() %></p>
         <p>목표까지 : <%= Integer.parseInt(dto.getTarget()) - dto.getWeight() %></p>
@@ -321,6 +326,11 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
       		out.print("다이어트");
       	}
           %></p>
+		
+		<input type="file" accept="jpg" name = "fileName">
+		<button type="submit" formaction = "updateProfile"
+				formmethod = "post">프로필 사진 변경</button>
+          <!-- <input type="submit" value = "프로필 사진 변경"> -->
         </div>
       </div>
     </div>
@@ -406,14 +416,15 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           </div>
         </div>
       </div>
+  		
     </div>
   </div>
-  <input type="submit" value="정보 수정">
-  </form>
+  <button type="submit" formaction = "update"
+				formmethod = "post">정보 수정</button>
 </div>
   <div class="temporary_footer"></div>
 </div>
-
+</form>
 <div class="icon_bar">
   <span><i id="h_footer" onclick="change_menu('h_footer','main_body1');" class="fas fa-home f_icon"></i></span>
   <span><i id="s_footer" onclick="change_menu('s_footer','main_body2');" class="fas fa-map-marked-alt f_icon"></i></span>

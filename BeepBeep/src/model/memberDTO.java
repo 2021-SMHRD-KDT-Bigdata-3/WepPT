@@ -12,6 +12,8 @@ public class memberDTO {
 	private String tel;
 	private float height;
 	private float weight;
+	// 프로필 사진 추가를 위한 필드 생성
+	private String profile;
 	
 	public memberDTO(String category, String id, String pw, String name, int age, String gender, String target, String tel,
 			float height, float weight) {
@@ -107,9 +109,14 @@ public class memberDTO {
 		this.weight = weight;
 	}
 
+	// 프로필 사진 추가를 위한 setter, getter 생성
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
 	
-	
-	
+	public String getProfile() {
+		return profile;
+	}
 	
 	
 	

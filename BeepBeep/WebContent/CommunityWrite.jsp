@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<div id = "Community">  
+	<div id = "Community"> 
 				<form action="Community" method="post" enctype="multipart/form-data">
 				<table id="list">submit
 
@@ -25,7 +25,7 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input name="fileName" type="file" style="float: right;">			
+							<input name="filename" type="file" style="float: right;">			
 							<textarea name="content" rows="10" style="resize: none;"></textarea>	
 						</td>
 					</tr>

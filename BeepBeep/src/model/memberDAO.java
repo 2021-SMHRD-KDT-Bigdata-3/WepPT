@@ -142,7 +142,23 @@ public class memberDAO {
 			return cnt;
 		}
 		
-		
+		public int updateProfile(String id, String fileName) {
+			try {
+				conn();
+				
+				String sql = "update member set profile = ? where id = ?";
+				pst = conn.prepareStatement(sql);
+				pst.setString(1, fileName);
+				pst.setString(2, id);
+				cnt = pst.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			
+			return cnt;
+		}
 		
 		
 		
