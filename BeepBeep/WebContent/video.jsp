@@ -69,7 +69,7 @@ li a:hover:not(.active) {
 }
 </style>
 </head>
-<body>
+<body >
 	
 
 <%
@@ -84,8 +84,8 @@ li a:hover:not(.active) {
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="main.jsp" class="logo"> <span class="symbol"><img
-						src="images/hehe.png" alt="" /></span><span class="title">Web & PT</span>
+				<a href="main.jsp" class="logo"> <span class="symbol"><img style = 'margin-left:320px;'
+						src="images/hehe.png" alt="" /></span><span style = 'font-size:100px;' class="title">Web & PT</span>
 				</a>
 
 				<!-- Nav -->
@@ -112,9 +112,9 @@ li a:hover:not(.active) {
 		</nav>
 
 		<!-- Main -->
-		<div id="main">
+		<div id="main" style = 'margin-left:300px;'>
 			<div class="inner">
-				<h1>부 위 별ㅤ영 상ㅤ추 천</h1>
+				<h1 style = 'margin-left:250px;'>부 위 별ㅤ영 상ㅤ추 천</h1>
 				<ul class = "ass">
 				
 		<% if(dto.getGender().equals("1")){ %>
@@ -177,7 +177,8 @@ li a:hover:not(.active) {
 			</div>
 	</div>
 
-
+<hr>
+<p align = 'center'> WEP & PT ㅤ제휴제안ㅤ|ㅤ개인정보 처리방침ㅤ|ㅤCopyright@WEBPT Corp.ㅤAll Rights Reserved </p>
 	
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%@page import="model.CommunityDAO"%>
+=======
+<%@page import="model.memberDTO"%>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/WepPT.git
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -8,6 +12,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+<%
+	memberDTO dto = (memberDTO)session.getAttribute("info");
+	%>
 	
 	<div>
 		<table>
