@@ -98,9 +98,9 @@ li a:hover:not(.active) {
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="main.jsp" class="logo"> <span class="symbol"><img
-						src="images/hehe.png" alt="" /></span><span class="title">Web & PT</span>
-				</a>
+				<a href="main.jsp" class="logo"> <span class="symbol"><img style = 'margin-left:500px;'
+						src="images/hehe.png" alt="" /></span><span style = 'font-size:100px;'class="title">Web & PT</span>
+				</a><h1  style = 'margin-left:600px;'>맞 춤 형  식 단 ㅤ추 천</h1>
 
 				<!-- Nav -->
 				<nav>
