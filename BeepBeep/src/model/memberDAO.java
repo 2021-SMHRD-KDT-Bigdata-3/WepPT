@@ -1,5 +1,8 @@
 package model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,7 +16,6 @@ public class memberDAO {
 	PreparedStatement pst = null;
 	int cnt=0;
 	memberDTO dto =null;
-	
 	// 데이터페이스와 연결
 		public void conn() {
 			try {
@@ -66,10 +68,10 @@ public class memberDAO {
 			    	String tel = rs.getString("tel");
 			    	float height = rs.getFloat("height");
 			    	float weight = rs.getFloat("weight");
-			    	
+			    	String profile = rs.getString("profile");
 			    	
 			    	//1.내가 더 가지고 오고 싶은 행이 있다면 rs.getString(행이름)
-			    	dto = new memberDTO(category, get_id, get_pw, name, age, gender, target, tel, height, weight);
+			    	dto = new memberDTO(category, get_id, get_pw, name, age, gender, target, tel, height, weight, profile);
 			    	
 			    	System.out.println("로그인 성공");
 			    }
@@ -160,7 +162,30 @@ public class memberDAO {
 			return cnt;
 		}
 		
+		public void copyProfile(String beforePath, String afterPath) {
+			
+			File oriFile = new File(beforePath);
+			File copyfile = new File(afterPath);
+			
+			try {
+				FileInputStream fis = new FileInputStream(oriFile);
+				FileOutputStream fos = new FileOutputStream(copyfile);
+				
+				int fileByte = 0;
+				while((fileByte = fis.read()) != -1) {
+					fos.write(fileByte);
+				}
+				fis.close();
+				fos.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
+		
+		
+		
+		}
 		
 		
 		
@@ -171,4 +196,4 @@ public class memberDAO {
 		
 		
 
-}
+

@@ -16,7 +16,7 @@ public class memberDTO {
 	private String profile;
 	
 	public memberDTO(String category, String id, String pw, String name, int age, String gender, String target, String tel,
-			float height, float weight) {
+			float height, float weight, String profile) {
 		this.category = category;
 		this.id = id;
 		this.pw = pw;
@@ -27,6 +27,7 @@ public class memberDTO {
 		this.tel = tel;
 		this.height = height;
 		this.weight = weight;
+		this.profile = profile;
 	}
 
 	public String getCategory() {

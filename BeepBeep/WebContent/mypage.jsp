@@ -338,7 +338,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
   <div class="profile_bar">
     <div class="profile_img">
       <span class="p_img" style="background-image: url('http://file.trip-term.com:81/sample.jpg">
-      <img src ="<%=dto.getProfile()%>" onerror = "this.src = 'images/dog.jpg'">
+      <img src ="profile/<%=dto.getProfile()%>" onerror = "this.src = 'images/dog.jpg'">
       </span>
     </div>
     <div class="profiles">

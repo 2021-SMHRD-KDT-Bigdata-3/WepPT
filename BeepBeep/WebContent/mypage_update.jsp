@@ -303,14 +303,14 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 						</ul>
 					</nav>
 	<!-- 회원정보칸 -->
-<form name = "profile" enctype="multipart/form-data">
+
 <div class="back_profile" style="background-color: ghostwhite;">
   <div class="back_img" style="background-image: url('http://file.trip-term.com:81/bamboo.jpg')"></div>
 <div class="profile_page">
   <div class="profile_bar">
     <div class="profile_img">
       <span class="p_img" style="background-image: url('http://file.trip-term.com:81/sample.jpg">
-      <img src = "<%= dto.getProfile()%>" onerror = "this.src = 'images/dog.jpg'">
+      <img src = "profile/<%= dto.getProfile()%>" onerror = "this.src = 'images/dog.jpg'">
       </span>
     </div>
     <div class="profiles">
@@ -326,15 +326,17 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
       		out.print("다이어트");
       	}
           %></p>
-		
+		<form id = "profile">
 		<input type="file" accept="jpg" name = "fileName">
 		<button type="submit" formaction = "updateProfile"
-				formmethod = "post">프로필 사진 변경</button>
+				formmethod = "post" formenctype="multipart/form-data" form ="profile">프로필 사진 변경</button>
+		</form>
           <!-- <input type="submit" value = "프로필 사진 변경"> -->
         </div>
       </div>
     </div>
   </div>
+  <form id = "userInfo">
   <div class="user_data">
     <div class="user_basic_header">
     </div>
@@ -416,15 +418,14 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           </div>
         </div>
       </div>
-  		
     </div>
   </div>
   <button type="submit" formaction = "update"
-				formmethod = "post">정보 수정</button>
+				formmethod = "post" form="userInfo">정보 수정</button>
+  </form>
 </div>
   <div class="temporary_footer"></div>
 </div>
-</form>
 <div class="icon_bar">
   <span><i id="h_footer" onclick="change_menu('h_footer','main_body1');" class="fas fa-home f_icon"></i></span>
   <span><i id="s_footer" onclick="change_menu('s_footer','main_body2');" class="fas fa-map-marked-alt f_icon"></i></span>

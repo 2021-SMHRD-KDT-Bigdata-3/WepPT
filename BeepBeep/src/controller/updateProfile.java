@@ -29,15 +29,16 @@ public class updateProfile extends HttpServlet {
 				
 				HttpSession session = request.getSession();
 				memberDTO dto = (memberDTO)session.getAttribute("info");
-				
+				String afterPath = "C:\\Users\\smhrd\\git\\Beep\\BeepBeep\\WebContent\\profile\\";
 				memberDAO dao = new memberDAO();
 				int cnt = dao.updateProfile(dto.getId(), fileName);
-				
 				if(cnt > 0) {
-					response.sendRedirect("mypage_update.jsp");
-					dto.setProfile(savePath + "\\" + fileName);
+					response.sendRedirect("mypage.jsp");
+					dto.setProfile(fileName);
 					System.out.println("프로필 사진 변경 완료");
-					System.out.println(savePath);
+					dao.copyProfile(savePath + "\\" + fileName, afterPath + fileName);
+					System.out.println(savePath + "\\" + fileName);
+					System.out.println(afterPath + fileName);
 				} else {
 					response.sendRedirect("mypage_update.jsp");
 					System.out.println("프로필 사진 변경 실패");
