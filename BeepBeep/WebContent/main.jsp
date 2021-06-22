@@ -29,6 +29,7 @@ h2 {
 		
 		body{
 		zoom: 100% !important;
+		align:'center';
 		}
 		span.title{
    font-size : 50px;
@@ -49,12 +50,12 @@ h2 {
 
 				<!-- Header -->
 					<header id="header">
-						<div class="inner">
+						<div class="inner" >
 							
 							
 							<!-- Logo -->
-								<a href="main.jsp" class="logo">
-									<span class="symbol"><img src="images/hehe.png" alt="" /></span><span class="title">돼지시키들</span>
+								<a href="main.jsp" class="logo" ">
+									<span class="symbol"><img style = 'margin-left:250px;'src="images/hehe.png" alt="" /></span><span class="title" style = 'font-size:80px'>WEB & PT</span>
 								</a>
 
 							<!-- Nav -->
@@ -63,14 +64,14 @@ h2 {
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
 
 										<% if (dto == null) {
-											out.print("<button><a style = 'font-size:30px;' href = 'login'>LOGIN</a></button>");
+											out.print("<button style = 'height:70px;'><a style = 'font-size:30px;' href = 'login'>LOGIN</a></button>");
 											out.print("<span>ㅤ</span>");
-											out.print("<button><a style = 'font-size:30px;' href = 'Join.jsp'>JOIN</a></button>");
+											out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'Join.jsp'>JOIN</a></button>");
 											out.print("<span>ㅤ</span>");
 										} else if (dto.getId() != null) {
-											out.print("<button><a style = 'font-size:30px;' href = 'logout'>LOGOUT</a></button>");
+											out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'logout'>LOGOUT</a></button>");
 											out.print("<span>ㅤ</span>");
-											out.print("<button><a style = 'font-size:30px;' href = 'mypage.jsp'>MY PAGE</a></button>");
+											out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'mypage.jsp'>MY PAGE</a></button>");
 											out.print("<span>ㅤ</span>");
 										}
 										%>
@@ -83,7 +84,7 @@ h2 {
 
 				<!-- Menu -->
 					<nav id="menu">
-						<h2>Menu</h2>
+						<h2 style = 'font-size:50px'>Menu</h2>
 						<ul>
 							<li><a href="main.jsp">메인화면으로</a></li>
 							<li><a href="video.jsp">영상</a></li>
@@ -148,8 +149,8 @@ h2 {
 
 				
 						</div>
-
-
+<hr>
+<p align = 'center'> WEP & PT ㅤ제휴제안ㅤ|ㅤ개인정보 처리방침ㅤ|ㅤCopyright@WEBPT Corp.ㅤAll Rights Reserved </p>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>

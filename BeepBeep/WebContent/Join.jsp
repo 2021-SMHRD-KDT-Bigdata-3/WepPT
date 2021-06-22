@@ -158,7 +158,7 @@
                             <li class="nav-item">
                             </li>
                         </ul>
-                        <form action="http://127.0.0.1:5000/" method="post">
+                        <form action="http://127.0.0.1:5001/" method="post">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">WEB & PT 회원가입</h3>
@@ -198,7 +198,7 @@
                                             <input style = "font-size : 30px;" type="text" class="form-control" placeholder="목표 몸무게" name="target" />
                                         </div>
                                         <div class="form-group">
-                                            <input style = "font-size : 30px;" type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함" name="email" />
+                                            <input style = "font-size : 30px;" type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="휴대폰 번호 - 미포함"  />
                                         </div>
                                          <div class="form-group">
                                             <input style = "font-size : 30px;" type="text" class="form-control" placeholder="키" name="height" />
