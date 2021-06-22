@@ -85,6 +85,7 @@ h2 {
 				<!-- Menu -->
 					<nav id="menu">
 						<h2 style = 'font-size:50px'>Menu</h2>
+						
 						<ul>
 							<li><a href="main.jsp">메인화면으로</a></li>
 							<li><a href="video.jsp">영상</a></li>
@@ -172,21 +173,7 @@ h2 {
 		
 		
 		
-		<script>// 왜 안뜨지?...
-		let article = document.getElementsByClassName("article");
-		
-			article.onclick = function () {
-			
-			<% if( dto == null ){   %>
-            alert("로그인 후 이용 가능합니다");
-            <%
-            
-			}%>
-    }
 	
-		
-		
-		</script>
 		
 		
 		
