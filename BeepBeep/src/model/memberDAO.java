@@ -62,7 +62,7 @@ public class memberDAO {
 			    	String name = rs.getString("name");
 			    	int age = rs.getInt("age");
 			    	String gender = rs.getString("gender");
-			    	String email = rs.getString("email");
+			    	String email = rs.getString("target");
 			    	String tel = rs.getString("tel");
 			    	float height = rs.getFloat("height");
 			    	float weight = rs.getFloat("weight");

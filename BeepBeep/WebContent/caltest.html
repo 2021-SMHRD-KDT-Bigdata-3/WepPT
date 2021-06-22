@@ -5,59 +5,6 @@
 <link href='test/packages/core/main.css' rel='stylesheet' />
 <link href='test/packages/daygrid/main.css' rel='stylesheet' />
 <link href='test/packages/timegrid/main.css' rel='stylesheet' />
-<script src='test/core/locales/all.js'></script>
-<script src='test/packages/core/main.js'></script>
-<script src='test/packages/interaction/main.js'></script>
-<script src='test/packages/daygrid/main.js'></script>
-<script src='test/packages/timegrid/main.js'></script>
-<script>
-
-
-// 시부랄 이제야 되네,,,,,,, 
-// 이거 하나라도 지우면 안됩니당 그럼 기능 안먹어요 !
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
-      header: {
-        left: 'prev, next, today',
-        center: 'title',
-        right: 'dayGridMonth, timeGridWeek, timeGridDay',
-      },
-      locale: 'ko',
-      defaultDate: '2021-06-21', //지금 날짜로 기본값 설정
-      navLinks: true, 
-      selectable: true,
-      selectMirror: true,
-      select: function(start, end, allDay, jsEvent, view) {
-		console.log(start);
-    	var title = prompt('이벤트 적용될 글 내용적어:');
-        if (title) {
-          calendar.addEvent({
-            title: title,
-            start: start,
-            end: end,
-            allDay: allDay
-          })
-        }
-        calendar.unselect()
-      },
-      editable: true,
-      eventLimit: true, 
-      //예로 넣어본 이벤트들
-      events: [
-        {
-          title: '모든 이벤트',
-          start: '2021-06-01'
-        }
-      ]
-    });
-
-    calendar.render();
-  });
-
-</script>
 <!-- 스타일 적용 조금만 줌 -->
 <style>
   body {
@@ -79,5 +26,65 @@
 
   <div id='calendar'></div>
 
+<script src='test/packages/core/locales/ko.js'></script>
+<script src='test/packages/core/main.js'></script>
+<script src='test/packages/interaction/main.js'></script>
+<script src='test/packages/daygrid/main.js'></script>
+<script src='test/packages/timegrid/main.js'></script>
+<script src='test/packages/moment/main.js'></script>
+<script src='test/packages/testCalendar/js/moment.min.js'></script>
+<script src='test/packages/list/main.js'></script>
+<script src='test/packages/rrule/main.js'></script>
+<script>
+
+
+// 시부랄 이제야 되네,,,,,,, 
+// 이거 하나라도 지우면 안됩니당 그럼 기능 안먹어요 !
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+      header: {
+        left: 'prev, next, today',
+        center: 'title',
+        right: 'dayGridMonth, timeGridWeek, timeGridDay',
+      },
+      locale: 'ko',
+      defaultDate: '2021-06-22', //지금 날짜로 기본값 설정
+      navLinks: true, 
+      selectable: true,
+      selectOverlap:function(event){
+    	  
+      },
+      selectMirror: true,
+      select: function(start, end, allDay) {
+    	alert(start);
+    	var title = prompt('이벤트 적용될 글 내용적어:');
+        if (title) {
+          calendar.addEvent({
+            title: title,
+            start: start,
+            end: end,
+            allDay: allDay
+          })
+        }
+        calendar.unselect()
+      },
+      editable: true,
+      eventLimit: true,
+      //예로 넣어본 이벤트들
+      events: [
+        {
+          title: '모든 이벤트',
+          start: '2021-06-01'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script>
 </body>
 </html>
