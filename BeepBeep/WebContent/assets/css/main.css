@@ -28,8 +28,6 @@ section, summary, time, mark, audio, video {
 
 
 
-
-
 #menu > div > ul > li:nth-child(3) > a:active{
 	
 }
@@ -2426,7 +2424,7 @@ input, select, textarea {
 			font-size: 0.9em;
 			font-weight: 900;
 			padding: 0 0.75em 0.75em 0.75em;
-			text-align: left;
+			text-align: center;
 		}
 
 		table thead {
@@ -2485,7 +2483,6 @@ input, select, textarea {
 		color: #585858 !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.8em;
 		font-weight: 900;
 		height: 3.5em;
 		letter-spacing: 0.35em;

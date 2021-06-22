@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+		
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap" rel="stylesheet">
 
@@ -29,7 +29,7 @@
     font-style: normal;
 }
 
-body {
+body, input {
 	font-family:'twayair';
 	font-size:30px;
 }
@@ -38,6 +38,7 @@ body {
 		* {
   margin:0px;
   padding:0px;
+  align:center;
 }
 
 .back_profile{
@@ -250,7 +251,6 @@ body {
     display:none;
   }
 }
-
 img {
 	height:200px;
 	width:200px;
@@ -258,6 +258,10 @@ img {
 	border-radius:50%;
 }
 .
+input {
+margin:0 auto;
+}
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
 		</style>
 		
 		<script>
@@ -282,7 +286,7 @@ img {
 			  document.getElementById(sideLine).classList.add('active_category');
 			}
 		</script>
-		
+		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
 
@@ -299,12 +303,12 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 
 				<!-- Header -->
 					<header id="header" style = "padding-left: -500px;">
-						<div class="inner" style = "width:1200px; ">
+						<div class="inner" style = "width:900px; ">
 
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">
 									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
-									<span class="title">Only <%= dto.getName()%>'s Page<span>
+									<span class="title">회원 정보 수정</span>
 								</a>
 
 							<!-- Nav 옆에 세줄로 된 메뉴바 -->
@@ -330,62 +334,74 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 					</nav>
 					
 	<!-- 회원정보칸 -->
-	
+
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <div class="back_profile" style="background-color: ghostwhite;">
   <div class="back_img" style="background-image: url('http://file.trip-term.com:81/bamboo.jpg')"></div>
-  <p>ㅤ</p>
 <div class="profile_page">
   <div class="profile_bar">
     <div class="profile_img">
       <span class="p_img" style="background-image: url('http://file.trip-term.com:81/sample.jpg">
-      <img src ="profile/<%=dto.getProfile()%>" onerror = "this.src = 'images/dog.jpg'">
+      <img src = "profile/<%= dto.getProfile()%>" onerror = "this.src = 'images/dog.jpg'">
       </span>
     </div>
     <div class="profiles">
       <div class="profile_detail">
-        <h3>현재 몸무게 : <%=dto.getWeight() %></h3>
+        <h3><%=dto.getWeight() %></h3>
         <div class="profiles">
-        <h3>목표 : <%= dto.getTarget()  %></h3><br>
-        <h3>목표까지! <%= Integer.parseInt(dto.getTarget()) -dto.getWeight() %></h3><br>
+        <p><%= dto.getTarget() %></p>
+        <p>목표까지 : <%= Integer.parseInt(dto.getTarget()) - dto.getWeight() %></p>
           <p><%
           if(dto.getCategory().equals("0")){
-      		out.print("<h3>Type : 벌크업</h3>");
+      		out.print("벌크업");
       	} else if(dto.getCategory().equals("3")){
-      		out.print("<h3>Type : 다이어트</h3>");
+      		out.print("다이어트");
       	}
           %></p>
+		<form id = "profile">
+		<input type="file" accept="jpg" name = "fileName">
+		<button type="submit" formaction = "updateProfile"
+				formmethod = "post" formenctype="multipart/form-data" form ="profile">프로필 사진 변경</button>
+		</form>
+          <!-- <input type="submit" value = "프로필 사진 변경"> -->
         </div>
       </div>
     </div>
   </div>
-      <p>ㅤ</p>
+  <form id = "userInfo">
   <div class="user_data">
     <div class="user_basic_header">
     </div>
-
     <div class="user_basic">
-      <div style = 'height:500px;' class="user_category">
+      <div class="user_category">
         <ul>
           <li id="h_category1" onclick="change_category('h_category1','h_detail1')">개인정보</li>
           <li id="h_category2" onclick="change_category('h_category2','h_detail2')">회원정보</li>
           <li id="h_category3" onclick="change_category('h_category3','h_detail3')">나의상태</li>
+          <li id="h_category4" onclick="change_category('h_category4','h_detail4')">알림설정</li>
         </ul>
       </div>
-      <div style = 'height:500px;' class="user_detail">
+      <div class="user_detail">
         <div id="h_detail1">
           <div class="user_detail_head">ID
             <span class="edit_detail"><%= dto.getId() %></span>
           </div>
           <div class="user_detail_head">PW
-            <span class="edit_detail"><%= dto.getPw() %></span>
+            <span class="edit_detail">
+            	<input type="text" name = 'pw'>
+            </span>
           </div>
         </div>  
         <div id="h_detail2">
           <div class="user_detail_head">몸무게
-            <span class="edit_detail"><%= dto.getWeight() %></span>
+            <span class="edit_detail">
+            	<input type="text" name = "weight">
+            </span>
           </div>
           <div class="user_detail_head">키
-            <span class="edit_detail"><%= dto.getHeight() %></span>
+            <span class="edit_detail">
+            	<input type="text" name = "height">
+            </span>
           </div>
         </div>
          <div id="h_detail3">
@@ -408,37 +424,52 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
             %></span>
           </div>
           <div class="user_detail_head">목표몸무게 <!-- 본인이 이루고 싶은 몸무게..받아와야하지 않나 회원가입에서 받아오기-->
-            <span class="edit_detail"><%= dto.getTarget() %></span>
+            <span class="edit_detail">
+            	<input type="text" name = "target">
+            </span>
           </div>
           <div class="user_detail_head">현재BMI지수 <!-- 몸무게와 키를 받아와서 보여주기 -->
             <span class="edit_detail"><%= dto.getWeight()/(dto.getHeight()/100)*(dto.getHeight()/100) %></span>
           </div>
         </div>
         <div id="h_detail4">
-          <div class="user_detail_head">
-            <span class="edit_detail"></span>
+          <div class="user_detail_head">알람설정(그냥 보기용)
+            <span class="edit_detail">DB 에서 불러온 값</span>
           </div>
-          <div class="user_detail_head">
-            <span class="edit_detail"></span>
+          <div class="user_detail_head">푸쉬알람
+            <span class="edit_detail">DB 에서 불러온 값</span>
           </div>
-          <div class="user_detail_head">
-            <span class="edit_detail"></span>
+          <div class="user_detail_head">식사시간알람
+            <span class="edit_detail">DB 에서 불러온 값</span>
           </div>
-          <div class="user_detail_head">
-            <span class="edit_detail"></span>
+          <div class="user_detail_head">체중측정알람
+            <span class="edit_detail">DB 에서 불러온 값</span>
           </div>
-          <div class="user_detail_head">
-            <span class="edit_detail"></span>
+          <div class="user_detail_head">제품추천알람
+            <span class="edit_detail">DB 에서 불러온 값</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <button type="submit" formaction = "update"
+				formmethod = "post" form="userInfo">정보 수정</button>
+=======
+  
+  
+  <form action = "update" method="post">
   <p>ㅤ</p>
-  <div>
-      <button style = 'font-size:30px; margin-left:150px;'><a href="logout">로그아웃</a></button>
-      <button style = 'font-size:30px; margin-left:100px;'><a href="mypage_update22222.jsp">정보 수정</a></button>
-  </div>
+  <input style = 'width: 300px; height:100px;' type="text" name = 'pw' placeholder = "변경할 비밀번호 입력">
+  <p>ㅤ</p>
+  <input style = ' width: 300px; height:100px;' type="text" name = "weight" placeholder = "몸무게 입력">
+  <p>ㅤ</p>
+  <input style = 'width: 300px; height:100px;' type="text" name = "height" placeholder = "키 입력">
+  <p>ㅤ</p>
+  <input style = 'width: 300px; height:100px;' type="text" name = "target" placeholder = "목표 몸무게 입력">
+  <p>ㅤ</p>
+  <input style = 'margin-left:1050px; width: 350px; height:100px' type="submit" value="정보수정 완료">
+  <p>ㅤ</p>
+  </form>
 </div>
   <div class="temporary_footer"></div>
 </div>
@@ -452,45 +483,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 			
 			
 			
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner" >
-							<section>
-								<h2>불편사항을 적어주세요</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input style = 'font-size:30px' type="text" name="name" id="name"  placeholder=<%= dto.getId() %> />
-										</div>
-										<div class="field half">
-											<input style = 'font-size:30px' type="email" name="email" id="email" placeholder="제목" />
-										</div>
-										<div class="field">
-											<textarea style = 'font-size:30px; margin-bottom:10px;' name="message" id="message" placeholder="내용"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="전송" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>pt 소셜</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-							</ul>
-						</div>
-					</footer>
+			
 
 			</div>
 

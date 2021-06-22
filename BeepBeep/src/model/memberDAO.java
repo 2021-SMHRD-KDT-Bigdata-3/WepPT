@@ -1,5 +1,8 @@
 package model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,7 +16,6 @@ public class memberDAO {
 	PreparedStatement pst = null;
 	int cnt=0;
 	memberDTO dto =null;
-	
 	// 데이터페이스와 연결
 		public void conn() {
 			try {
@@ -62,14 +64,14 @@ public class memberDAO {
 			    	String name = rs.getString("name");
 			    	int age = rs.getInt("age");
 			    	String gender = rs.getString("gender");
-			    	int target = rs.getInt("target");
+			    	String target = rs.getString("target");
 			    	String tel = rs.getString("tel");
 			    	float height = rs.getFloat("height");
 			    	float weight = rs.getFloat("weight");
-			    	
+			    	String profile = rs.getString("profile");
 			    	
 			    	//1.내가 더 가지고 오고 싶은 행이 있다면 rs.getString(행이름)
-			    	dto = new memberDTO(category, get_id, get_pw, name, age, gender, target, tel, height, weight);
+			    	dto = new memberDTO(category, get_id, get_pw, name, age, gender, target, tel, height, weight, profile);
 			    	
 			    	System.out.println("로그인 성공");
 			    }
@@ -85,7 +87,7 @@ public class memberDAO {
 
 		
 		// 회원가입
-		public int join(String id, String pw, String name, int age, int gender, int target, String tel, float height, float weight) {
+		public int join(String id, String pw, String name, int age, int gender, String target, String tel, float height, float weight) {
 
 			// 런타임오류 : 실행했을 때 발생하는 오류 -> 예외처리
 			try {
@@ -101,7 +103,7 @@ public class memberDAO {
 				pst.setString(3, name);
 				pst.setInt(4, age);
 				pst.setInt(5, gender);
-				pst.setInt(6, target);
+				pst.setString(6, target);
 				pst.setString(7, tel);
 				pst.setFloat(8, height);
 				pst.setFloat(9, weight);
@@ -118,9 +120,72 @@ public class memberDAO {
 			return cnt;
 		}
 		
+		public int update(String id, String pw, float weight, float height, String target) {
+			try {
+				conn();
+				
+				String sql = "update member set pw = ?, weight = ?, height = ?, target = ? where id = ?";
+				pst = conn.prepareStatement(sql);
+				pst.setString(1, pw);
+				pst.setFloat(2, height);
+				pst.setFloat(3, weight);
+				pst.setString(4, target);
+				pst.setString(5, id);
+				
+				cnt = pst.executeUpdate();
+			} catch (Exception e) {
+				System.out.println("정보수정 실패");
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			
+			
+			return cnt;
+		}
+		
+		public int updateProfile(String id, String fileName) {
+			try {
+				conn();
+				
+				String sql = "update member set profile = ? where id = ?";
+				pst = conn.prepareStatement(sql);
+				pst.setString(1, fileName);
+				pst.setString(2, id);
+				cnt = pst.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			
+			return cnt;
+		}
+		
+		public void copyProfile(String beforePath, String afterPath) {
+			
+			File oriFile = new File(beforePath);
+			File copyfile = new File(afterPath);
+			
+			try {
+				FileInputStream fis = new FileInputStream(oriFile);
+				FileOutputStream fos = new FileOutputStream(copyfile);
+				
+				int fileByte = 0;
+				while((fileByte = fis.read()) != -1) {
+					fos.write(fileByte);
+				}
+				fis.close();
+				fos.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 		
 		
+		
+		}
 		
 		
 		
@@ -131,4 +196,4 @@ public class memberDAO {
 		
 		
 
-}
+

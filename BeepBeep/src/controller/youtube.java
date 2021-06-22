@@ -14,6 +14,8 @@ import model.youtubeDTO;
 
 public class youtube {
 	
+	
+	
 	HttpServletRequest request;
 	HttpServletResponse response;
 	HttpSession session;
@@ -21,6 +23,7 @@ public class youtube {
 	youtubeDAO dao;
 	memberDTO get_dto;
 	ArrayList<youtubeDTO> al;
+	
 	public youtube(HttpServletRequest request, HttpSession session) {
 		this.request = request;
 		this.session = session;

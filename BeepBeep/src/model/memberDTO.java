@@ -8,13 +8,15 @@ public class memberDTO {
 	private String name;
 	private int age;
 	private String gender;
-	private int target;
+	private String target;
 	private String tel;
 	private float height;
 	private float weight;
+	// 프로필 사진 추가를 위한 필드 생성
+	private String profile;
 	
-	public memberDTO(String category, String id, String pw, String name, int age, String gender, int target, String tel,
-			float height, float weight) {
+	public memberDTO(String category, String id, String pw, String name, int age, String gender, String target, String tel,
+			float height, float weight, String profile) {
 		this.category = category;
 		this.id = id;
 		this.pw = pw;
@@ -25,6 +27,7 @@ public class memberDTO {
 		this.tel = tel;
 		this.height = height;
 		this.weight = weight;
+		this.profile = profile;
 	}
 
 	public String getCategory() {
@@ -75,11 +78,11 @@ public class memberDTO {
 		this.gender = gender;
 	}
 
-	public int getTarget() {
+	public String getTarget() {
 		return target;
 	}
 
-	public void setTarget(int target) {
+	public void setTarget(String target) {
 		this.target = target;
 	}
 
@@ -107,9 +110,14 @@ public class memberDTO {
 		this.weight = weight;
 	}
 
+	// 프로필 사진 추가를 위한 setter, getter 생성
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
 	
-	
-	
+	public String getProfile() {
+		return profile;
+	}
 	
 	
 	
