@@ -24,7 +24,7 @@
 						<td colspan="2">내용</td>
 					</tr>
 					<tr>
-						<td colspan="2">
+						<td colspan="2"> <!-- 변수중복?????어디서 변수랑 중복이라는 거야어디어디어디어디 -->
 							<input name="fileName" type="file" style="float: right;">			
 							<textarea name="content" rows="10" style="resize: none;"></textarea>	
 						</td>

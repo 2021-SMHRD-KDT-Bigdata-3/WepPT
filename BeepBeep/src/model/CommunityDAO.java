@@ -54,7 +54,7 @@ public class CommunityDAO {
 				try {
 					conn();
 					
-					String sql = "insert into member values(?,?,?,?)";
+					String sql = "insert into community values(?,?,?,?)";
 					// 3. sql巩 角青按眉(Prepared Statement)积己
 					pst = conn.prepareStatement(sql);
 

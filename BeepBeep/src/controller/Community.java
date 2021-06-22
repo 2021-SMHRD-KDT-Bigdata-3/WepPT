@@ -38,7 +38,7 @@ public class Community extends HttpServlet {
 		//값 받아오기
 		String title = request.getParameter("title");
 		String id = request.getParameter("id");
-		String filename = URLEncoder.encode(multi.getFilesystemName("filename"), "EUC-KR");
+		String filename = URLEncoder.encode(multi.getFilesystemName("fileName"), "EUC-KR");
 		String content = request.getParameter("content");
 		
 		//dto, dao 생성
