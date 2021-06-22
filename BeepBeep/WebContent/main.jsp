@@ -85,6 +85,7 @@ h2 {
 				<!-- Menu -->
 					<nav id="menu">
 						<h2 style = 'font-size:50px'>Menu</h2>
+						
 						<ul>
 							<li><a href="main.jsp">메인화면으로</a></li>
 							<li><a href="video.jsp">영상</a></li>
@@ -98,44 +99,60 @@ h2 {
 					<div id="main">
 						<div class="inner">
 							<section class="tiles">
-								<article class="style1">
+								<article class="style1 article">
 									<span class="image">
 										<img src="images/video.jpg" alt="" />
 									</span>
-									<a href="video.jsp">
+									<% if (dto == null) {
+										out.print("<a href='main.jsp'>");
+									}else{
+										out.print("<a href='video.jsp'>");
+									}%>
 										<h2>영상</h2>
 										<div class="content">
 											<p>최적의 알고리즘으로 당신의 운동을 추천해줍니다.</p>
 										</div>
 									</a>
 								</article>
-								<article class="style2">
+								<article class="style2 article">
 									<span class="image">
 										<img src="images/recommend.jpg" alt="" />
 									</span>
-									<a href="recommend.jsp">
+									<% if (dto == null) {
+										out.print("<a href='main.jsp'>");
+									}else{
+										out.print("<a href='recommend.jsp'>");
+									}%>
 										<h2>식단추천</h2>
 										<div class="content">
 											<p>당신의 건강한 식습관을 개선해드립니다.</p>
 										</div>
 									</a>
 								</article>
-								<article class="style3">
+								<article class="style3 article">
 									<span class="image">
 										<img src="images/meal.jpg" alt="" />
 									</span>
-									<a href="Community.jsp">
+										<% if (dto == null) {
+										out.print("<a href='main.jsp'>");
+									}else{
+										out.print("<a href='Community.jsp'>");
+									}%>
 										<h2>커뮤니티</h2>
 										<div class="content">
 											<p>회원들과 운동일지를 공유해 보아요!</p>
 										</div>
 									</a>
 								</article>
-								<article class="style4">
+								<article class="style4 article">
 									<span class="image">
 										<img src="images/calendar.png" alt="" />
 									</span>
-									<a href="caltest.html">
+									<% if (dto == null) {
+										out.print("<a href='main.jsp'>");
+									}else{
+										out.print("<a href='caltest.html'>");
+									}%>
 										<h2>캘린더</h2>
 										<div class="content">
 											<p>당신의 식단 일지 운동 기록등을 해줍니다.</p>
@@ -151,6 +168,33 @@ h2 {
 						</div>
 <hr>
 <p align = 'center'> WEP & PT ㅤ제휴제안ㅤ|ㅤ개인정보 처리방침ㅤ|ㅤCopyright@WEBPT Corp.ㅤAll Rights Reserved </p>
+		
+		
+		
+		
+		
+		<script>// 왜 안뜨지?...
+		let article = document.getElementsByClassName("article");
+		
+			article.onclick = function () {
+			
+			<% if( dto == null ){   %>
+            alert("로그인 후 이용 가능합니다");
+            <%
+            
+			}%>
+    }
+	
+		
+		
+		</script>
+		
+		
+		
+		
+		
+		
+		
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>

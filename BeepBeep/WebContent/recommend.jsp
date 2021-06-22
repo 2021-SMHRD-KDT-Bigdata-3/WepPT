@@ -51,6 +51,24 @@ img{
 width : 200px;
 height:200px;}
 
+<<<<<<< HEAD
+.test{
+font-size: 21px;
+padding:0 0.75em 0.75em 0.75em;
+text-align: center;
+        animation-name: big;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-delay: 2s;
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+        animation-fill-mode: none;
+        animation-play-state: running;
+}
+
+table tr>td{
+    vertical-align: middle;
+=======
 .ass {
 	list-style-type: none;
 	margin: 0;
@@ -80,6 +98,7 @@ li a:hover:not(.active) {
 
 .active:hover {
 	background-color: #4CAF50;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/WepPT.git
 }
 </style>
 </head>
@@ -98,9 +117,9 @@ li a:hover:not(.active) {
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="main.jsp" class="logo"> <span class="symbol"><img
-						src="images/hehe.png" alt="" /></span><span class="title">Web & PT</span>
-				</a>
+				<a href="main.jsp" class="logo"> <span class="symbol"><img style = 'margin-left:500px;'
+						src="images/hehe.png" alt="" /></span><span style = 'font-size:100px;'class="title">Web & PT</span>
+				</a><h1  style = 'margin-left:600px;'>맞 춤 형  식 단 ㅤ추 천</h1>
 
 				<!-- Nav -->
 				<nav>
@@ -152,18 +171,20 @@ li a:hover:not(.active) {
 							
 								
     <table id = "testTable" class="sortable" border="1px">
+    <thead>
         <tr>
-            <th>img</th>
-            <th>name</th>
-            <th>칼로리</th>  
-            <th>탄수화물</th>
-            <th>단백질</th>
-            <th>지방</th>
+            <th class="test">이미지</th>
+            <th class="test">제품이름</th>
+            <th class="test">칼로리</th>  
+            <th class="test">탄수화물</th>
+            <th class="test">단백질</th>
+            <th class="test">지방</th>
         </tr>
-        
+    </thead>
+    <tbody>    
             <%for(int i = 0; i < arr.size(); i++){ 
             %>
-            <tr class = 'row'>
+            <tr class = 'row' style = 'display: table-row !important;'>
                <td>
                		<img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%=i+1 %>>
                </td>
@@ -174,21 +195,36 @@ li a:hover:not(.active) {
                <td><%=arr.get(i).getProduct_fat() %></td>
             </tr>
             <%}%>
+            </tbody>
     </table>
        <script src = "JS/jquery-3.6.0.js" type="text/javascript"></script>
     <script>
+    var num = 0;
     const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
 
     const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
         v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
         )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
 
-    document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+   document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+        	num += 1;
         const table = th.closest('table');
         Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
             .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
             .forEach(tr => table.appendChild(tr) );
+        th.onclick = function(){
+        	if(num % 2 == 0){
+     	   th.style.fontWeight = "bolder";
+        	} else{
+        		th.style.backgroundColor == "blue";
+        	}
+        };
     })));
+    
+  /* let th = document.getElementsByclassName("test");
+   th.onclick = function(){
+	   th.style.backgroundColor = "blue";
+   } */
     </script>
 
 		</div>

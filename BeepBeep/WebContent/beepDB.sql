@@ -101,10 +101,15 @@ create table community (
 	id varchar2(50) not null,
 	filename varchar2(200) not null,
 	content varchar2(500) not null,
-	day date,
-    constraint community_fk_id foreign key(id)
-    references member(id)
+	day date
+  --  constraint community_fk_id foreign key(id)
+  --  references member(id)
 )
+
+drop table community cascade constraints;
+
+commit;
+
 
 drop sequence num_board;
 

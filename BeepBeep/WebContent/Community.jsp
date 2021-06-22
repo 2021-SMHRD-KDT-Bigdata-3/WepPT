@@ -1,3 +1,5 @@
+<%@page import="model.CommunityDAO"%>
+<%@page import="model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -7,6 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+<%
+	memberDTO dto = (memberDTO)session.getAttribute("info");
+	%>
 	
 	<div>
 		<table>
@@ -17,10 +24,10 @@
 				<td>날짜</td>
 			</tr>
 			<%
-			
+			CommunityDAO commudao = new CommunityDAO();
 			%>
 			<tr>
-				<td></td> <!-- communityDTO에서 받아오기 -->
+				<td><%= %></td> <!-- communityDTO에서 받아오기 -->
 				<td></td>
 				<td></td>
 				<td></td>

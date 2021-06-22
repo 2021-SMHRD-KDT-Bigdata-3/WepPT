@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +23,7 @@ public class login extends HttpServlet {
 		String id = request.getParameter("id");
  		String pw = request.getParameter("pw");
 			
-		
+		PrintWriter out = response.getWriter();
 		
 		memberDAO dao = new memberDAO();
 		memberDTO get_dto = dao.login(id, pw);
@@ -36,6 +38,7 @@ public class login extends HttpServlet {
 		}else {
 			System.out.println("로그인 실패");
 			response.sendRedirect("Login.jsp");
+			
 		}
 	
 	}
