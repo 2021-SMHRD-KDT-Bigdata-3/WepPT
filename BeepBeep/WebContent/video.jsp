@@ -74,15 +74,6 @@ li a:hover:not(.active) {
 
 <%
 	memberDTO dto = (memberDTO)session.getAttribute("info");
-	//System.out.print("카테고리 :" +dto.getCategory());
-	//System.out.println("성별 :" + dto.getGender());
-	
-	youtubeDAO dao = new youtubeDAO();
-
-	//ArrayList<youtubeDTO> al =  dao.select(dto.getGender());
-	
-	//System.out.println("유튜버 :" + al.get(1).getYoutuber() 
-			//+ "성별 : " +al.get(1).getGender());
 %>
 
 	<!-- Wrapper -->
@@ -147,13 +138,16 @@ li a:hover:not(.active) {
 			
 				
 				<%
+				
 				youtube Youtube = new youtube(request, session);
 				ArrayList<youtubeDTO> al = Youtube.getAl();
-				ArrayList<youtubeDTO> al2 =  dao.select(dto.getGender(), "abs");
+				
+				youtubeDAO dao = new youtubeDAO();
+				ArrayList<youtubeDTO> al2 =  dao.select(dto.getGender(), "chest");
+				
 				System.out.println(al.size());
 				System.out.println(al2.size());
 				
-		
 				//if (al.get(0).getPart()==null){
 				if (al.size()==0){
 					 for (int i = 0; i<5; i++){
@@ -165,10 +159,8 @@ li a:hover:not(.active) {
 				out.print("frameborder='0' ");
 				out.print("allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' ");
 				out.print("allowfullscreen></iframe>");
-		
 					 }
 					}else{
-				
 				for(int j = 0; j <5; j++){
 				Random ran = new Random();
 				out.print("<iframe width='1344' height='700' src = ");

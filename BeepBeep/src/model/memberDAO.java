@@ -132,6 +132,7 @@ public class memberDAO {
 				
 				cnt = pst.executeUpdate();
 			} catch (Exception e) {
+				System.out.println("정보수정 실패");
 				e.printStackTrace();
 			} finally {
 				close();

@@ -435,8 +435,9 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
       </div>
     </div>
   </div>
+  <p>ㅤ</p>
   <div>
-      <button><a href="mypage_update.jsp">정보 수정</a></button>
+      <button style = 'font-size:30px; margin-left:50px;'><a href="mypage_update.jsp">정보 수정</a></button>
   </div>
 </div>
   <div class="temporary_footer"></div>
