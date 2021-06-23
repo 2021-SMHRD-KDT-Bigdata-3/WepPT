@@ -187,12 +187,12 @@ li a:hover:not(.active) {
     <table id = "testTable" class="sortable" border="1px">
     <thead>
         <tr>
-            <th class="test">이미지</th>
-            <th class="test">제품이름</th>
-            <th class="test">칼로리</th>  
-            <th class="test">탄수화물</th>
-            <th class="test">단백질</th>
-            <th class="test">지방</th>
+            <th style = 'font-size:40px' class="test">이미지</th>
+            <th style = 'font-size:40px' class="test">제품이름</th>
+            <th style = 'font-size:40px' class="test">칼로리</th>  
+            <th style = 'font-size:40px' class="test">탄수화물</th>
+            <th style = 'font-size:40px' class="test">단백질</th>
+            <th style = 'font-size:40px' class="test">지방</th>
         </tr>
     </thead>
     <tbody>    
@@ -203,10 +203,10 @@ li a:hover:not(.active) {
                		<img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%= "temp"+i+1 %>>
                </td>
                <td src="#"><%=arr.get(i).getProduct_name() %></td>
-               <td><%=arr.get(i).getProduct_cal() %></td>
-               <td><%=arr.get(i).getProduct_carb() %></td>
-               <td><%=arr.get(i).getProduct_prot() %></td>
-               <td><%=arr.get(i).getProduct_fat() %></td>
+               <td><%=arr.get(i).getProduct_cal() %>Kcal</td>
+               <td><%=arr.get(i).getProduct_carb() %>g</td>
+               <td><%=arr.get(i).getProduct_prot() %>g</td>
+               <td><%=arr.get(i).getProduct_fat() %>g</td>
             </tr>
             <%}%>
             </tbody>
