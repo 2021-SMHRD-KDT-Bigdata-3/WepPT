@@ -113,4 +113,6 @@ commit;
 
 drop sequence num_board;
 
-select * from COMMUNITY;
+select * from COMMUNITY; 
+
+delete from COMMUNITY;

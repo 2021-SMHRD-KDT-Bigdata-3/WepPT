@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Generic - Phantom by HTML5 UP</title>
+		<title>마이페이지</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -79,7 +79,6 @@ body {
   bottom: 0;
   right: 0;
   display: inline-block;
-  background-color: #ccc;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -88,6 +87,7 @@ body {
 
 .profiles{
   width:100%;
+  margin-bottom:50px;
 }
 
 .profile_detail{
@@ -246,9 +246,13 @@ img {
 	height:200px;
 	width:200px;
 	border:1px;
-	border-radius:50%;
+	border-radius:100%;
+	margin-left:550px;
 }
-.
+#por{
+	margin-bottom:40px;
+}
+
 		</style>
 		
 		<script>
@@ -321,7 +325,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 					</nav>
 	<!-- 회원정보칸 -->
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-<form action = "update" method="post">
+
 <div class="back_profile" style="background-color: ghostwhite; padding-bottom:100px;">
   <div class="back_img" style="background-image: url('http://file.trip-term.com:81/bamboo.jpg')"></div>
   
@@ -334,10 +338,12 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
     </div>
     	<form id = "profile">
 		<input type="file" accept="jpg" name = "fileName">
+		<div></div>
 		<button type="submit" formaction = "updateProfile"
-				formmethod = "post" formenctype="multipart/form-data" form ="profile">프로필 사진 변경</button>
+				formmethod = "post" formenctype="multipart/form-data" form ="profile" style = "margin-top:40px;">프로필 사진 변경</button>
 		</form>
   </div>
+  <form id = "userInfo">
   <div class="user_data">
     <div class="user_basic_header">
     </div>
@@ -411,14 +417,14 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
             <span class="edit_detail"></span>
           </div>
           <div class="user_detail_head">
-            <span class="edit_detail">D</span>
+            <span class="edit_detail"></span>
           </div>
         </div>
       </div>
     </div>
   </div>
-    <p style = 'height:50px'>ㅤ</p>
-  <input style = 'margin-left:800px; height:100px' type="submit" value="정보수정 완료">
+  <button type="submit" formaction = "update"
+				formmethod = "post" form ="userInfo" style = "margin-left:1450px; font-size:20px; margin-top:100px;">정보수정 완료</button>
   </form>
 </div>
   <div class="temporary_footer"></div>

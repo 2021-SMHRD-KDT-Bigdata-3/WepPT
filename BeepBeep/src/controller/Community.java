@@ -51,7 +51,7 @@ public class Community extends HttpServlet {
 		int cnt = commudao.CommuWrite(commudto);
 
 		if (cnt > 0) {
-			System.out.println("커뮤니티 글 작성 성공(｡･∀･)ﾉﾞ");
+			System.out.println("커뮤니티 글 작성 성공VV");
 			response.sendRedirect("Community.jsp");
 		} else {
 			System.out.println("커뮤니티 글 작성 실패");
