@@ -37,6 +37,7 @@
 				<td><%= al.get(i).getDay() %></td>
 			</tr>
 			<%} %>
+		<a href="main.jsp"><button id="writer">홈으로</button></a>
 		<a href="CommunityWrite.jsp"><button id="writer">글쓰기</button></a>
 		</table>
 		
