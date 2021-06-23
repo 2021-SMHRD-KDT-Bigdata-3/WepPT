@@ -1,3 +1,4 @@
+<%@page import="model.memberDTO"%>
 <%@page import="model.foodDTO"%>
 <%@page import="model.foodDAO"%>
 <%@page import="controller.youtube"%>
@@ -105,9 +106,6 @@ li a:hover:not(.active) {
 <body>
 	
 
-<%
-	memberDTO dto = (memberDTO)session.getAttribute("info");
-%>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -120,7 +118,7 @@ li a:hover:not(.active) {
 				<a href="main.jsp" class="logo"> <span class="symbol"><img style = 'margin-left:500px;'
 						src="images/hehe.png" alt="" /></span><span style = 'font-size:100px;'class="title">Web & PT</span>
 				</a><h1  style = 'margin-left:600px;'>맞 춤 형  식 단 ㅤ추 천</h1>
-
+					<h3 style = 'margin-left:620px;'> ※ 열 이름 클릭시 정렬할 수 있습니다.</h3>
 				<!-- Nav -->
 				<nav>
 					<ul>
@@ -135,7 +133,6 @@ li a:hover:not(.active) {
 		<nav id="menu">
 			<h2>Menu</h2>
 			<ul>
-
 				<li><a href="main.jsp">메인화면으로</a></li>
 				<li><a href="video.jsp">영상</a></li>
 				<li><a href="recommend.jsp">식단추천</a></li>
@@ -150,7 +147,13 @@ li a:hover:not(.active) {
     	function None() {
     	$('img').each(function(){ //이미지를 배열의 형태로 가져옴 ---> for문을 돌면서 하나씩 뽑아오기
 			$(this).on('error',function(){
-				$('.1').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp01').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp11').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp21').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp31').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp41').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				//이유는 모르겠는데 11,21,31,41 이렇게 동작을 안하길래 그냥 얘 억지로 뺐어요
+				//동작안하는 이유는 좀 찾아봐야 할 거 같은데 일단 해결!
 				$(this).closest('.row').hide();
 				});
     		});
@@ -158,9 +161,19 @@ li a:hover:not(.active) {
     
     </script>
 <%
-   foodDAO dao = new foodDAO();
-   ArrayList<foodDTO> arr = dao.getFood_info();
-   String link = "img/";
+	memberDTO dto = (memberDTO)session.getAttribute("info");
+
+	String category;
+	if(dto.getCategory().equals("0")){
+   	category = "desc";
+	}else{
+   	category = "asc";
+	}
+
+
+	foodDAO dao = new foodDAO();
+	ArrayList<foodDTO> arr = dao.getFood_info(category);
+	String link = "img/";
 %>
 <!-- Wrapper -->
 			<div id="wrapper">
@@ -174,12 +187,12 @@ li a:hover:not(.active) {
     <table id = "testTable" class="sortable" border="1px">
     <thead>
         <tr>
-            <th class="test">이미지</th>
-            <th class="test">제품이름</th>
-            <th class="test">칼로리</th>  
-            <th class="test">탄수화물</th>
-            <th class="test">단백질</th>
-            <th class="test">지방</th>
+            <th style = 'font-size:40px' class="test">이미지</th>
+            <th style = 'font-size:40px' class="test">제품이름</th>
+            <th style = 'font-size:40px' class="test">칼로리</th>  
+            <th style = 'font-size:40px' class="test">탄수화물</th>
+            <th style = 'font-size:40px' class="test">단백질</th>
+            <th style = 'font-size:40px' class="test">지방</th>
         </tr>
     </thead>
     <tbody>    
@@ -187,13 +200,13 @@ li a:hover:not(.active) {
             %>
             <tr class = 'row' style = 'display: table-row !important;'>
                <td>
-               		<img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%=i+1 %>>
+               		<img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%= "temp"+i+1 %>>
                </td>
                <td src="#"><%=arr.get(i).getProduct_name() %></td>
-               <td><%=arr.get(i).getProduct_cal() %></td>
-               <td><%=arr.get(i).getProduct_carb() %></td>
-               <td><%=arr.get(i).getProduct_prot() %></td>
-               <td><%=arr.get(i).getProduct_fat() %></td>
+               <td><%=arr.get(i).getProduct_cal() %>Kcal</td>
+               <td><%=arr.get(i).getProduct_carb() %>g</td>
+               <td><%=arr.get(i).getProduct_prot() %>g</td>
+               <td><%=arr.get(i).getProduct_fat() %>g</td>
             </tr>
             <%}%>
             </tbody>
