@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Generic - Phantom by HTML5 UP</title>
+<title>영상 추천 서비스</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -29,13 +29,23 @@
 body {
 	font-family:'twayair';
 	font-size:30px;
+	zoom: 100% !important;
 }
 
-input {
+input{
 	font-family:'ROKABold';
 	font-size:30px;
 	color : white;
+	
 }
+ input:hover{
+	 transform: scale(1.5);
+	 transition: all 0.5s linear;
+	 transition: transform .50s;
+	 -webkit-transition: 1s;
+  	 transition: 1s;
+	 color: olive; 
+} 
 
 .ass {
 	list-style-type: none;
@@ -67,6 +77,9 @@ li a:hover:not(.active) {
 .active:hover {
 	background-color: #4CAF50;
 }
+
+
+
 </style>
 </head>
 <body >
@@ -118,7 +131,7 @@ li a:hover:not(.active) {
 				<ul class = "ass">
 				
 		<% if(dto.getGender().equals("1")){ %>
-			<form action="video.jsp">
+			<form action="video.jsp" style = "height: 200px; display: table-row;">
 				<input type="submit" name="part" value="back"><span>ㅤ</span>
 				<input type="submit" name="part" value="shoulder"><span>ㅤ</span>
 				<input type="submit" name="part" value="legs"><span>ㅤ</span>
@@ -126,7 +139,7 @@ li a:hover:not(.active) {
 				<input type="submit" name="part" value="chest">
 			</form>
 		<%} else{%>
-			<form action="video.jsp">
+			<form action="video.jsp" style = "height: 200px; display: table-row;">
 				<input type="submit" name="part" value="shoulder"><span>ㅤ</span>
 				<input type="submit" name="part" value="abs"><span>ㅤ</span>
 				<input type="submit" name="part" value="arm"><span>ㅤ</span>
@@ -186,6 +199,18 @@ li a:hover:not(.active) {
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	
+	<!-- 애니메이션효과 -->
+	<script>
+	/* $('input').on('hover', function(){
+		transform: scale( 1.5 );
+	 	transition: all 0.5s linear;
+	 	transition: transform .35s;
+	})
+	} */
+	
+	
+	</script>
 
 
 </body>
