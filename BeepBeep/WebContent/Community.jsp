@@ -256,10 +256,7 @@ img {
 	margin-bottom:40px;
 }
 
-#member{
- padding-left : 500px;
-}	
-	
+
 	
 	
 	</style>
@@ -300,13 +297,13 @@ img {
 	<div>
 		<!-- Header -->
 					<header id="header" style = "padding-left: -500px;">
-						<div class="inner" style = "width:900px; ">
+						<div class="inner" >
 
 							<!-- Logo -->
 							<div>
 								<a href="main.jsp" class="logo">
 									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
-									<span id="membercommu">회원 정보 수정</span>
+									<span>커뮤니티</span>
 								</a>
 							</div>
 							<div id="commutable">
@@ -332,26 +329,7 @@ img {
 								<a href="CommunityWrite.jsp"><button id="writer">글쓰기</button></a>
 							</div>
 							</div>
-		<table border = "1px" align = "center">
-			<tr>
-				<td>번호</td>
-				<td>제목</td>
-				<td>아이디</td>
-				<td>날짜</td>
-			</tr>
-			<%
-			for(int i = 0; i<al.size(); i++){
-			%>
-			<tr>
-				<td><%= i+1 %></td>
-				<td><a href="CommunityView.jsp?num=<%=al.get(i).getNum()%>"><%= al.get(i).getTitle()%></a>  </td>
-				<td><%= al.get(i).getId() %></td>
-				<td><%= al.get(i).getDay() %></td>
-			</tr>
-			<%} %>
-		<a href="main.jsp"><button id="writer">홈으로</button></a>
-		<a href="CommunityWrite.jsp"><button id="writer">글쓰기</button></a>
-		</table>
+		
 		
 		
 	</div>

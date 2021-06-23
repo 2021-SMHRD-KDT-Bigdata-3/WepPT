@@ -261,7 +261,6 @@ img {
 input {
 margin:0 auto;
 }
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
 		</style>
 		
 		<script>
