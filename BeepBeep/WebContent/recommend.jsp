@@ -1,3 +1,4 @@
+<%@page import="model.memberDTO"%>
 <%@page import="model.foodDTO"%>
 <%@page import="model.foodDAO"%>
 <%@page import="controller.youtube"%>
@@ -105,9 +106,6 @@ li a:hover:not(.active) {
 <body>
 	
 
-<%
-	memberDTO dto = (memberDTO)session.getAttribute("info");
-%>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -150,7 +148,13 @@ li a:hover:not(.active) {
     	function None() {
     	$('img').each(function(){ //이미지를 배열의 형태로 가져옴 ---> for문을 돌면서 하나씩 뽑아오기
 			$(this).on('error',function(){
-				$('.1').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp01').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp11').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp21').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp31').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				$('.temp41').closest('.row').hide(); //closest-> 부모요소를 css선택자를 활용해서 가져올 수 있는 기능
+				//이유는 모르겠는데 11,21,31,41 이렇게 동작을 안하길래 그냥 얘 억지로 뺐어요
+				//동작안하는 이유는 좀 찾아봐야 할 거 같은데 일단 해결!
 				$(this).closest('.row').hide();
 				});
     		});
@@ -158,9 +162,19 @@ li a:hover:not(.active) {
     
     </script>
 <%
-   foodDAO dao = new foodDAO();
-   ArrayList<foodDTO> arr = dao.getFood_info();
-   String link = "img/";
+	memberDTO dto = (memberDTO)session.getAttribute("info");
+
+	String category;
+	if(dto.getCategory().equals("0")){
+   	category = "desc";
+	}else{
+   	category = "asc";
+	}
+
+
+	foodDAO dao = new foodDAO();
+	ArrayList<foodDTO> arr = dao.getFood_info(category);
+	String link = "img/";
 %>
 <!-- Wrapper -->
 			<div id="wrapper">
@@ -187,7 +201,7 @@ li a:hover:not(.active) {
             %>
             <tr class = 'row' style = 'display: table-row !important;'>
                <td>
-               		<img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%=i+1 %>>
+               		<img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%= "temp"+i+1 %>>
                </td>
                <td src="#"><%=arr.get(i).getProduct_name() %></td>
                <td><%=arr.get(i).getProduct_cal() %></td>

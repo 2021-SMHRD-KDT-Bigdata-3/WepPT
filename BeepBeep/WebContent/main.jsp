@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Phantom by HTML5 UP</title>
+		<title>∏ﬁ¿Œ</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -35,7 +35,7 @@ h2 {
    font-size : 50px;
 }
 		</style>
-</head>
+</head>  
 
 <body>
 
@@ -55,7 +55,8 @@ h2 {
 							
 							<!-- Logo -->
 								<a href="main.jsp" class="logo" ">
-									<span class="symbol"><img style = 'margin-left:250px;'src="images/hehe.png" alt="" /></span><span class="title" style = 'font-size:80px'>WEB & PT</span>
+									<span class="symbol"><img style = 'margin-left:250px;'src="images/hehe.png" alt="" />
+									</span><span class="title" style = 'font-size:80px'>WEB & PT</span>
 								</a>
 
 							<!-- Nav -->
