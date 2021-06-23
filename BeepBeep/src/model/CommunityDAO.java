@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.connector.Request;
+
 public class CommunityDAO {
 	
 	ResultSet rs = null;
@@ -63,7 +65,7 @@ public class CommunityDAO {
 					// 3. sql문 실행객체(Prepared Statement)생성
 					pst = conn.prepareStatement(sql);
 					
-
+					
 					// 4. 바인드 변수 채우기
 					pst.setString(1, commudto.getTitle());
 					pst.setString(2, commudto.getId());

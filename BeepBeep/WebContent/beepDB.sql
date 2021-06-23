@@ -116,3 +116,7 @@ drop sequence num_board;
 select * from COMMUNITY; 
 
 delete from COMMUNITY;
+
+create sequence num_board;
+start with 1
+increment by 1

@@ -19,7 +19,7 @@ CommunityDTO commudto = commudao.oneSelect(num);  //위에 인트로 받아온 num
 
 
 	<div id = "community">
-				<table id="list" border="1px">
+				<table id="list" border="1px" align="center">
 					<tr>
 						<td>제목</td>
 						<td><%= commudto.getTitle() %></td>

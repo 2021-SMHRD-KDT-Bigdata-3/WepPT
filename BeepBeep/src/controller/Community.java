@@ -36,12 +36,18 @@ public class Community extends HttpServlet {
 				new DefaultFileRenamePolicy());
 
 		HttpSession session = request.getSession();
+		memberDTO dto = (memberDTO)session.getAttribute("info");
 
 		// 값 받아오기
 		String title = multi.getParameter("title");
-		String id = multi.getParameter("id");
+		String id = dto.getId();
 		String filename = URLEncoder.encode(multi.getFilesystemName("fileName"), "EUC-KR");
 		String content = multi.getParameter("content");
+		
+		System.out.println(title);
+		System.out.println(id);
+		System.out.println(filename);
+		System.out.println(content);
 
 		// dto, dao 생성
 		CommunityDTO commudto = new CommunityDTO(title, id, filename, content);
