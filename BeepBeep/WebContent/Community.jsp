@@ -284,7 +284,14 @@ img {
 		}
 	
 	</script>
+
 </head>
+
+
+
+
+
+
 <body>
 
 
@@ -294,18 +301,49 @@ img {
 	ArrayList<CommunityDTO> al = commudao.select();
 	%>
 	
+	<!-- Header -->
+					<header id="header">
+						<div style="margin-left: 300px;"
+						class="inner" >
+							
+							
+							<!-- Logo -->
+								<a href="main.jsp" class="logo" ">
+									<span class="symbol"><img style = 'margin-left:300px;'src="images/hehe.png" alt="" />
+									</span><span class="title" style = 'font-size:80px'>WEB & PT</span>
+								</a>
+
+<nav style = 'right:0'>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+					
+					
+		<!-- Menu -->
+					<nav id="menu">
+						<h2 style = 'font-size:50px'>Menu</h2>
+						
+						<ul>
+							<li><a href="main.jsp">메인화면으로</a></li>
+							<li><a href="video.jsp">영상</a></li>
+							<li><a href="recommend.jsp">식단추천</a></li>
+							<li><a href="meal.jsp">식단</a></li>
+							<li><a href="caltest.html">캘린더</a></li>
+						</ul>
+					</nav>				
+	
+	
+	
 	<div>
 		<!-- Header -->
 					<header id="header" style = "padding-left: -500px;">
 						<div class="inner" >
 
-							<!-- Logo -->
-							<div>
-								<a href="main.jsp" class="logo">
-									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
-									<span>커뮤니티</span>
-								</a>
-							</div>
+							
 							<div id="commutable">
 								<table>
 									<tr>
@@ -330,7 +368,7 @@ img {
 							</div>
 							</div>
 		
-		
+
 		
 	</div>
 	
