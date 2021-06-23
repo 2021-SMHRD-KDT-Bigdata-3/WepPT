@@ -12,10 +12,10 @@ import model.CommunityDAO;
 @WebServlet("/CommunityDelete")
 public class CommunityDelete extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int boardNum = Integer.parseInt(request.getParameter("boardNum"));
+		int community_num = Integer.parseInt(request.getParameter("community_num"));
 		
 		CommunityDAO dao = new CommunityDAO();
-		int cnt = dao.delCommunity(boardNum);
+		int cnt = dao.delCommunity(community_num);
 		
 		if(cnt > 0) {
 			System.out.println("게시글 삭제 성공");

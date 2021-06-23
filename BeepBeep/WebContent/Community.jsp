@@ -362,11 +362,10 @@ img {
 										<td><%= al.get(i).getId() %></td>
 										<td><%= al.get(i).getDay() %></td>
 										<%if(al.get(i).getId().equals(dto.getId())){ %>
-										<td>
-											<form>
-												<button href= "http://localhost:8082/BeepBeep/CommunityDelete?boardNum=<%=al.get(i).getNum()%>">삭제</button>
-											</form>
-										</td>
+										<td> <form action="CommunityDelete">
+												<input type="hidden" name="community_num" value="<%=al.get(i).getNum() %>">
+												<input type="submit" value="삭제">
+											</form> </td>
 										<%} %>
 									</tr>
 									<%} %>
