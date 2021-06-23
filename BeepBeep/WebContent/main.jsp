@@ -100,7 +100,7 @@ h2 {
 					<div id="main">
 						<div class="inner">
 							<section class="tiles">
-								<article class="style1 article">
+								<article id = "article1" class="style1 article">
 									<span class="image">
 										<img src="images/video.jpg" alt="" />
 									</span>
@@ -115,7 +115,7 @@ h2 {
 										</div>
 									</a>
 								</article>
-								<article class="style2 article">
+								<article id = "article2" class="style2 article">
 									<span class="image">
 										<img src="images/recommend.jpg" alt="" />
 									</span>
@@ -130,7 +130,7 @@ h2 {
 										</div>
 									</a>
 								</article>
-								<article class="style3 article">
+								<article id = "article3" class="style3 article">
 									<span class="image">
 										<img src="images/meal.jpg" alt="" />
 									</span>
@@ -145,7 +145,7 @@ h2 {
 										</div>
 									</a>
 								</article>
-								<article class="style4 article">
+								<article id = "article4" class="style4 article">
 									<span class="image">
 										<img src="images/calendar.png" alt="" />
 									</span>
@@ -173,7 +173,35 @@ h2 {
 		
 		
 		
-		
+		<script>
+	
+			let article1 = document.getElementById('article1');
+			let article2 = document.getElementById('article2');
+			let article3 = document.getElementById('article3');
+			let article4 = document.getElementById('article4');
+
+			article1.onclick = function() {
+		<%if (dto == null) {%>
+			alert("로그인 후 이용가능합니다.")
+		<%}%>
+			}
+
+			article2.onclick = function() {
+		<%if (dto == null) {%>
+			alert("로그인 후 이용가능합니다.")
+		<%}%>
+			}
+			article3.onclick = function() {
+		<%if (dto == null) {%>
+			alert("로그인 후 이용가능합니다.")
+		<%}%>
+			}
+			article4.onclick = function() {
+		<%if (dto == null) {%>
+			alert("로그인 후 이용가능합니다.")
+		<%}%>
+			}
+		</script>
 	
 		
 		
