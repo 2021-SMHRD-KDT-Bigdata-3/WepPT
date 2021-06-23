@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.connector.Request;
+
 public class CommunityDAO {
 	
 	ResultSet rs = null;
@@ -63,7 +65,7 @@ public class CommunityDAO {
 					// 3. sql문 실행객체(Prepared Statement)생성
 					pst = conn.prepareStatement(sql);
 					
-
+					
 					// 4. 바인드 변수 채우기
 					pst.setString(1, commudto.getTitle());
 					pst.setString(2, commudto.getId());
@@ -94,7 +96,7 @@ public class CommunityDAO {
 				try {
 					conn();
 					
-					String sql = "select * from Community";
+					String sql = "select * from Community order by num";
 					
 					pst = conn.prepareStatement(sql);
 					
@@ -146,9 +148,9 @@ public class CommunityDAO {
 						
 						commudto = new CommunityDTO(get_num, title, id, fileName, content, day);
 						
-						System.out.println("커뮤니티 글 작성 성공");
+						System.out.println("커뮤니티 글 불러오기 성공");
 					} else {
-						System.out.println("커뮤니티 글 작성 실패");
+						System.out.println("커뮤니티 글 불러오기 실패");
 					}
 
 				} catch (Exception e) {

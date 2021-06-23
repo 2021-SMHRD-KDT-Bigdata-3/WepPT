@@ -17,14 +17,14 @@
 	
 		<form action="Community" method="post" enctype="multipart/form-data">
 			<div id = "Community">  
-				<table id="list">
+				<table id="list" align = "center">
 					<tr>
 						<td>제목</td>
 						<td><input type="text" name="title"> </td>
 					</tr>
 					<tr>
 						<td>아이디</td>
-						<td><input  type="text" name="id"> </td>
+						<td><%= dto.getId() %></td>
 					</tr>
 					<tr>
 						<td colspan="2">내용</td>
