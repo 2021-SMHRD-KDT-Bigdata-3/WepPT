@@ -63,7 +63,7 @@ public class CommunityDAO {
 				try {
 					conn();
 					
-					String sql = "insert into community values(num.nextval, ?,?,?,?, sysdate )";
+					String sql = "insert into community values(community_num.nextval, ?,?,?,?, sysdate )";
 					// 3. sql巩 角青按眉(Prepared Statement)积己
 					pst = conn.prepareStatement(sql);
 					
