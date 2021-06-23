@@ -4,11 +4,12 @@ ALTER TABLE member DROP PRIMARY KEY;
 drop table member cascade constraints;
 
 
+
 -- constraint wmember_pk primary key(category)
 
 create table member (
     category varchar2(50),
-    id varchar2(50) UNIQUE,
+    id varchar2(50),
     pw varchar2(50) not null,
     name varchar2(50) not null ,
     age number not null,
@@ -16,17 +17,17 @@ create table member (
     target varchar2(100) not null,
     tel varchar2(50) not null,
     height float not null,
-    weight float not null
+    weight float not null,
+    constraint members_pk_id primary key(id)
 );
 -- 포르필 사진 경로 저장을 위한 컬럼 추가
 alter table member add profile varchar2(50);
 
 insert into member values ('0', 'man', '123', 'kite', 20, '1', 60, 100, 100, 80);
 insert into member values ('0', 'woman', '123', 'kite', 20, '2', 60, 100, 100, 80);
-insert into member values ('3', 'mem', '123', 'kite', 20, '1', 60, 100, 100, 80);
+insert into member values ('3', 'men', '123', 'kite', 20, '1', 60, 100, 100, 80);
 insert into member values ('3', 'women', '123', 'kite', 20, '2', 60, 100, 100, 80);
 
-insert into member values ('a', 'kite', '123', 'kite', 20, '0203120', 'sdksf@#nag', 100, 100, 240);
 
 
 select * from member;
@@ -101,14 +102,18 @@ create table community (
 	id varchar2(50) not null,
 	filename varchar2(200) not null,
 	content varchar2(500) not null,
-	day date
+	day date,
+	constraint community_pk primary key(num)
   --  constraint community_fk_id foreign key(id)
   --  references member(id)
-)
+);
 
 drop table community cascade constraints;
 
 commit;
+
+create sequence num_board start with 1 increment by 1;
+
 
 
 drop sequence num_board;
@@ -121,4 +126,31 @@ create sequence num_board
 start with 1
 increment by 1;
 
+
+-- 댓글 테이블
+create table comment_board (
+  community_num number,
+  COMMENT_NUM NUMBER NOT NULL,
+  COMMENT_ID VARCHAR2(15),
+  COMMENT_CONTENT VARCHAR2(1000) NOT NULL,
+  COMMENT_DATE DATE,
+  constraint comment_fk_id foreign key(COMMENT_ID)
+  references member(id),
+  constraint comment_fk_num foreign key(community_num)
+  references community(num)
+);
+
+
+create sequence comment_num start with 1 increment by 1;
+
+drop sequence comment_num;
+
+select * from comment_board;
+
+drop table comment_board;
+
+
+
+drop table comment_board cascade constraints;
+commit;
 

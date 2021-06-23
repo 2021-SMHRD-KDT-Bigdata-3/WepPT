@@ -1,3 +1,5 @@
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.net.URLDecoder"%>
 <%@page import="model.memberDTO"%>
 <%@page import="model.foodDTO"%>
 <%@page import="model.foodDAO"%>
@@ -118,7 +120,8 @@ li a:hover:not(.active) {
 				<a href="main.jsp" class="logo"> <span class="symbol"><img style = 'margin-left:500px;'
 						src="images/hehe.png" alt="" /></span><span style = 'font-size:100px;'class="title">Web & PT</span>
 				</a><h1  style = 'margin-left:600px;'>맞 춤 형  식 단 ㅤ추 천</h1>
-					<h3 style = 'margin-left:620px;'> ※ 열 이름 클릭시 정렬할 수 있습니다.</h3>
+					<h3 style = 'margin-left:620px;'> → 열 이름 클릭시 정렬 됩니다.</h3>
+					<h3 style = 'margin-left:620px;'> → 제품 이름 클릭시 사이트로 이동됩니다.</h3>
 				<!-- Nav -->
 				<nav>
 					<ul>
@@ -202,7 +205,7 @@ li a:hover:not(.active) {
                <td>
                		<img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%= "temp"+i+1 %>>
                </td>
-               <td src="#"><%=arr.get(i).getProduct_name() %></td>
+               <td><a href = "https://search.naver.com/search.naver?where=nexearch&sm=top_sly.hst&fbm=1&acr=2&ie=utf8&query=<%=URLEncoder.encode(arr.get(i).getProduct_name(), "utf-8")%>"><%=arr.get(i).getProduct_name()%></a></td>
                <td><%=arr.get(i).getProduct_cal() %>Kcal</td>
                <td><%=arr.get(i).getProduct_carb() %>g</td>
                <td><%=arr.get(i).getProduct_prot() %>g</td>
