@@ -205,7 +205,7 @@ li a:hover:not(.active) {
                <td>
                		<img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%= "temp"+i+1 %>>
                </td>
-               <td><a href = "https://search.naver.com/search.naver?where=nexearch&sm=top_sly.hst&fbm=1&acr=2&ie=utf8&query=<%=URLEncoder.encode(arr.get(i).getProduct_name(), "utf-8")%>"><%=arr.get(i).getProduct_name()%></a></td>
+               <td><a href = "https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=<%=URLEncoder.encode(arr.get(i).getProduct_name(), "utf-8")%>"><%=arr.get(i).getProduct_name()%></a></td>
                <td><%=arr.get(i).getProduct_cal() %>Kcal</td>
                <td><%=arr.get(i).getProduct_carb() %>g</td>
                <td><%=arr.get(i).getProduct_prot() %>g</td>
