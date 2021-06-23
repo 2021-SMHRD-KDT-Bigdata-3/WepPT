@@ -38,8 +38,8 @@ public class Community extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		// 값 받아오기
-		String title = request.getParameter("title");
-		String id = request.getParameter("id");
+		String title = multi.getParameter("title");
+		String id = multi.getParameter("id");
 		String filename = URLEncoder.encode(multi.getFilesystemName("fileName"), "EUC-KR");
 		String content = multi.getParameter("content");
 
@@ -51,7 +51,7 @@ public class Community extends HttpServlet {
 		int cnt = commudao.CommuWrite(commudto);
 
 		if (cnt > 0) {
-			System.out.println("커뮤니티 글 작성 성공(｡･∀･)ﾉﾞ");
+			System.out.println("커뮤니티 글 작성 성공VV");
 			response.sendRedirect("Community.jsp");
 		} else {
 			System.out.println("커뮤니티 글 작성 실패");
