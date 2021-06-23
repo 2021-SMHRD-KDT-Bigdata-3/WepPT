@@ -8,7 +8,6 @@ public class CommentDTO {
 	private String comment_content;
 	
 	
-	
 	public CommentDTO(int community_num, String comment_id, String comment_content) {
 		this.community_num = community_num;
 		this.comment_id = comment_id;

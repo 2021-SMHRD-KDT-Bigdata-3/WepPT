@@ -1,5 +1,8 @@
 package model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -218,6 +221,7 @@ public class CommunityDAO {
 					// 5. sql문 실행하여 결과처리
 					cnt = pst.executeUpdate();
 
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.out.println("댓글작성오류");
@@ -226,5 +230,73 @@ public class CommunityDAO {
 				}
 				return cnt;
 			}
+			
+			
+			
+			public int updateProfile(int num, String fileName) {
+				try {
+					conn();
+					
+					String sql = "update community set filename = ? where num = ?";
+					pst = conn.prepareStatement(sql);
+					pst.setString(1, fileName);
+					pst.setInt(2, num);
+					cnt = pst.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				
+				return cnt;
+			}
+			
+			
+			
+			public void copyFilename(String beforePath, String afterPath) {
+				
+				File oriFile = new File(beforePath);
+				File copyfile = new File(afterPath);
+				
+				try {
+					FileInputStream fis = new FileInputStream(oriFile);
+					FileOutputStream fos = new FileOutputStream(copyfile);
+					
+					int fileByte = 0;
+					while((fileByte = fis.read()) != -1) {
+						fos.write(fileByte);
+					}
+					fis.close();
+					fos.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			public int deleteComment(int comment_num) {
+				try {
+					conn();
+					
+					String sql = "delete from comment_board where comment_num = ?";
+					// 3. sql문 실행객체(Prepared Statement)생성
+					pst = conn.prepareStatement(sql);
+					
+					
+					// 4. 바인드 변수 채우기
+					pst.setInt(1, comment_num);
+
+					// 5. sql문 실행하여 결과처리
+					cnt = pst.executeUpdate();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("댓글삭제안됨");
+				} finally {
+					close();
+				}
+				return cnt;
+			
+			}
+			
 			
 }
