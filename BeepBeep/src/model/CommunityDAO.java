@@ -1,5 +1,8 @@
 package model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,15 +11,19 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.connector.Request;
+
 public class CommunityDAO {
 	
 	ResultSet rs = null;
 	Connection conn = null;
 	PreparedStatement pst = null;
 	ArrayList<CommunityDTO> al = new ArrayList<CommunityDTO>();
+	ArrayList<CommentDTO> al2 = new ArrayList<CommentDTO>();
 	CommunityDTO commudto = null;
 	memberDTO dto =null;
 	int cnt=0;
+	
 	
 	
 	
@@ -59,11 +66,11 @@ public class CommunityDAO {
 				try {
 					conn();
 					
-					String sql = "insert into community values(num_board.nextval, ?,?,?,?, sysdate )";
+					String sql = "insert into community values(community_num.nextval, ?,?,?,?, sysdate )";
 					// 3. sql문 실행객체(Prepared Statement)생성
 					pst = conn.prepareStatement(sql);
 					
-
+					
 					// 4. 바인드 변수 채우기
 					pst.setString(1, commudto.getTitle());
 					pst.setString(2, commudto.getId());
@@ -94,7 +101,7 @@ public class CommunityDAO {
 				try {
 					conn();
 					
-					String sql = "select * from Community";
+					String sql = "select * from Community order by num";
 					
 					pst = conn.prepareStatement(sql);
 					
@@ -146,9 +153,9 @@ public class CommunityDAO {
 						
 						commudto = new CommunityDTO(get_num, title, id, fileName, content, day);
 						
-						System.out.println("커뮤니티 글 작성 성공");
+						System.out.println("커뮤니티 글 불러오기 성공");
 					} else {
-						System.out.println("커뮤니티 글 작성 실패");
+						System.out.println("커뮤니티 글 불러오기 실패");
 					}
 
 				} catch (Exception e) {
@@ -157,6 +164,138 @@ public class CommunityDAO {
 					close();
 				}
 				return commudto;
+			}
+			
+			
+			//댓글 select
+			public ArrayList<CommentDTO> comment_select(int num) {
+				try {
+					conn();
+					
+					String sql = "select * from comment_board where community_num = ? order by comment_date";
+					
+					pst = conn.prepareStatement(sql);
+					pst.setInt(1, num);
+					rs = pst.executeQuery();
+					
+					while(rs.next()){
+						int community_num = rs.getInt("community_num");
+						int comment_num = rs.getInt("comment_num");
+						String comment_id = rs.getString("comment_id");
+						String comment_content = rs.getString("comment_content");
+						String comment_date = rs.getString("comment_date");
+						
+						CommentDTO dto = new CommentDTO(community_num, comment_num, comment_id, comment_content, comment_date);
+						
+						al2.add(dto);
+						
+					}		
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				return al2;
+			}	
+			
+			
+			
+			//댓글입력
+			public int CommentWrite(CommentDTO commentdto) {
+
+				// 런타임오류 : 실행했을 때 발생하는 오류 -> 예외처리
+				try {
+					conn();
+					
+					String sql = "insert into comment_board values(?, comment_num.nextval, ?, ?, sysdate )";
+					// 3. sql문 실행객체(Prepared Statement)생성
+					pst = conn.prepareStatement(sql);
+					
+					
+					// 4. 바인드 변수 채우기
+					pst.setInt(1, commentdto.getCommunity_num());
+					pst.setString(2, commentdto.getComment_id());
+					pst.setString(3, commentdto.getComment_content());
+					
+					
+					// 5. sql문 실행하여 결과처리
+					cnt = pst.executeUpdate();
+
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("댓글작성오류");
+				} finally {
+					close();
+				}
+				return cnt;
+			}
+			
+			
+			
+			public int updateProfile(int num, String fileName) {
+				try {
+					conn();
+					
+					String sql = "update community set filename = ? where num = ?";
+					pst = conn.prepareStatement(sql);
+					pst.setString(1, fileName);
+					pst.setInt(2, num);
+					cnt = pst.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				
+				return cnt;
+			}
+			
+			
+			
+			public void copyFilename(String beforePath, String afterPath) {
+				
+				File oriFile = new File(beforePath);
+				File copyfile = new File(afterPath);
+				
+				try {
+					FileInputStream fis = new FileInputStream(oriFile);
+					FileOutputStream fos = new FileOutputStream(copyfile);
+					
+					int fileByte = 0;
+					while((fileByte = fis.read()) != -1) {
+						fos.write(fileByte);
+					}
+					fis.close();
+					fos.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			public int deleteComment(int comment_num) {
+				try {
+					conn();
+					
+					String sql = "delete from comment_board where comment_num = ?";
+					// 3. sql문 실행객체(Prepared Statement)생성
+					pst = conn.prepareStatement(sql);
+					
+					
+					// 4. 바인드 변수 채우기
+					pst.setInt(1, comment_num);
+
+					// 5. sql문 실행하여 결과처리
+					cnt = pst.executeUpdate();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("댓글삭제안됨");
+				} finally {
+					close();
+				}
+				return cnt;
+			
 			}
 			
 			
