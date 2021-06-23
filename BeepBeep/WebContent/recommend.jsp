@@ -118,7 +118,7 @@ li a:hover:not(.active) {
 				<a href="main.jsp" class="logo"> <span class="symbol"><img style = 'margin-left:500px;'
 						src="images/hehe.png" alt="" /></span><span style = 'font-size:100px;'class="title">Web & PT</span>
 				</a><h1  style = 'margin-left:600px;'>맞 춤 형  식 단 ㅤ추 천</h1>
-
+					<h3 style = 'margin-left:620px;'> ※ 열 이름 클릭시 정렬할 수 있습니다.</h3>
 				<!-- Nav -->
 				<nav>
 					<ul>
@@ -133,7 +133,6 @@ li a:hover:not(.active) {
 		<nav id="menu">
 			<h2>Menu</h2>
 			<ul>
-
 				<li><a href="main.jsp">메인화면으로</a></li>
 				<li><a href="video.jsp">영상</a></li>
 				<li><a href="recommend.jsp">식단추천</a></li>
