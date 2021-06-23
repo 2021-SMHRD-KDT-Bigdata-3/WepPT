@@ -357,6 +357,16 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 				<td><%= al2.get(i).getComment_id() %></td>
 				<td><%= al2.get(i).getComment_content() %></td>
 				<td><%= al2.get(i).getComment_date() %></td>
+				
+				<%if(dto.getId().equals(al2.get(i).getComment_id())){%>
+					<td> <form action="CommentDelete">
+					<input type="hidden" name="community_num" value="<%=num %>">
+					<input type="hidden" name="comment_num" value="<%=al2.get(i).getComment_num() %>">
+					<input type="submit" value="»èÁ¦">
+					</form> </td>
+					
+				<% }%>
+				
 			</tr>
 			<%} %>
 		</table>
