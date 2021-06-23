@@ -118,6 +118,9 @@ create sequence community_num start with 1 increment by 1;
 
 drop sequence community_num;
 
+insert into COMMUNITY values(1, 'test', 'man', 'abc', 'test', sysdate );
+
+
 select * from COMMUNITY; 
 
 delete from COMMUNITY;
@@ -126,6 +129,8 @@ create sequence num_board
 start with 1
 increment by 1;
 
+
+select * from comment_board;
 
 -- ´ñ±Û Å×ÀÌºí
 create table comment_board (

@@ -24,7 +24,10 @@ body {
 	font-size:30px;
 }
 
-
+		body{
+		zoom: 67% !important;
+		align:'center';
+		}
 
 
 		* {
@@ -33,6 +36,7 @@ body {
 }
 
 .back_profile{
+  align:center;
   width:100%;
   position:relative;
 }
@@ -56,7 +60,7 @@ body {
 
 .profile_bar{
   display:flex;
-  width:90%;
+  width:100%;
   max-height:200px;
   margin-left:5%;
 }
@@ -294,7 +298,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 
 				<!-- Header -->
 					<header id="header" style = "padding-top: 0px;">
-						<div class="inner" style = "margin-left: 0px; padding-left: 0px;">
+						<div class="inner" style = "margin-left: 0px; padding-left: 500px;">
 
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">
@@ -362,19 +366,19 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           </div>
           <div class="user_detail_head">PW
             <span class="edit_detail">
-            	<input style = 'height:30px;' type="text" name = 'pw' placeholder = "변경할 비밀번호 입력">
+            	<input style = 'height:42px;' type="text" name = 'pw' placeholder = "변경할 비밀번호 입력">
             </span>
           </div>
         </div>  
         <div id="h_detail2">
           <div class="user_detail_head">몸무게
             <span class="edit_detail">
-            	<input style = 'height:30px;' type="text" name = "weight" placeholder = "몸무게 입력">
+            	<input style = 'height:42px;' type="text" name = "weight" placeholder = "몸무게 입력">
             </span>
           </div>
           <div class="user_detail_head">키
             <span class="edit_detail">
-            	<input style = 'height:30px;' type="text" name = "height" placeholder = "키 입력">
+            	<input style = 'height:42px;' type="text" name = "height" placeholder = "키 입력">
             </span>
           </div>
         </div>
@@ -399,7 +403,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           </div>
           <div class="user_detail_head">목표몸무게 <!-- 본인이 이루고 싶은 몸무게..받아와야하지 않나 회원가입에서 받아오기-->
             <span class="edit_detail">
-            	<input style = 'height:30px;' type="text" name = "target" placeholder = "목표 몸무게 입력">
+            	<input style = 'height:42px;' type="text" name = "target" placeholder = "목표 몸무게 입력">
             </span>
           </div>
           <div class="user_detail_head">현재BMI지수 <!-- 몸무게와 키를 받아와서 보여주기 -->
@@ -457,7 +461,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="전송" class="primary" /></li>
+										<li><input style = 'margin-left:200px'type="submit" value="전송" class="primary" /></li>
 									</ul>
 								</form>
 							</section>

@@ -16,9 +16,11 @@ public class CommunityDAO {
 	Connection conn = null;
 	PreparedStatement pst = null;
 	ArrayList<CommunityDTO> al = new ArrayList<CommunityDTO>();
+	ArrayList<CommentDTO> al2 = new ArrayList<CommentDTO>();
 	CommunityDTO commudto = null;
 	memberDTO dto =null;
 	int cnt=0;
+	
 	
 	
 	
@@ -161,5 +163,68 @@ public class CommunityDAO {
 				return commudto;
 			}
 			
+			
+			//댓글 select
+			public ArrayList<CommentDTO> comment_select(int num) {
+				try {
+					conn();
+					
+					String sql = "select * from comment_board where community_num = ? order by comment_date";
+					
+					pst = conn.prepareStatement(sql);
+					pst.setInt(1, num);
+					rs = pst.executeQuery();
+					
+					while(rs.next()){
+						int community_num = rs.getInt("community_num");
+						int comment_num = rs.getInt("comment_num");
+						String comment_id = rs.getString("comment_id");
+						String comment_content = rs.getString("comment_content");
+						String comment_date = rs.getString("comment_date");
+						
+						CommentDTO dto = new CommentDTO(community_num, comment_num, comment_id, comment_content, comment_date);
+						
+						al2.add(dto);
+						
+					}		
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				return al2;
+			}	
+			
+			
+			
+			//댓글입력
+			public int CommentWrite(CommentDTO commentdto) {
+
+				// 런타임오류 : 실행했을 때 발생하는 오류 -> 예외처리
+				try {
+					conn();
+					
+					String sql = "insert into comment_board values(?, comment_num.nextval, ?, ?, sysdate )";
+					// 3. sql문 실행객체(Prepared Statement)생성
+					pst = conn.prepareStatement(sql);
+					
+					
+					// 4. 바인드 변수 채우기
+					pst.setInt(1, commentdto.getCommunity_num());
+					pst.setString(2, commentdto.getComment_id());
+					pst.setString(3, commentdto.getComment_content());
+					
+					
+					// 5. sql문 실행하여 결과처리
+					cnt = pst.executeUpdate();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("댓글작성오류");
+				} finally {
+					close();
+				}
+				return cnt;
+			}
 			
 }

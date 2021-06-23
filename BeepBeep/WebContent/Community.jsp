@@ -332,6 +332,29 @@ img {
 								<a href="CommunityWrite.jsp"><button id="writer">글쓰기</button></a>
 							</div>
 							</div>
+		<table border = "1px" align = "center">
+			<tr>
+				<td>번호</td>
+				<td>제목</td>
+				<td>아이디</td>
+				<td>날짜</td>
+			</tr>
+			<%
+			for(int i = 0; i<al.size(); i++){
+			%>
+			<tr>
+				<td><%= i+1 %></td>
+				<td><a href="CommunityView.jsp?num=<%=al.get(i).getNum()%>"><%= al.get(i).getTitle()%></a>  </td>
+				<td><%= al.get(i).getId() %></td>
+				<td><%= al.get(i).getDay() %></td>
+			</tr>
+			<%} %>
+		<a href="main.jsp"><button id="writer">홈으로</button></a>
+		<a href="CommunityWrite.jsp"><button id="writer">글쓰기</button></a>
+		</table>
+		
+		
+	</div>
 	
 	
 	
