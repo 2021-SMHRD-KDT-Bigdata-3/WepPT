@@ -20,15 +20,16 @@
     font-style: normal;
 }
 
-h2 {
+body {
 	font-family:'twayair';
-	font-size:200px;
 }
 		
-		
+		table{
+		font-size:50px;
+		}
 		
 		body{
-		zoom: 100% !important;
+		zoom: 25% !important;
 		align:'center';
 		}
 		span.title{
@@ -53,8 +54,8 @@ h2 {
 							
 							
 							<!-- Logo -->
-								<a href="main.jsp" class="logo"> <span class="symbol"><img style = 'margin-left:500px;'
-						src="images/hehe.png" alt="" /></span><span style = 'font-size:100px;'class="title">Web & PT</span>
+								<a style = "margin-left:300px;"href="main.jsp" class="logo"> <span class="symbol"><img style = 'width:300px; heigth:500px; margin-left: 2700px;'
+						src="images/hehe.png" alt="" /></span><span style = 'font-size:200px;'class="title">Web & PT</span>
 				</a>
 
 							<!-- Nav -->
@@ -63,14 +64,14 @@ h2 {
 										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
 
 										<% if (dto == null) {
-											out.print("<button style = 'height:70px;'><a style = 'font-size:30px;' href = 'login'>LOGIN</a></button>");
+											out.print("<button style = 'height:150px;'><a style = 'font-size:100px;' href = 'login'>LOGIN</a></button>");
 											out.print("<span>ㅤ</span>");
-											out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'Join.jsp'>JOIN</a></button>");
+											out.print("<button  style = 'height:150px;'><a style = 'font-size:100px;' href = 'Join.jsp'>JOIN</a></button>");
 											out.print("<span>ㅤ</span>");
 										} else if (dto.getId() != null) {
-											out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'logout'>LOGOUT</a></button>");
+											out.print("<button  style = 'height:150px;'><a style = 'font-size:100px;' href = 'logout'>LOGOUT</a></button>");
 											out.print("<span>ㅤ</span>");
-											out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'mypage.jsp'>MY PAGE</a></button>");
+											out.print("<button  style = 'height:150px;'><a style = 'font-size:100px;' href = 'mypage.jsp'>MY PAGE</a></button>");
 											out.print("<span>ㅤ</span>");
 										}
 										%>
@@ -94,35 +95,41 @@ h2 {
 						</ul>
 					</nav>
 	
-	
+	<div style = "width:43%; margin-left:2000px;">
+		<table></table>
 		<form action="Community" method="post" enctype="multipart/form-data">
 			<div id = "Community">  
-				<table id="list" align = "center">
+				<table id="list" align = "center" >
 					<tr>
-						<td>제목</td>
-						<td><input type="text" name="title"> </td>
+						<td style = "font-size:100px; width:500px;">제목</td>
+						<td><input type="text" name="title" autofocus="true"> </td>
 					</tr>
 					<tr>
-						<td>아이디</td>
-						<td><%= dto.getId() %></td>
+						<td style = "font-size:100px; width:300px;">아이디</td>
+						<td style = "font-size:100px;"><%= dto.getId() %></td>
 					</tr>
 					<tr>
-						<td colspan="2">내용</td>
+						<td style = "font-size:100px;">내용</td>
+							<td>
+							<input style = "font-size:100px;" name="fileName" type="file" style="float: right;">			
+							</td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input name="fileName" type="file" style="float: right;">			
-							<textarea name="content" rows="10" style="resize: none;"></textarea>	
+							<textarea name="content" rows="20" style="resize: none;"></textarea>	
 						</td>
 					</tr>
-					<tr>
-						<td colspan="2">
-							<input type="reset" value="초기화">
-							<input type="submit" value="저장하기">
+					<tr style = "align:center;" >
+						<td colspan="2" >
+							<input style = "margin-left: 1300px; font-size:50px;" type="reset" value="초기화">
+							<input style = "margin-left: 100px; font-size:50px;" type="submit" value="저장하기">
 						</td>
 					</tr>
 				</table>
 			</div>
 		</form>
+		<table></table>
+		</div>
+				
 </body>
 </html>
