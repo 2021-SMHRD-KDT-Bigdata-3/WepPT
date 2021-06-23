@@ -113,4 +113,6 @@ commit;
 
 drop sequence num_board;
 
-select * from COMMUNITY;  근데 넘에 숫자가 랜덤 부여인가요 왜죠 왜져 왜지 왜죠?
+select * from COMMUNITY; 
+
+delete from COMMUNITY;

@@ -94,7 +94,7 @@ public class CommunityDAO {
 				try {
 					conn();
 					
-					String sql = "select * from Community";
+					String sql = "select * from Community order by num";
 					
 					pst = conn.prepareStatement(sql);
 					
@@ -146,9 +146,9 @@ public class CommunityDAO {
 						
 						commudto = new CommunityDTO(get_num, title, id, fileName, content, day);
 						
-						System.out.println("커뮤니티 글 작성 성공");
+						System.out.println("커뮤니티 글 불러오기 성공");
 					} else {
-						System.out.println("커뮤니티 글 작성 실패");
+						System.out.println("커뮤니티 글 불러오기 실패");
 					}
 
 				} catch (Exception e) {

@@ -10,16 +10,16 @@
 </head>
 <body>
 <%
-int get_num = Integer.parseInt(request.getParameter("num"));
+int num = Integer.parseInt(request.getParameter("num"));
 
 CommunityDAO commudao = new CommunityDAO();
-CommunityDTO commudto = commudao.oneSelect(get_num);
+CommunityDTO commudto = commudao.oneSelect(num);  //위에 인트로 받아온 num
 
 %>
 
 
 	<div id = "community">
-				<table id="list">
+				<table id="list" border="1px">
 					<tr>
 						<td>제목</td>
 						<td><%= commudto.getTitle() %></td>

@@ -16,8 +16,7 @@
 <%
 	memberDTO dto = (memberDTO)session.getAttribute("info");
 	CommunityDAO commudao = new CommunityDAO();
-	commudao.select();
-	
+	ArrayList<CommunityDTO> al = commudao.select();
 	%>
 	
 	<div>
@@ -29,15 +28,15 @@
 				<td>날짜</td>
 			</tr>
 			<%
-			
-			
+			for(int i = 1; i<al.size(); i++){
 			%>
 			<tr>
-				<td></td> <!-- communityDTO에서 받아오기 -->
-				<td></td>
-				<td></td>
-				<td></td>
+				<td><%= al.get(i).getNum() %></td>
+				<td><a href="CommunityView.jsp?num=<%=al.get(i).getNum()%>"><%= al.get(i).getTitle()%></a>  </td>
+				<td><%= al.get(i).getId() %></td>
+				<td><%= al.get(i).getDay() %></td>
 			</tr>
+			<%} %>
 		</table>
 		
 		<a href="CommunityWrite.jsp"><button id="writer">작성하러가기</button></a>
