@@ -184,7 +184,6 @@ public class CommunityDAO {
 						String comment_id = rs.getString("comment_id");
 						String comment_content = rs.getString("comment_content");
 						String comment_date = rs.getString("comment_date");
-						String filename = rs.getString("filename");
 						
 						CommentDTO dto = new CommentDTO(community_num, comment_num, comment_id, comment_content, comment_date);
 						
@@ -272,5 +271,24 @@ public class CommunityDAO {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			}
+			
+			public int delCommunity(int boardNum) {
+				try {
+					conn();
+					
+					String sql = "delete from community where num = ?";
+					pst = conn.prepareStatement(sql);
+					pst.setInt(1, boardNum);
+					
+					cnt = pst.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+				
+				
+				return cnt;
 			}
 }

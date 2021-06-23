@@ -351,6 +351,7 @@ img {
 										<td>제목</td>
 										<td>아이디</td>
 										<td>날짜</td>
+										<td></td>
 									</tr>
 									<%
 									for(int i = 0; i<al.size(); i++){
@@ -360,6 +361,13 @@ img {
 										<td><a href="CommunityView.jsp?num=<%=al.get(i).getNum()%>"><%= al.get(i).getTitle()%></a>  </td>
 										<td><%= al.get(i).getId() %></td>
 										<td><%= al.get(i).getDay() %></td>
+										<%if(al.get(i).getId().equals(dto.getId())){ %>
+										<td>
+											<form>
+												<button href= "http://localhost:8082/BeepBeep/CommunityDelete?boardNum=<%=al.get(i).getNum()%>">삭제</button>
+											</form>
+										</td>
+										<%} %>
 									</tr>
 									<%} %>
 								</table>
