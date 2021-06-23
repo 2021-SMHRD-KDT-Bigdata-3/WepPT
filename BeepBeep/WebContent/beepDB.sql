@@ -102,8 +102,8 @@ create table community (
 	id varchar2(50) not null,
 	filename varchar2(200) not null,
 	content varchar2(500) not null,
-	day date,
-	constraint community_pk primary key(num)
+	day date
+	--constraint community_pk primary key(num)
   --  constraint community_fk_id foreign key(id)
   --  references member(id)
 );
@@ -112,11 +112,11 @@ drop table community cascade constraints;
 
 commit;
 
-create sequence num_board start with 1 increment by 1;
+create sequence community_num start with 1 increment by 1;
 
 
 
-drop sequence num_board;
+drop sequence community_num;
 
 select * from COMMUNITY; 
 
