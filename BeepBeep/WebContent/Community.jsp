@@ -343,7 +343,13 @@ img {
 					<header id="header" style = "padding-left: -500px;">
 						<div class="inner" >
 
-							
+							<!-- Logo -->
+							<div>
+								<a href="main.jsp" class="logo">
+									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
+									<span>Ä¿¹Â´ÏÆ¼</span>
+								</a>
+							</div>
 							<div id="commutable">
 								<table>
 									<tr>

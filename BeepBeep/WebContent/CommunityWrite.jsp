@@ -6,6 +6,35 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/main.css" />
+      <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <style>
+   
+      
+   @font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2 {
+   font-family:'twayair';
+   font-size:200px;
+}
+      
+      
+      
+      body{
+      zoom: 100% !important;
+      align:'center';
+      }
+      span.title{
+   font-size : 50px;
+}
+      </style>     
 </head>
 <body>
 	
