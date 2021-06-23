@@ -9,6 +9,8 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body>
 
