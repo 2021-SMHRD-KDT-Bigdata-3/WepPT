@@ -106,9 +106,6 @@ li a:hover:not(.active) {
 <body>
 	
 
-<%
-	memberDTO dto = (memberDTO)session.getAttribute("info");
-%>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
