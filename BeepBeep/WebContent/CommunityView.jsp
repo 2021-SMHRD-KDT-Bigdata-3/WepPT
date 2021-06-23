@@ -39,7 +39,7 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 					</tr>
 					<tr>
 						<td colspan="2">
-							<img src="img/<%= commudto.getFilename() %>">
+							<img src="community\<%= commudto.getFilename() %>">
 							<%= commudto.getContent() %>
 						</td>
 					</tr>
