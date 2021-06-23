@@ -159,3 +159,27 @@ drop table comment_board;
 drop table comment_board cascade constraints;
 commit;
 
+
+--Ä¶¸°´õ--
+
+
+create table calendar(
+    calendar_id varchar2(50),
+    calendar_title varchar2(100),
+    calendar_start date,
+    calendar_end date,
+    calendar_description varchar2(100),
+    calendar_type varchar2(100),
+    calendar_userid varchar2(50),
+    calendar_color varchar2(50),
+    calendar_textcolor varchar2(50),
+    constraint cal_fk_user foreign key(calendar_userid)
+    references member(id)
+);
+
+drop table calendar cascade constraints;
+
+select * from calendar;
+
+
+
