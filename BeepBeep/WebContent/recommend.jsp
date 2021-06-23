@@ -118,7 +118,7 @@ li a:hover:not(.active) {
 				<a href="main.jsp" class="logo"> <span class="symbol"><img style = 'margin-left:500px;'
 						src="images/hehe.png" alt="" /></span><span style = 'font-size:100px;'class="title">Web & PT</span>
 				</a><h1  style = 'margin-left:600px;'>맞 춤 형  식 단 ㅤ추 천</h1>
-
+					<h3 style = 'margin-left:620px;'> ※ 열 이름 클릭시 정렬할 수 있습니다.</h3>
 				<!-- Nav -->
 				<nav>
 					<ul>
@@ -133,7 +133,6 @@ li a:hover:not(.active) {
 		<nav id="menu">
 			<h2>Menu</h2>
 			<ul>
-
 				<li><a href="main.jsp">메인화면으로</a></li>
 				<li><a href="video.jsp">영상</a></li>
 				<li><a href="recommend.jsp">식단추천</a></li>
@@ -188,12 +187,12 @@ li a:hover:not(.active) {
     <table id = "testTable" class="sortable" border="1px">
     <thead>
         <tr>
-            <th class="test">이미지</th>
-            <th class="test">제품이름</th>
-            <th class="test">칼로리</th>  
-            <th class="test">탄수화물</th>
-            <th class="test">단백질</th>
-            <th class="test">지방</th>
+            <th style = 'font-size:40px' class="test">이미지</th>
+            <th style = 'font-size:40px' class="test">제품이름</th>
+            <th style = 'font-size:40px' class="test">칼로리</th>  
+            <th style = 'font-size:40px' class="test">탄수화물</th>
+            <th style = 'font-size:40px' class="test">단백질</th>
+            <th style = 'font-size:40px' class="test">지방</th>
         </tr>
     </thead>
     <tbody>    
@@ -204,10 +203,10 @@ li a:hover:not(.active) {
                		<img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%= "temp"+i+1 %>>
                </td>
                <td src="#"><%=arr.get(i).getProduct_name() %></td>
-               <td><%=arr.get(i).getProduct_cal() %></td>
-               <td><%=arr.get(i).getProduct_carb() %></td>
-               <td><%=arr.get(i).getProduct_prot() %></td>
-               <td><%=arr.get(i).getProduct_fat() %></td>
+               <td><%=arr.get(i).getProduct_cal() %>Kcal</td>
+               <td><%=arr.get(i).getProduct_carb() %>g</td>
+               <td><%=arr.get(i).getProduct_prot() %>g</td>
+               <td><%=arr.get(i).getProduct_fat() %>g</td>
             </tr>
             <%}%>
             </tbody>
