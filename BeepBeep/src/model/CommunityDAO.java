@@ -291,4 +291,30 @@ public class CommunityDAO {
 				
 				return cnt;
 			}
+			public int deleteComment(int comment_num) {
+				try {
+					conn();
+					
+					String sql = "delete from comment_board where comment_num = ?";
+					// 3. sql문 실행객체(Prepared Statement)생성
+					pst = conn.prepareStatement(sql);
+					
+					
+					// 4. 바인드 변수 채우기
+					pst.setInt(1, comment_num);
+
+					// 5. sql문 실행하여 결과처리
+					cnt = pst.executeUpdate();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("댓글삭제안됨");
+				} finally {
+					close();
+				}
+				return cnt;
+			
+			}
+			
+			
 }
