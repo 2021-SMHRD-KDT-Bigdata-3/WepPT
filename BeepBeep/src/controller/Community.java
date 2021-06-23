@@ -26,7 +26,7 @@ public class Community extends HttpServlet {
 		request.setCharacterEncoding("EUC-KR");
 
 		// 파일 경로, 파일 크기, 파일 이름 ==> 인코딩
-		String savePath = request.getServletContext().getRealPath("img");
+		String savePath = request.getServletContext().getRealPath("community");
 		int maxSize = 5 * 1024 * 1024;
 		String encoding = "EUC-KR";
 		System.out.println(savePath);
@@ -44,11 +44,8 @@ public class Community extends HttpServlet {
 		String filename = URLEncoder.encode(multi.getFilesystemName("fileName"), "EUC-KR");
 		String content = multi.getParameter("content");
 		
-		System.out.println(title);
-		System.out.println(id);
-		System.out.println(filename);
-		System.out.println(content);
-
+		String afterPath = "C:\\Users\\smhrd\\git\\WepPT\\BeepBeep\\WebContent\\community\\";
+		
 		// dto, dao 생성
 		CommunityDTO commudto = new CommunityDTO(title, id, filename, content);
 		CommunityDAO commudao = new CommunityDAO();
@@ -59,6 +56,9 @@ public class Community extends HttpServlet {
 		if (cnt > 0) {
 			System.out.println("커뮤니티 글 작성 성공VV");
 			response.sendRedirect("Community.jsp");
+			commudao.copyFilename(savePath + "\\" + filename, afterPath + filename);
+			System.out.println(savePath + "\\" + filename);
+			System.out.println(afterPath + filename);
 		} else {
 			System.out.println("커뮤니티 글 작성 실패");
 			response.sendRedirect("CommunityWrite.jsp");

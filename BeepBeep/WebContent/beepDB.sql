@@ -125,6 +125,10 @@ select * from COMMUNITY;
 
 delete from COMMUNITY;
 
+create sequence num_board
+start with 1
+increment by 1;
+
 
 select * from comment_board;
 
@@ -154,5 +158,4 @@ drop table comment_board;
 
 drop table comment_board cascade constraints;
 commit;
-
 

@@ -261,7 +261,6 @@ img {
 input {
 margin:0 auto;
 }
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
 		</style>
 		
 		<script>
@@ -303,7 +302,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 
 				<!-- Header -->
 					<header id="header" style = "padding-left: -500px;">
-						<div class="inner" style = "width:900px; ">
+						<div class="inner" style = "width:900px; " align ="center">
 
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">

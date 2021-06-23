@@ -1,5 +1,8 @@
 package model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -181,6 +184,7 @@ public class CommunityDAO {
 						String comment_id = rs.getString("comment_id");
 						String comment_content = rs.getString("comment_content");
 						String comment_date = rs.getString("comment_date");
+						String filename = rs.getString("filename");
 						
 						CommentDTO dto = new CommentDTO(community_num, comment_num, comment_id, comment_content, comment_date);
 						
@@ -218,6 +222,7 @@ public class CommunityDAO {
 					// 5. sql문 실행하여 결과처리
 					cnt = pst.executeUpdate();
 
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.out.println("댓글작성오류");
@@ -227,4 +232,45 @@ public class CommunityDAO {
 				return cnt;
 			}
 			
+			
+			
+			public int updateProfile(int num, String fileName) {
+				try {
+					conn();
+					
+					String sql = "update community set filename = ? where num = ?";
+					pst = conn.prepareStatement(sql);
+					pst.setString(1, fileName);
+					pst.setInt(2, num);
+					cnt = pst.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				
+				return cnt;
+			}
+			
+			
+			
+			public void copyFilename(String beforePath, String afterPath) {
+				
+				File oriFile = new File(beforePath);
+				File copyfile = new File(afterPath);
+				
+				try {
+					FileInputStream fis = new FileInputStream(oriFile);
+					FileOutputStream fos = new FileOutputStream(copyfile);
+					
+					int fileByte = 0;
+					while((fileByte = fis.read()) != -1) {
+						fos.write(fileByte);
+					}
+					fis.close();
+					fos.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 }
