@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 
 
+
 public class calendarDAO {
 	
 	
@@ -100,5 +101,44 @@ public class calendarDAO {
 	}
 	
 	
-
+	public int add(calendarDTO dto) {
+		// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리
+		try{
+			
+			conn();
+			
+		    String sql = "insert into calendar values ('아이디', ?, ?, ?, ?, ?, ?, ?, '텍스트컬러')";
+		                                             // ? : 바인드 변수
+		    // 3. sql문 실행객체 ( PreparedStatement ) 생성
+		    pst = conn.prepareStatement(sql);
+			
+		    // 4. 바인드 변수 채워주기
+		    pst.setString(1, dto.getCal_title());
+		    pst.setString(2, dto.getCal_start());
+		    pst.setString(3, dto.getCal_end());
+		    pst.setString(4, dto.getCal_description());
+		    pst.setString(5, dto.getCal_type());
+		    pst.setString(6, dto.getCal_id());
+		    pst.setString(7, dto.getCal_color());
+		    
+		    // 5. sql문 실행하기
+		    cnt = pst.executeUpdate();
+		    
+		  
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("FAIL");
+		}finally {
+			// 열려있으면 닫아줄 수 없으므로 예외문 한번더
+			close();
+			
+		}
+		return cnt;
+	
+	}
+	
+	
+	
+	
 }
