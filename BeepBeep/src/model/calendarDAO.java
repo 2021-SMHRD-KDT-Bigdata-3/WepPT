@@ -141,33 +141,33 @@ public class calendarDAO {
 	}
 	
 	// 켈린더 출력 해주기 
-public ArrayList<calendarDTO> calendar_select() {
+public ArrayList<calendarDTO> calendar_select(String user) {
 		// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리
 		try{
 			conn();
 			
-		    String sql = "select * from calendar where user_id =?" ;
+		    String sql = "select * from calendar where calendar_userid =?" ;
 		                                             // ? : 바인드 변수
 		    // 3. sql문 실행객체 ( PreparedStatement ) 생성
 		    pst = conn.prepareStatement(sql);
+		    
+		    pst.setString(1, user);
 			
 		    // 4. 바인드 변수 채워주기
-		    pst.setString(1, dto.getCal_user());
-		    
 		    
 		    // 5. sql문 실행하기
 		    rs = pst.executeQuery();
 		    
 		    while ( rs.next() ) {
-		    	String title = rs.getString("2");
-		    	String start = rs.getString("3");
-		    	String end = rs.getString("4");
-		    	String desc = rs.getString("5");
-		    	String type = rs.getString("6");
-		    	String user = rs.getString("7");
-		    	String color = rs.getString("8");
+		    	String title = rs.getString(2);
+		    	String start = rs.getString(3);
+		    	String end = rs.getString(4);
+		    	String desc = rs.getString(5);
+		    	String type = rs.getString(6);
+		    	String get_user = rs.getString(7);
+		    	String color = rs.getString(8);
 		    	
-		    	dto = new calendarDTO(title, start, end, desc, type, user, color);
+		    	dto = new calendarDTO(title, start, end, desc, type, get_user, color);
 		    	
 		    	al.add(dto);
 		    }

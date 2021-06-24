@@ -44,16 +44,32 @@ public class calendar extends HttpServlet {
 		
 		calendarDAO cal_dao = new calendarDAO();
 		
-		int cnt = cal_dao.add(cal_dto);
+		/*
+		 * int cnt = cal_dao.add(cal_dto);
+		 * 
+		 * if ( cnt > 0) { System.out.println("备眶");
+		 * response.sendRedirect("calendar.jsp"); }else { System.out.println("海靛");
+		 * response.sendRedirect("calendar.jsp");
+		 * 
+		 * }
+		 */
+		Gson gson = new Gson();
 		
-		if ( cnt > 0) {
-			System.out.println("备眶");
-			response.sendRedirect("calendar.jsp");
-		}else {
-			System.out.println("海靛");
-			response.sendRedirect("calendar.jsp");
-			
-		}
+		ArrayList<calendarDTO> list = cal_dao.calendar_select(user);
+		
+		String result = gson.toJson(list);
+		
+		PrintWriter out = response.getWriter();
+		
+		out.print(result);
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		/*
