@@ -1,3 +1,6 @@
+<%@page import="model.calendarDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.calendarDAO"%>
 <%@page import="model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -64,6 +67,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
                         <div class="row">
                             <div class="col-xs-12">
                                 <label class="col-xs-4" for="edit-title">유저명</label>
+                                <% System.out.println(dto.getId()); %>
                                 <label class="col-xs-4" for="edit-title"><%=dto.getId() %></label>
                                 
                             </div>
@@ -221,26 +225,13 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 		})
 </script>
  -->
+   <%
+   calendarDAO dao = new calendarDAO();
+   ArrayList<calendarDTO> cal_dto = dao.calendar_select();
+   %>
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+  
    
    
    
@@ -261,5 +252,18 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 <script src='test/packages/testCalendar/js/editEvent.js'></script>
 <script src='test/packages/testCalendar/js/main.js'></script>
 <script src='test/packages/testCalendar/js/etcSetting.js'></script>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 </body>
 </html>

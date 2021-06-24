@@ -28,7 +28,7 @@ public class calendar extends HttpServlet {
 	
 		HttpSession session = request.getSession();
 		memberDTO dto = (memberDTO)session.getAttribute("info");
-	
+		
 		String title = request.getParameter("edit-title");
 		String start = request.getParameter("start").substring(2, 10).replace("-", "/");
 		String end = request.getParameter("end").substring(2, 10).replace("-", "/");
@@ -36,7 +36,7 @@ public class calendar extends HttpServlet {
 		String type = request.getParameter("edit-type");
 		String user = dto.getId();
 		String color = request.getParameter("color");
-
+		
 		System.out.println(user);
 	
 		

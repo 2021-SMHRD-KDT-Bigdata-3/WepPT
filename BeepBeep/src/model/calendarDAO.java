@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 
 
+
 public class calendarDAO {
 	
 	
@@ -18,6 +19,7 @@ public class calendarDAO {
 	int cnt=0;
 	calendarDTO dto = null;
 	ArrayList<calendarDTO> al = new ArrayList<calendarDTO>();
+	//memberDTO dto = (memberDTO)session.getAttribute("info");
 	
 	// 데이터페이스와 연결
 	public void conn() {
@@ -118,7 +120,7 @@ public class calendarDAO {
 		    pst.setString(3, dto.getCal_end());
 		    pst.setString(4, dto.getCal_description());
 		    pst.setString(5, dto.getCal_type());
-		    pst.setString(6, dto.getCal_id());
+		    pst.setString(6, dto.getCal_user());
 		    pst.setString(7, dto.getCal_color());
 		    
 		    // 5. sql문 실행하기
@@ -138,7 +140,50 @@ public class calendarDAO {
 	
 	}
 	
-	
+	// 켈린더 출력 해주기 
+public ArrayList<calendarDTO> calendar_select() {
+		// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리
+		try{
+			conn();
+			
+		    String sql = "select * from calendar where user_id =?" ;
+		                                             // ? : 바인드 변수
+		    // 3. sql문 실행객체 ( PreparedStatement ) 생성
+		    pst = conn.prepareStatement(sql);
+			
+		    // 4. 바인드 변수 채워주기
+		    pst.setString(1, dto.getCal_user());
+		    
+		    
+		    // 5. sql문 실행하기
+		    rs = pst.executeQuery();
+		    
+		    while ( rs.next() ) {
+		    	String title = rs.getString("2");
+		    	String start = rs.getString("3");
+		    	String end = rs.getString("4");
+		    	String desc = rs.getString("5");
+		    	String type = rs.getString("6");
+		    	String user = rs.getString("7");
+		    	String color = rs.getString("8");
+		    	
+		    	dto = new calendarDTO(title, start, end, desc, type, user, color);
+		    	
+		    	al.add(dto);
+		    }
+		    System.out.println("유저별 정보");
+		    
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("fail..");
+		}finally {
+			// 열려있으면 닫아줄 수 없으므로 예외문 한번더
+			close();
+			
+		}
+		return al;
+	}
 	
 	
 }

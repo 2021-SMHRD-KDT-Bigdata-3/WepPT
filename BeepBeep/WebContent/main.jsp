@@ -42,6 +42,7 @@ h2 {
 
 <%
 		memberDTO dto = (memberDTO)session.getAttribute("info");
+		
 %>
 
 
