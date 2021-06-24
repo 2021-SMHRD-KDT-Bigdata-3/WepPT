@@ -35,15 +35,10 @@ h2 {
    font-size : 50px;
 }
       </style>     
-
-
-
-
-
 </head>
 <body>
-   
-   <%
+	
+	 <%
    memberDTO dto = (memberDTO)session.getAttribute("info");
    %>
    
@@ -124,5 +119,7 @@ h2 {
             </table>
          </div>
       </form>
+	
+	
 </body>
 </html>

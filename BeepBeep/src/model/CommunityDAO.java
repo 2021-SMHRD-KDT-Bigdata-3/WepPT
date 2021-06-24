@@ -184,7 +184,6 @@ public class CommunityDAO {
 						String comment_id = rs.getString("comment_id");
 						String comment_content = rs.getString("comment_content");
 						String comment_date = rs.getString("comment_date");
-						String filename = rs.getString("filename");
 						
 						CommentDTO dto = new CommentDTO(community_num, comment_num, comment_id, comment_content, comment_date);
 						
@@ -273,4 +272,49 @@ public class CommunityDAO {
 					e.printStackTrace();
 				}
 			}
+			
+			public int delCommunity(int boardNum) {
+				try {
+					conn();
+					
+					String sql = "delete from community where num = ?";
+					pst = conn.prepareStatement(sql);
+					pst.setInt(1, boardNum);
+					
+					cnt = pst.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+				
+				
+				return cnt;
+			}
+			public int deleteComment(int comment_num) {
+				try {
+					conn();
+					
+					String sql = "delete from comment_board where comment_num = ?";
+					// 3. sql문 실행객체(Prepared Statement)생성
+					pst = conn.prepareStatement(sql);
+					
+					
+					// 4. 바인드 변수 채우기
+					pst.setInt(1, comment_num);
+
+					// 5. sql문 실행하여 결과처리
+					cnt = pst.executeUpdate();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("댓글삭제안됨");
+				} finally {
+					close();
+				}
+				return cnt;
+			
+			}
+			
+			
 }

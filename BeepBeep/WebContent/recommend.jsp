@@ -38,8 +38,9 @@
 }
 
 body {
-   font-family:'twayair';
-   font-size:30px;
+	font-family:'twayair';
+	font-size:30px;
+	zoom: 100% !important;
 }
 
 input {
@@ -54,7 +55,6 @@ img{
 width : 200px;
 height:200px;}
 
-<<<<<<< HEAD
 .test{
 font-size: 21px;
 padding:0 0.75em 0.75em 0.75em;
@@ -71,7 +71,7 @@ text-align: center;
 
 table tr>td{
     vertical-align: middle;
-=======
+    }
 .ass {
    list-style-type: none;
    margin: 0;

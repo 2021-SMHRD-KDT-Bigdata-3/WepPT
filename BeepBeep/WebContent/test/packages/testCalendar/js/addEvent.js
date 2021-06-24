@@ -83,9 +83,7 @@ var newEvent = function (start, end, eventType) {
         $.ajax({
             type: "get",
             url: "",
-            data: {
-                //.....
-            },
+            data: eventData,
             success: function (response) {
                 //DB연동시 중복이벤트 방지를 위한
                 //$('#calendar').fullCalendar('removeEvents');
