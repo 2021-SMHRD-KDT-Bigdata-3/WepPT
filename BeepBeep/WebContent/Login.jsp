@@ -11,7 +11,7 @@
      <style>
     <!-- 화면비율고정 -->
 		body{
-		zoom: 67% !important;
+		zoom: 100% !important;
 		}
 
 :root{

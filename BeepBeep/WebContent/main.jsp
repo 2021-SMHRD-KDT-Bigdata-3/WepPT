@@ -152,7 +152,7 @@ h2 {
 									<% if (dto == null) {
 										out.print("<a href='main.jsp'>");
 									}else{
-										out.print("<a href='calendarTest.jsp'>");
+										out.print("<a href='calendar.html'>");
 									}%>
 										<h2>Ä¶¸°´õ</h2>
 										<div class="content">
