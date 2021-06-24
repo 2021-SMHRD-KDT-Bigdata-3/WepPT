@@ -248,13 +248,10 @@ img {
 	margin-bottom: 40px;
 }
 
-td {
-	padding: 5px;
-}
-
 table {
 	margin-left: auto;
 	margin-right: auto;
+	width: 1800px;
 }
 
 textarea {
@@ -299,7 +296,12 @@ label, input[type=file] {
 	display: inline-block;
 	width: 200px;
 	height: 50px;
+	border: 3px;
 }
+
+.ver{display:table-cell; vertical-align:middle;}
+
+
 </style>
 
 <script>
@@ -354,18 +356,22 @@ label, input[type=file] {
 				<form action="Community" method="post" enctype="multipart/form-data">
 					<div id="commutable">
 						<table width=70% border="1px">
-							<tr align="center">
-								<td width=10%>제목</td>
-								<td width=40%><input type="text" name="title"
-									style="font-size: 40px"></td>
-								<td width=5%>작성자</td>
-								<td width=15%><%=dto.getId()%></td>
-								<td width=20%><label class="btn btn-primary btn-file"
-									style="vertical-align: center;">파일추가 <input
-										name="fileName" type="file" style="display: none;">
-								</label></td>
-							</tr>
+							<tr align="center" height="10px">
+								<td width=10% class="ver">제목</td>
+								<td width=40% class="ver" colspan="1"><input type="text" name="title"
+									style="font-size: 40px;"></td>
+								<td width=15% align="right" class="ver">작성자</td>
+								<td width=15% align="center" class="ver"><%=dto.getId()%></td>
 
+								<td width=20% style="word-break:break-all;"><label class="btn btn-primary btn-file ver"
+									style="vertical-align: center; cursor: pointer;">파일추가 <input
+										name="fileName" type="file" style="display: none;" class="ver"
+										onchange="javascript:document.getElementById('fileName').value = this.value">
+								</label>
+								<input type="text" id="fileName" name="fileName" style="text-decoration: none;">
+								</td>
+							</tr>
+						
 
 
 
@@ -374,10 +380,8 @@ label, input[type=file] {
 										style="resize: none;"></textarea></td>
 							</tr>
 							<tr>
-								<td colspan="2" align="right"><input class="icon"
-									type="reset" value="초기화"></td>
-								<td colspan="2" align="left"><input class="icon"
-									type="submit" value="저장하기"></td>
+								<td colspan="5" align="center"><input class="icon" type="reset" value="초기화">
+								<input class="icon" type="submit" value="저장하기"></td>
 							</tr>
 						</table>
 				</form>
