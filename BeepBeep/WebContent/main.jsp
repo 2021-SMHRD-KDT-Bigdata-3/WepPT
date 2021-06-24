@@ -36,53 +36,52 @@
 			}
 		</style>
 		
+ 
 </head>  
 
 <body>
 
 
 <%
-		memberDTO dto = (memberDTO)session.getAttribute("info");
+      memberDTO dto = (memberDTO)session.getAttribute("info");
+      
 %>
 
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+      <!-- Wrapper -->
+         <div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner" >
-							
-							
-							<!-- Logo -->
-								<a href="main.jsp" class="logo" ">
-									<span class="symbol"><img style = 'margin-left:250px;'src="images/hehe.png" alt="" />
-									</span><span class="title" style = 'font-size:80px'>WEB & PT</span>
-								</a>
+            <!-- Header -->
+               <header id="header">
+                  <div class="inner" >
+                     
+                     
+                     <!-- Logo -->
+                        <a href="main.jsp" class="logo" ">
+                           <span class="symbol"><img style = 'margin-left:250px;'src="images/hehe.png" alt="" />
+                           </span><span class="title" style = 'font-size:80px'>WEB & PT</span>
+                        </a>
 
-							<!-- Nav -->
-								<nav style = 'right:0'>
-									<ul>
-										<!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
+                     <!-- Nav -->
+                        <nav style = 'right:0'>
+                           <ul>
+                              <!-- a태그 폰트 밑줄 삭제하는 방법 생각해보기 -->
 
-										<% if (dto == null) {
-											out.print("<button style = 'height:70px;'><a style = 'font-size:30px;' href = 'login'>LOGIN</a></button>");
-											out.print("<span>ㅤ</span>");
-											out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'Join.jsp'>JOIN</a></button>");
-											out.print("<span>ㅤ</span>");
-										} else if (dto.getId() != null) {
-											out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'logout'>LOGOUT</a></button>");
-											out.print("<span>ㅤ</span>");
-											out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'mypage.jsp'>MY PAGE</a></button>");
-											out.print("<span>ㅤ</span>");
-										}
-										%>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
-						</div>
-					</header>
+                              <% if (dto == null) {
+                                 out.print("<button style = 'height:70px;'><a style = 'font-size:30px;' href = 'login'>LOGIN</a></button>");
+                                 out.print("<span>ㅤ</span>");
+                                 out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'Join.jsp'>JOIN</a></button>");
+                                 out.print("<span>ㅤ</span>");
+                              } else if (dto.getId() != null) {
+                                 out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'logout'>LOGOUT</a></button>");
+                                 out.print("<span>ㅤ</span>");
+                                 out.print("<button  style = 'height:70px;'><a style = 'font-size:30px;' href = 'mypage.jsp'>MY PAGE</a></button>");
+                                 out.print("<span>ㅤ</span>");
+                              }
+                              %>
+                              <li><a href="#menu">Menu</a></li>
+                           </ul>
+                        </nav>
 
 				<!-- Menu -->
 					<nav id="menu">
@@ -96,6 +95,8 @@
 							<li><a href="caltest.html">캘린더</a></li>
 						</ul>
 					</nav>
+                  </div>
+               </header>
 
 				<!-- Main -->
 					<div id="main">
@@ -165,58 +166,71 @@
 							</section>
 						</div>
 					</div>
+            <!-- Menu -->
+               <nav id="menu">
+                  <h2 style = 'font-size:50px'>Menu</h2>
+                  
+                  <ul>
+                     <li><a href="main.jsp">메인화면으로</a></li>
+                     <li><a href="video.jsp">영상</a></li>
+                     <li><a href="recommend.jsp">식단추천</a></li>
+                     <li><a href="meal.jsp">식단</a></li>
+                     <li><a href="calendar.jsp">캘린더</a></li>
+                  </ul>
+               </nav>
 
-				
-						</div>
+          
+
+            
 <hr>
 <p align = 'center'> WEP & PT ㅤ제휴제안ㅤ|ㅤ개인정보 처리방침ㅤ|ㅤCopyright@WEBPT Corp.ㅤAll Rights Reserved </p>
-		
-		
-		
-		
-		<script>
-	
-			let article1 = document.getElementById('article1');
-			let article2 = document.getElementById('article2');
-			let article3 = document.getElementById('article3');
-			let article4 = document.getElementById('article4');
+      
+      
+      
+      
+      <script>
+   
+         let article1 = document.getElementById('article1');
+         let article2 = document.getElementById('article2');
+         let article3 = document.getElementById('article3');
+         let article4 = document.getElementById('article4');
 
-			article1.onclick = function() {
-		<%if (dto == null) {%>
-			alert("로그인 후 이용가능합니다.")
-		<%}%>
-			}
+         article1.onclick = function() {
+      <%if (dto == null) {%>
+         alert("로그인 후 이용가능합니다.")
+      <%}%>
+         }
 
-			article2.onclick = function() {
-		<%if (dto == null) {%>
-			alert("로그인 후 이용가능합니다.")
-		<%}%>
-			}
-			article3.onclick = function() {
-		<%if (dto == null) {%>
-			alert("로그인 후 이용가능합니다.")
-		<%}%>
-			}
-			article4.onclick = function() {
-		<%if (dto == null) {%>
-			alert("로그인 후 이용가능합니다.")
-		<%}%>
-			}
-		</script>
-	
-		
-		
-		
-		
-		
-		
-		
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+         article2.onclick = function() {
+      <%if (dto == null) {%>
+         alert("로그인 후 이용가능합니다.")
+      <%}%>
+         }
+         article3.onclick = function() {
+      <%if (dto == null) {%>
+         alert("로그인 후 이용가능합니다.")
+      <%}%>
+         }
+         article4.onclick = function() {
+      <%if (dto == null) {%>
+         alert("로그인 후 이용가능합니다.")
+      <%}%>
+         }
+      </script>
+   
+      
+      
+      
+      
+      
+      
+      
+      <!-- Scripts -->
+         <script src="assets/js/jquery.min.js"></script>
+         <script src="assets/js/browser.min.js"></script>
+         <script src="assets/js/breakpoints.min.js"></script>
+         <script src="assets/js/util.js"></script>
+         <script src="assets/js/main.js"></script>
 
 </body>
 </html>
