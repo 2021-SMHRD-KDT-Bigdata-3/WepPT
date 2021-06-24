@@ -23,7 +23,6 @@
 }
 
 body {
-	zoom:67% important;
 	font-family:'twayair';
 	font-size:30px;
 }

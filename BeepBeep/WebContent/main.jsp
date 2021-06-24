@@ -27,7 +27,10 @@
 					
 					
 			body{
+<<<<<<< HEAD
 				transform-origin: 100% 100%;
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/WepPT.git
 				align:'center';
 			}
 			
@@ -153,7 +156,7 @@
 									<% if (dto == null) {
 										out.print("<a href='main.jsp'>");
 									}else{
-										out.print("<a href='calendar.jsp'>");
+										out.print("<a href='calTest.jsp'>");
 									}%>
 										<h2>Ä¶¸°´õ</h2>
 										<div class="content">

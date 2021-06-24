@@ -53,16 +53,17 @@ public class calendarDAO {
 	}
 
 	
-	public ArrayList<calendarDTO> select() {
+	public ArrayList<calendarDTO> select(String userId) {
 		
 		// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리
 		try{
 			conn();
 			
-		    String sql = "select * from calendar";
+		    String sql = "select * from calendar where calendar_userid = ?";
 		                                             // ? : 바인드 변수
 		    // 3. sql문 실행객체 ( PreparedStatement ) 생성
 		    pst = conn.prepareStatement(sql);
+		    pst.setString(1, userId);
 			
 		    // 4. 바인드 변수 채워주기
 		    
