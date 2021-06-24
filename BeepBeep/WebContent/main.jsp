@@ -42,6 +42,7 @@ h2 {
 
 <%
       memberDTO dto = (memberDTO)session.getAttribute("info");
+      
 %>
 
 
@@ -92,7 +93,7 @@ h2 {
                      <li><a href="video.jsp">영상</a></li>
                      <li><a href="recommend.jsp">식단추천</a></li>
                      <li><a href="meal.jsp">식단</a></li>
-                     <li><a href="caltest.html">캘린더</a></li>
+                     <li><a href="calendar.jsp">캘린더</a></li>
                   </ul>
                </nav>
 
@@ -117,7 +118,7 @@ h2 {
                         </article>
                         <article id = "article2" class="style2 article">
                            <span class="image">
-                              <img src="images/meal.jpg" alt="" />
+                              <img src="images/recommend.jpg" alt="" />
                            </span>
                            <% if (dto == null) {
                               out.print("<a href='main.jsp'>");
@@ -132,7 +133,7 @@ h2 {
                         </article>
                         <article id = "article3" class="style3 article">
                            <span class="image">
-                              <img src="images/recommend.jpg" alt="" />
+                              <img src="images/meal.jpg" alt="" />
                            </span>
                               <% if (dto == null) {
                               out.print("<a href='main.jsp'>");
@@ -152,7 +153,7 @@ h2 {
                            <% if (dto == null) {
                               out.print("<a href='main.jsp'>");
                            }else{
-                              out.print("<a href='caltest.html'>");
+                              out.print("<a href='calendar.jsp'>");
                            }%>
                               <h2>캘린더</h2>
                               <div class="content">
