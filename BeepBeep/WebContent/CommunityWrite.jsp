@@ -380,8 +380,10 @@ label, input[type=file] {
 										style="resize: none;"></textarea></td>
 							</tr>
 							<tr>
-								<td colspan="5" align="center"><input class="icon" type="reset" value="초기화">
-								<input class="icon" type="submit" value="저장하기"></td>
+								<td colspan="5" align="center">
+									<input class="icon" type="reset" value="초기화">
+									<input class="icon" type="submit" value="저장하기">
+								</td>
 							</tr>
 						</table>
 				</form>
