@@ -23,6 +23,7 @@
 }
 
 body {
+	zoom:67% important;
 	font-family:'twayair';
 	font-size:30px;
 }
@@ -256,9 +257,24 @@ img {
 	margin-bottom:40px;
 }
 
+	
+#commutable{
+text-align:center;
+margin-left: 700px;
+}
 
-	
-	
+#header {
+	padding: 0em 0 0.1em 0 ;
+}
+
+#writer{
+	width:150px;
+	height:80px;
+	background-color:#FF8C24;
+	font-size: 20px;	
+	margin-left:550px;
+}
+
 	</style>
 	
 	<script>
@@ -303,16 +319,17 @@ img {
 	
 	<!-- Header -->
 					<header id="header">
-						<div style="margin-left: 300px;"
+						<div style="margin-left: 700px;"
 						class="inner" >
 							
 							
 							<!-- Logo -->
-								<a href="main.jsp" class="logo" ">
-									<span class="symbol"><img style = 'margin-left:300px;'src="images/hehe.png" alt="" />
+							
+								<a href="main.jsp" class="logo" style="text-align:center;">
+									<span class="symbol"><img style = 'margin-left:300px;'src="images/hehe.png" alt=""/>
 									</span><span class="title" style = 'font-size:80px'>WEB & PT</span>
 								</a>
-
+							
 <nav style = 'right:0'>
 									<ul>
 										<li><a href="#menu">Menu</a></li>
@@ -344,14 +361,16 @@ img {
 						<div class="inner" >
 
 							<!-- Logo -->
-							<div>
-								<a href="main.jsp" class="logo">
-									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
-									<span>커뮤니티</span>
+							<div style="text-align:center">
+								<a href="main.jsp" class="logo" style="">
+									<span style = "font-size:80px" >커뮤니티</span>
 								</a>
 							</div>
-							<div id="commutable">
-								<table>
+							<div id="commutable" style="text-align:center;">
+								<a href="CommunityWrite.jsp" style="border-bottom:dotted 1px rgba(255, 255, 255, 0.5)"><button id="writer">글쓰기</button></a>
+								<br>
+								<br>
+								<table style="width:1500px; text-align:center;">
 									<tr>
 										<td>번호</td>
 										<td>제목</td>
@@ -370,7 +389,7 @@ img {
 									<%} %>
 								</table>
 								
-								<a href="CommunityWrite.jsp"><button id="writer">글쓰기</button></a>
+						
 							</div>
 							</div>
 		
