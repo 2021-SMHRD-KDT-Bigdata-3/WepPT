@@ -16,7 +16,6 @@
 <link href='test/packages/testCalendar/css/select2.min.css' rel='stylesheet' />
 <style>
 body{
-zoom: 100% !important;
 }
 </style>
 </head>

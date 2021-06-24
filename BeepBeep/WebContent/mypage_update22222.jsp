@@ -25,7 +25,6 @@ body {
 }
 
 		body{
-		zoom: 67% !important;
 		align:'center';
 		}
 

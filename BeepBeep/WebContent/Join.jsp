@@ -17,7 +17,6 @@
 
 
 		body{
-		zoom: 100% !important;
 		}
 
 	span, body, input {

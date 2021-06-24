@@ -26,7 +26,6 @@
 body {
 	font-family: 'twayair';
 	font-size: 30px;
-	zoom: 100% !important;
 	align: 'center';
 }
 
