@@ -341,7 +341,7 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">
-									<span class="symbol"><img src="images/mainimage.png" alt="" style="width: 20em; height: 20em;" /></span>
+									<span class="symbol"><img src="images/mainimage.png" alt="" style="width: 500px; height: 500px;" /></span>
 								</a>
 						</div>			
 				<div>				
