@@ -1,5 +1,3 @@
-<%@page import="model.calendarDTO"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="model.calendarDAO"%>
 <%@page import="model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -26,7 +24,6 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 %>
 
    <div class="container">
-
         <!-- 일자 클릭시 메뉴오픈 -->
         <div id="contextMenu" class="dropdown clearfix">
             <ul class="dropdown-menu dropNewEvent" role="menu" aria-labelledby="dropdownMenu"
@@ -224,80 +221,12 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 		})
 </script>
  -->
+ 	<script src = 'JS/jquery-3.6.0.js'></script>
  
  
  
  
  <script>
- 
-/*  $.ajax({
-		url: 'calendar',
-		success: function(res){
-			var list = res;
-			console.log(list);
-			
-			
-			var calendarEl = document.getElementById('calendar');
-			
-			var events = list.map(function(item) {
-				return {
-					title : item.reservationTitle,
-					start : item.reservationDate + "T" + item.reservationTime
-				}
-			});
-			 */
-			
-			
-			var calendarEl = document.getElementById('calendar');
-			var calendar = new FullCalendar.Calendar(calendarEl, {
-				plugins: [ 'dayGrid', 'timeGrid', 'list', 'interaction' ],
-				header: {
-					left: 'prev,next today',
-					center: 'title',
-					right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-				},
-				defaultView: 'timeGridWeek',
-				locale: 'ko',
-				navLinks: true, // can click day/week names to navigate views
-				editable: true,
-				allDaySlot: false,
-				eventLimit: true, // allow "more" link when too many events
-				minTime: '10:00:00',
-				maxTime: '24:00:00',
-				contentHeight: 'auto',
-				eventSources: [{
-					events: function(info, successCallback, failureCallback) {
-						$.ajax({
-							url: 'calendar',
-							dataType: 'json',
-							data: {
-								start : moment(info.startStr).format('YYYY-MM-DD'),
-								end : moment(info.endStr).format('YYYY-MM-DD')
-							},
-							success: function(data) {
-								var list = data;
-								console.log(list);
-							}
-						});
-					}
-				}]
-			});
-					
-			calendar.render();
-			
-			
-			
-			
-			
-			
- 
- </script>
- 
- 
- 
-   
-   
-   
     <!-- /.container -->
 <script src = 'test/packages/testCalendar/js/jquery-3.6.0.js'></script>
 <script src = 'test/packages/testCalendar/js/jquery-ui.js'></script>
@@ -312,6 +241,114 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 <script src='test/packages/testCalendar/js/editEvent.js'></script>
 <script src='test/packages/testCalendar/js/main.js'></script>
 <script src='test/packages/testCalendar/js/etcSetting.js'></script>
+<<<<<<< HEAD
+<script type="text/javascript">
+   
+	
+	$(function getAll() {
+		$.ajax({
+			url : "ajaxTest.jsp",
+			dataType : 'json',
+			method : 'post',
+			success : function(res){
+				$.each(res, function(index, res){
+					console.log(res)
+				})
+			}
+		})
+	})
+	$(function() {
+
+  $('#calendar').fullCalendar({
+    defaultView: 'month',
+    defaultDate: '2021-06-12',
+    eventColor: 'green',
+    
+    events: [
+      {
+        title: 'All Day Event',
+        start: '2021-06-01'
+      },
+      {
+        title: 'Long Event',
+        start: '2021-06-07',
+        end: '2021-06-10',
+        color: 'purple' // override!
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2021-06-09T16:00:00'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2021-06-16T16:00:00'
+      },
+      {
+        title: 'Conference',
+        start: '2021-06-11',
+        end: '2021-06-13',
+        color: 'purple' // override!
+      },
+      {
+        title: 'Meeting',
+        start: '2021-06-12T10:30:00',
+        end: '2021-06-12T12:30:00'
+      },
+      {
+        title: 'Lunch',
+        start: '2021-06-12T12:00:00'
+      },
+      {
+        title: 'Meeting',
+        start: '2021-06-12T14:30:00'
+      },
+      {
+        title: 'Birthday Party',
+        start: '2021-06-13T07:00:00'
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2021-06-28'
+      }
+    ]
+  });
+
+});
+	/* $(function() {
+	var calendarEl = document.getElementById('calendar');
+	var calendar = new FullCalendar.Calendar(calendarEl, {
+		events :  [
+		    { // this object will be "parsed" into an Event Object
+		        title: 'The Title', // a property!
+		        start: '2021-06-24', // a property!
+		        end: '2021-06-26' // a property! ** see important note below about 'end' **
+		      }
+		    ] */
+			
+			/*{url : 'ajaxTest.jsp',
+			method : 'POST',
+			extraParams: {
+			      custom_param1: 'cal_color',
+			      custom_param2: 'cal_description',
+			      custom_param3: 'cal_start',
+			      custom_param4: 'cal_end',
+			      custom_param5: 'cal_id',
+			      custom_param6: 'cal_textColor',
+			      custom_param7: 'cal_title',
+			      custom_param8: 'cal_type',
+			      custom_param9: 'cal_user'
+			    },
+			    failure : function(){
+			    	alert('there was an error while fetching events!');
+			    }}*/
+		
+		 
+/* });
+	}); */
+   </script>
    
    
    

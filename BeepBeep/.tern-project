@@ -1,4 +1,25 @@
 {
+<<<<<<< HEAD
+  "ecmaVersion": 6,
+  "plugins": {
+    "guess-types": {
+      
+    },
+    "outline": {
+      
+    },
+    "browser-extension": {
+      
+    },
+    "jquery-extension": {
+      
+    }
+  },
+  "libs": [
+    "browser",
+    "jquery"
+  ]
+=======
   "plugins": {
     "guess-types": {
       
@@ -8,4 +29,5 @@
     }
   },
   "ecmaVersion": 5
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/BeepBeep.git
 }
