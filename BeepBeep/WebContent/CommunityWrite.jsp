@@ -6,7 +6,13 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+</noscript>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
 <style>
 @font-face {
 	font-family: 'twayair';
@@ -20,6 +26,8 @@
 body {
 	font-family: 'twayair';
 	font-size: 30px;
+	zoom: 100% !important;
+	align: 'center';
 }
 
 .back_profile {
@@ -288,13 +296,10 @@ input {
 }
 
 label, input[type=file] {
-	  display:inline-block;
-	  width : 200px;
-	  height : 50px;
-	}
-
-
-
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+}
 </style>
 
 <script>
@@ -325,7 +330,6 @@ label, input[type=file] {
 		document.getElementById(sideLine).classList.add('active_category');
 	}
 </script>
-
 </head>
 <body>
 	<%
@@ -356,8 +360,9 @@ label, input[type=file] {
 									style="font-size: 40px"></td>
 								<td width=5%>작성자</td>
 								<td width=15%><%=dto.getId()%></td>
-								<td width=20%><label class="btn btn-primary btn-file" style="vertical-align: center;">파일추가
-										<input name="fileName" type="file" style="display: none;">
+								<td width=20%><label class="btn btn-primary btn-file"
+									style="vertical-align: center;">파일추가 <input
+										name="fileName" type="file" style="display: none;">
 								</label></td>
 							</tr>
 
@@ -379,8 +384,5 @@ label, input[type=file] {
 
 			</div>
 	</div>
-
-
-
 </body>
 </html>

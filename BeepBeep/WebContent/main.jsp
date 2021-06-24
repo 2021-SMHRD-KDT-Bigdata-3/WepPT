@@ -92,7 +92,7 @@ h2 {
 							<li><a href="video.jsp">영상</a></li>
 							<li><a href="recommend.jsp">식단추천</a></li>
 							<li><a href="meal.jsp">식단</a></li>
-							<li><a href="caltest.html">캘린더</a></li>
+							<li><a href="calendar.jsp">캘린더</a></li>
 						</ul>
 					</nav>
 
@@ -152,7 +152,7 @@ h2 {
 									<% if (dto == null) {
 										out.print("<a href='main.jsp'>");
 									}else{
-										out.print("<a href='caltest.html'>");
+										out.print("<a href='calendar.jsp'>");
 									}%>
 										<h2>캘린더</h2>
 										<div class="content">

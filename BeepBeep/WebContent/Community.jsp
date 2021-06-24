@@ -23,6 +23,7 @@
 }
 
 body {
+	zoom:67% important;
 	font-family:'twayair';
 	font-size:30px;
 }
@@ -256,9 +257,24 @@ img {
 	margin-bottom:40px;
 }
 
+	
+#commutable{
+text-align:center;
+margin-left: 700px;
+}
 
-	
-	
+#header {
+	padding: 0em 0 0.1em 0 ;
+}
+
+#writer{
+	width:150px;
+	height:80px;
+	background-color:#FF8C24;
+	font-size: 20px;	
+	margin-left:550px;
+}
+
 	</style>
 	
 	<script>
@@ -303,16 +319,17 @@ img {
 	
 	<!-- Header -->
 					<header id="header">
-						<div style="margin-left: 300px;"
+						<div style="margin-left: 700px;"
 						class="inner" >
 							
 							
 							<!-- Logo -->
-								<a href="main.jsp" class="logo" ">
-									<span class="symbol"><img style = 'margin-left:300px;'src="images/hehe.png" alt="" />
+							
+								<a href="main.jsp" class="logo" style="text-align:center;">
+									<span class="symbol"><img style = 'margin-left:300px;'src="images/hehe.png" alt=""/>
 									</span><span class="title" style = 'font-size:80px'>WEB & PT</span>
 								</a>
-
+							
 <nav style = 'right:0'>
 									<ul>
 										<li><a href="#menu">Menu</a></li>
@@ -343,14 +360,23 @@ img {
 					<header id="header" style = "padding-left: -500px;">
 						<div class="inner" >
 
-							
-							<div id="commutable">
-								<table>
+							<!-- Logo -->
+							<div style="text-align:center">
+								<a href="main.jsp" class="logo" style="">
+									<span style = "font-size:80px" >커뮤니티</span>
+								</a>
+							</div>
+							<div id="commutable" style="text-align:center;">
+								<a href="CommunityWrite.jsp" style="border-bottom:dotted 1px rgba(255, 255, 255, 0.5)"><button id="writer">글쓰기</button></a>
+								<br>
+								<br>
+								<table style="width:1500px; text-align:center;">
 									<tr>
 										<td>번호</td>
 										<td>제목</td>
 										<td>아이디</td>
 										<td>날짜</td>
+										<td></td>
 									</tr>
 									<%
 									for(int i = 0; i<al.size(); i++){
@@ -360,11 +386,17 @@ img {
 										<td><a href="CommunityView.jsp?num=<%=al.get(i).getNum()%>"><%= al.get(i).getTitle()%></a>  </td>
 										<td><%= al.get(i).getId() %></td>
 										<td><%= al.get(i).getDay() %></td>
+										<%if(al.get(i).getId().equals(dto.getId())){ %>
+										<td> <form action="CommunityDelete">
+												<input type="hidden" name="community_num" value="<%=al.get(i).getNum() %>">
+												<input type="submit" value="삭제">
+											</form> </td>
+										<%} %>
 									</tr>
 									<%} %>
 								</table>
 								
-								<a href="CommunityWrite.jsp"><button id="writer">글쓰기</button></a>
+						
 							</div>
 							</div>
 		

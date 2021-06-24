@@ -273,6 +273,24 @@ public class CommunityDAO {
 				}
 			}
 			
+			public int delCommunity(int boardNum) {
+				try {
+					conn();
+					
+					String sql = "delete from community where num = ?";
+					pst = conn.prepareStatement(sql);
+					pst.setInt(1, boardNum);
+					
+					cnt = pst.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+				
+				
+				return cnt;
+			}
 			public int deleteComment(int comment_num) {
 				try {
 					conn();

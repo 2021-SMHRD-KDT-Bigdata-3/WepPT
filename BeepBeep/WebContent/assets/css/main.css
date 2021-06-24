@@ -52,8 +52,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	zoom: 100% !important;
-		
+
 }
 
 ol, ul {
@@ -2852,7 +2851,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		padding: 0em 0 0.1em 0 ;
 	}
 
 		#header .logo {
