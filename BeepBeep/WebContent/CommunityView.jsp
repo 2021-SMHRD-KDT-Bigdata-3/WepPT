@@ -39,6 +39,8 @@ body, input {
 	font-size:30px;
 }
 
+.box-sizing{ height: 500px; }
+
 
 		* {
   margin:0px;
@@ -288,6 +290,10 @@ button{
 	align:center;
 }
 
+input[type=text] {
+	height: 50px;
+	width: 1200px;
+}
 
 		</style>
 		
@@ -331,11 +337,11 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 	<div id = "community">
 	
 		<header id="header" style = "padding-left: -500px;">
-						<div class="inner"  align ="center">
+						<div class="box-sizing"  align ="center">
 
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">
-									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
+									<span class="symbol"><img src="images/mainimage.png" alt="" style="width: 20em; height: 20em;" /></span>
 								</a>
 						</div>			
 				<div>				
@@ -370,26 +376,25 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 		<table class="list" border = "1px" align = "center">
 			<tr>
 				<td>아이디</td>
-				<td>내용</td>
-				<td>날짜</td>
+				<td align="center">내용</td>
+				<td align="center">날짜</td>
+				<td></td>
 			</tr>
 			<%
 			for(int i = 0; i<al2.size(); i++){
 			%>
 			<tr>
 				<td><%= al2.get(i).getComment_id() %></td>
-				<td><%= al2.get(i).getComment_content() %></td>
-				<td><%= al2.get(i).getComment_date() %></td>
-				
+				<td align="center"><%= al2.get(i).getComment_content() %></td>
+				<td align="center"><%= al2.get(i).getComment_date() %></td>
+				<td>
 				<%if(dto.getId().equals(al2.get(i).getComment_id())){%>
-					<td> <form action="CommentDelete">
+					 <form action="CommentDelete">
 					<input type="hidden" name="community_num" value="<%=num %>">
 					<input type="hidden" name="comment_num" value="<%=al2.get(i).getComment_num() %>">
 					<input class="commentbtn" type="submit" value="삭제">
-					</form> </td>
-					
-				<% }%>
-				
+					</form> 
+				<% }%></td>
 			</tr>
 			<%} %>
 		</table>
@@ -404,9 +409,9 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 			<div>
 			<form action="Comment" method="post">
 			<table class="list" border="1">
-			<tr> <td colspan="3" width="1500px" align="center"> <input type="hidden" name="community_num" value="<%=num %>"> </td>
-			<td> <input type="text" name="comment_content"> </td> 
-			<td align="right"><input type="submit" value="등록" style="margin-left : 550px"></td>
+			<tr> <td> <input type="hidden" name="community_num" value="<%=num %>"> </td>
+			<td align="left"> <input type="text" name="comment_content"> </td> 
+			<td align="left"><input type="submit" value="등록"></td>
 			</tr>
 			</table>
 			</form>
