@@ -54,7 +54,7 @@ h2 {
 							
 							
 							<!-- Logo -->
-								<a href="main.jsp" class="logo" ">
+								<a href="main.jsp" class="logo" >
 									<span class="symbol"><img style = 'margin-left:250px;'src="images/hehe.png" alt="" />
 									</span><span class="title" style = 'font-size:80px'>WEB & PT</span>
 								</a>
