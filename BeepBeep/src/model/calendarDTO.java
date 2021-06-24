@@ -26,6 +26,21 @@ public class calendarDTO {
 		this.cal_textColor = cal_textColor;
 	}
 
+	
+	public calendarDTO(String cal_title, String cal_start, String cal_end, String cal_description,
+			String cal_type, String cal_user, String cal_color) {
+		this.cal_id = cal_id;
+		this.cal_title = cal_title;
+		this.cal_start = cal_start;
+		this.cal_end = cal_end;
+		this.cal_description = cal_description;
+		this.cal_type = cal_type;
+		this.cal_user = cal_user;
+		this.cal_color = cal_color;
+		this.cal_textColor = cal_textColor;
+	}
+	
+	
 
 	public String getCal_id() {
 		return cal_id;
