@@ -277,7 +277,15 @@ button{
 	height:80px;
 	background-color:#FF8C24;
 	font-size: 20px;	
-	margin-left:550px;
+	margin-left:1450px;
+}
+
+.commentbtn{
+	width: 150px;
+	height:80px;
+	background-color:#FF8C24;
+	font-size: 20px;
+	align:center;
 }
 
 
@@ -377,7 +385,7 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 					<td> <form action="CommentDelete">
 					<input type="hidden" name="community_num" value="<%=num %>">
 					<input type="hidden" name="comment_num" value="<%=al2.get(i).getComment_num() %>">
-					<input type="submit" value="삭제">
+					<input class="commentbtn" type="submit" value="삭제">
 					</form> </td>
 					
 				<% }%>
@@ -396,10 +404,11 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 			<div>
 			<form action="Comment" method="post">
 			<table class="list" border="1">
-			<tr> <td> <input type="hidden" name="community_num" value="<%=num %>"> </td>
-			<td> <input type="text" name="comment_content"> </td> </tr>
+			<tr> <td colspan="3" width="1500px" align="center"> <input type="hidden" name="community_num" value="<%=num %>"> </td>
+			<td> <input type="text" name="comment_content"> </td> 
+			<td align="right"><input type="submit" value="등록" style="margin-left : 550px"></td>
+			</tr>
 			</table>
-			<input type="submit" value="등록" style="margin-left : 550px">
 			</form>
 			
 			

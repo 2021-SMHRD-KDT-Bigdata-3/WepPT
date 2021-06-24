@@ -12,29 +12,30 @@
 		
 		<style>
 	
-		
-	@font-face {
-    font-family: 'twayair';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-h2 {
-	font-family:'twayair';
-	font-size:100px;
-}
-		
-		
-		
-		body{
-		zoom: 100% !important;
-		align:'center';
-		}
-		span.title{
-   font-size : 50px;
-}
+			@font-face {
+		    font-family: 'twayair';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+			}
+			
+			h2 {
+				font-family:'twayair';
+				font-size:100px;
+			}
+					
+					
+					
+			body{
+				zoom: 100% !important;
+				align:'center';
+			}
+			
+			span.title{
+			   font-size : 50px;
+			}
 		</style>
+		
 </head>  
 
 <body>
@@ -92,7 +93,7 @@ h2 {
 							<li><a href="video.jsp">영상</a></li>
 							<li><a href="recommend.jsp">식단추천</a></li>
 							<li><a href="meal.jsp">식단</a></li>
-							<li><a href="calendar.jsp">캘린더</a></li>
+							<li><a href="caltest.html">캘린더</a></li>
 						</ul>
 					</nav>
 
@@ -152,7 +153,7 @@ h2 {
 									<% if (dto == null) {
 										out.print("<a href='main.jsp'>");
 									}else{
-										out.print("<a href='calendar.jsp'>");
+										out.print("<a href='calendar.html'>");
 									}%>
 										<h2>캘린더</h2>
 										<div class="content">
