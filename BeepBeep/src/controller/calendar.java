@@ -64,7 +64,7 @@ public class calendar extends HttpServlet {
 		out.print(result);
 		
 		
-		
+		response.sendRedirect("calendar.jsp");
 		
 		
 		

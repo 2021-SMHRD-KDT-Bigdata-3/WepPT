@@ -27,7 +27,7 @@
 					
 					
 			body{
-				zoom: 100% !important;
+				transform-origin: 100% 100%;
 				align:'center';
 			}
 			
