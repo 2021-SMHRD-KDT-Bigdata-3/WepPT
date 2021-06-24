@@ -47,7 +47,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
         <div class="modal fade" tabindex="-1" role="dialog" id="eventModal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-<form action = "calendar" method = "post">
+<form action = "calendar">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
@@ -64,6 +64,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
                         <div class="row">
                             <div class="col-xs-12">
                                 <label class="col-xs-4" for="edit-title">유저명</label>
+                                <% System.out.println(dto.getId()); %>
                                 <label class="col-xs-4" for="edit-title"><%=dto.getId() %></label>
                                 
                             </div>
@@ -222,32 +223,11 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 </script>
  -->
  	<script src = 'JS/jquery-3.6.0.js'></script>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+ 
+ 
+ 
+ 
+ <script>
     <!-- /.container -->
 <script src = 'test/packages/testCalendar/js/jquery-3.6.0.js'></script>
 <script src = 'test/packages/testCalendar/js/jquery-ui.js'></script>
@@ -262,6 +242,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 <script src='test/packages/testCalendar/js/editEvent.js'></script>
 <script src='test/packages/testCalendar/js/main.js'></script>
 <script src='test/packages/testCalendar/js/etcSetting.js'></script>
+<<<<<<< HEAD
 <script type="text/javascript">
    
 	
@@ -369,5 +350,18 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 /* });
 	}); */
    </script>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 </body>
 </html>

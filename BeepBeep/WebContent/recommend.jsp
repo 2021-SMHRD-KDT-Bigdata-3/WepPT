@@ -192,10 +192,10 @@ li a:hover:not(.active) {
         <tr>
             <th style = 'font-size:40px' class="test">이미지</th>
             <th style = 'font-size:40px' class="test">제품이름</th>
-            <th style = 'font-size:40px' class="test">칼로리</th>  
-            <th style = 'font-size:40px' class="test">탄수화물</th>
-            <th style = 'font-size:40px' class="test">단백질</th>
-            <th style = 'font-size:40px' class="test">지방</th>
+            <th style = 'font-size:40px' class="test">칼로리(Kcal)</th>  
+            <th style = 'font-size:40px' class="test">탄수화물(g)</th>
+            <th style = 'font-size:40px' class="test">단백질(g)</th>
+            <th style = 'font-size:40px' class="test">지방(g)</th>
         </tr>
     </thead>
     <tbody>    
@@ -206,10 +206,10 @@ li a:hover:not(.active) {
                      <img src= "<%=link + arr.get(i).getProduct_name() + ".jpg"%>" onerror = 'None()' class = <%= "temp"+i+1 %>>
                </td>
                <td><a href = "https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=<%=URLEncoder.encode(arr.get(i).getProduct_name(), "utf-8")%>"><%=arr.get(i).getProduct_name()%></a></td>
-               <td><%=arr.get(i).getProduct_cal() %>Kcal</td>
-               <td><%=arr.get(i).getProduct_carb() %>g</td>
-               <td><%=arr.get(i).getProduct_prot() %>g</td>
-               <td><%=arr.get(i).getProduct_fat() %>g</td>
+               <td><%=arr.get(i).getProduct_cal()%></td>
+               <td><%=arr.get(i).getProduct_carb()%></td>
+               <td><%=arr.get(i).getProduct_prot()%></td>
+               <td><%=arr.get(i).getProduct_fat()%></td>
             </tr>
             <%}%>
             </tbody>

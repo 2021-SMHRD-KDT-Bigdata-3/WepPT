@@ -46,6 +46,7 @@ public class foodDAO {
 					e.printStackTrace();
 				}
 		}
+		
 		public ArrayList<foodDTO> getFood_info(String category) {
             ArrayList<foodDTO> arr = new ArrayList<foodDTO>();
              try {

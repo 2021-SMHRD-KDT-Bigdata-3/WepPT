@@ -37,7 +37,6 @@ public class calendarDTO {
 		this.cal_type = cal_type;
 		this.cal_user = cal_user;
 		this.cal_color = cal_color;
-		this.cal_textColor = cal_textColor;
 	}
 	
 	
