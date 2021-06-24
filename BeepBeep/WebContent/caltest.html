@@ -41,6 +41,7 @@
 <script src='test/packages/testCalendar/js/moment.min.js'></script>
 <script src='test/packages/list/main.js'></script>
 <script src='test/packages/rrule/main.js'></script>
+<script src = 'JS/jquery-3.6.0.js'></script>
 <script>
 
 
@@ -80,15 +81,42 @@
       editable: true,
       eventLimit: true,
       //예로 넣어본 이벤트들
-      events: [
-        {
-          title: '모든 이벤트',
-          start: '2021-06-01'
-        }
-      ]
-    });
+      //events: function (start, end, timezone, callback) {
+    	 events : function( fetchInfo, successCallback, failureCallback ){
+    	    $.ajax({
+    	        type: "get",
+    	        url: "ajaxTest.jsp",
+    	        //data: {
+    	          // 화면이 바뀌면 Date 객체인 start, end 가 들어옴
+    	          //startDate : moment(start).format('YYYY-MM-DD'),
+    	          //endDate   : moment(end).format('YYYY-MM-DD')
+    	        //},
+    	        dataType: 'json',
+    	        success: function (response) {
+    	          /*var fixedDate = response.map(function (array) {
+    	            if (array.allDay && array.start !== array.end) {
+    	              array.end = moment(array.end).add(1, 'days'); // 이틀 이상 AllDay 일정인 경우 달력에 표기시 하루를 더해야 정상출력
+    	            }
+    	            return array;
+    	          });
+    	          callback(fixedDate);*/
+    	  			
+    	  			ret = [];
+    	  			for(i=0;i<response.length;i++){
+    	  				var tmp={};
+    	  				tmp['title']=response[i]['cal_title'];
+    	  				tmp['start']=response[i]['cal_start'];
+    	  				tmp['end']=response[i]['cal_end'];
+    	  				ret.push(tmp);
+    	  			}
+    	  			console.log(ret);
+    	  			callback( ret);
+    	        }
+    	      });
+    	    }
 
-    calendar.render();
+  });
+    	calendar.render();
   });
 
 </script>

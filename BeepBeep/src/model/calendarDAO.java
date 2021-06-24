@@ -69,15 +69,15 @@ public class calendarDAO {
 		    rs = pst.executeQuery();
 		    
 		    while ( rs.next() ) {
-		    	String id = "[{'calendar_id':'" + rs.getString(1) + "',";
-		    	String title = "'calendar_title':'" + rs.getString(2) + "',";
-		    	String start = "'calendar_start':'" + rs.getString(3) + "',";
-		    	String end = "'calendar_end':'" + rs.getString(4) + "',";
-		    	String description = "'calendar_description':'" + rs.getString(5) + "',";
-		    	String type = "'calendar_type':'" + rs.getString(6) + "',";
-		    	String user = "'calendar_user':'" + rs.getString(7) + "',";
-		    	String color = "'calendar_color':'" + rs.getString(8) + "',";
-		    	String textColor = "'calendar_textColor':'" + rs.getString(9) + "'}]";
+		    	String id = rs.getString(1);
+		    	String title = rs.getString(2);
+		    	String start = rs.getString(3);
+		    	String end = rs.getString(4);
+		    	String description = rs.getString(5);
+		    	String type = rs.getString(6);
+		    	String user = rs.getString(7);
+		    	String color = rs.getString(8);
+		    	String textColor = rs.getString(9);
 		    	
 		    	
 		    	
@@ -119,7 +119,7 @@ public class calendarDAO {
 		    pst.setString(3, dto.getCal_end());
 		    pst.setString(4, dto.getCal_description());
 		    pst.setString(5, dto.getCal_type());
-		    pst.setString(6, dto.getCal_id());
+		    pst.setString(6, dto.getCal_user());
 		    pst.setString(7, dto.getCal_color());
 		    
 		    // 5. sql문 실행하기
