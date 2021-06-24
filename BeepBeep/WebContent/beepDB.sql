@@ -168,7 +168,7 @@ create table calendar(
     calendar_title varchar2(100),
     calendar_start date,
     calendar_end date,
-    calendar_description varchar2(100),
+    calendar_description varchar2(500),
     calendar_type varchar2(100),
     calendar_userid varchar2(50),
     calendar_color varchar2(50),
@@ -176,6 +176,9 @@ create table calendar(
     constraint cal_fk_user foreign key(calendar_userid)
     references member(id)
 );
+
+--가데이터
+insert into calendar values('kite', '우와', '21/12/03', '23/10/03', '내용', '타입', 'woman', '색깔', '텍스트색');
 
 drop table calendar cascade constraints;
 

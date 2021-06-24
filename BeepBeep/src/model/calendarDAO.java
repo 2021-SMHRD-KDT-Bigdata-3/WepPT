@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
+
+
 
 public class calendarDAO {
 	
@@ -12,7 +16,8 @@ public class calendarDAO {
 	Connection conn = null;
 	PreparedStatement pst = null;
 	int cnt=0;
-	
+	calendarDTO dto = null;
+	ArrayList<calendarDTO> al = new ArrayList<calendarDTO>();
 	
 	// 데이터페이스와 연결
 	public void conn() {
@@ -46,9 +51,94 @@ public class calendarDAO {
 	}
 
 	
-	// 인설트랑 딜리트 셀렉트 --
+	public ArrayList<calendarDTO> select() {
+		
+		// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리
+		try{
+			conn();
+			
+		    String sql = "select * from calendar";
+		                                             // ? : 바인드 변수
+		    // 3. sql문 실행객체 ( PreparedStatement ) 생성
+		    pst = conn.prepareStatement(sql);
+			
+		    // 4. 바인드 변수 채워주기
+		    
+		    // 5. sql문 실행하기
+		    rs = pst.executeQuery();
+		    
+		    while ( rs.next() ) {
+		    	String id = rs.getString(1);
+		    	String title = rs.getString(2);
+		    	String start = rs.getString(3);
+		    	String end = rs.getString(4);
+		    	String description = rs.getString(5);
+		    	String type = rs.getString(6);
+		    	String user = rs.getString(7);
+		    	String color = rs.getString(8);
+		    	String textColor = rs.getString(9);
+		    	
+		    	
+		    	
+		    	calendarDTO dto = new calendarDTO(id, title, start, end, description, type, user, color, textColor);
+		    	
+		    	
+		    	al.add(dto);
+		    	
+		    	System.out.println("우왕굳");
+		    }
+		    
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("에라이");
+		}finally {
+			// 열려있으면 닫아줄 수 없으므로 예외문 한번더
+			close();
+			
+		}
+		return al;
+	}
+	
+	
+	public int add(calendarDTO dto) {
+		// 런타임오류 : 실행했을 때 발생하는 오류 > 예외처리
+		try{
+			
+			conn();
+			
+		    String sql = "insert into calendar values ('아이디', ?, ?, ?, ?, ?, ?, ?, '텍스트컬러')";
+		                                             // ? : 바인드 변수
+		    // 3. sql문 실행객체 ( PreparedStatement ) 생성
+		    pst = conn.prepareStatement(sql);
+			
+		    // 4. 바인드 변수 채워주기
+		    pst.setString(1, dto.getCal_title());
+		    pst.setString(2, dto.getCal_start());
+		    pst.setString(3, dto.getCal_end());
+		    pst.setString(4, dto.getCal_description());
+		    pst.setString(5, dto.getCal_type());
+		    pst.setString(6, dto.getCal_id());
+		    pst.setString(7, dto.getCal_color());
+		    
+		    // 5. sql문 실행하기
+		    cnt = pst.executeUpdate();
+		    
+		  
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("FAIL");
+		}finally {
+			// 열려있으면 닫아줄 수 없으므로 예외문 한번더
+			close();
+			
+		}
+		return cnt;
+	
+	}
 	
 	
 	
-
+	
 }

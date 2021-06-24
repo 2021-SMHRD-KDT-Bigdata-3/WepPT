@@ -9,7 +9,7 @@
 <html>
 <head>
 
-	<title>Generic - Phantom by HTML5 UP</title>
+	<title>커뮤니티 작성글</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -257,15 +257,38 @@ body, input {
   }
 }
 img {
-	height:200px;
-	width:200px;
+	height:500px;
+	width:500px;
 	border:1px;
-	border-radius:50%;
 }
 .
 input {
 margin:0 auto;
 }
+
+
+.list{
+width:1800px;
+margin-left:550px;
+}
+
+button{
+	width:180px;
+	height:80px;
+	background-color:#FF8C24;
+	font-size: 20px;	
+	margin-left:1450px;
+}
+
+.commentbtn{
+	width: 150px;
+	height:80px;
+	background-color:#FF8C24;
+	font-size: 20px;
+	align:center;
+}
+
+
 		</style>
 		
 		<script>
@@ -308,7 +331,7 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 	<div id = "community">
 	
 		<header id="header" style = "padding-left: -500px;">
-						<div class="inner" style = "width:900px; " align ="center">
+						<div class="inner"  align ="center">
 
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">
@@ -316,7 +339,7 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 								</a>
 						</div>			
 				<div>				
-				<table id="list" border="1px" align="center">
+				<table class="list" border="1px" align="center">
 					<tr>
 						<td>제목</td>
 						<td><%= commudto.getTitle() %></td>
@@ -335,7 +358,7 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2"><a href="Community.jsp"><button>뒤로가기</button></a></td>
+						<td colspan="2"><a href="Community.jsp" style="border-bottom:dotted 1px rgba(255, 255, 255, 0.5)"><button>뒤로가기</button></a></td>
 					</tr>
 				</table>
 				</div>
@@ -344,7 +367,7 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 			
 			<!-- 댓글 출력 -->
 			<div>
-		<table border = "1px" align = "center">
+		<table class="list" border = "1px" align = "center">
 			<tr>
 				<td>아이디</td>
 				<td>내용</td>
@@ -362,7 +385,7 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 					<td> <form action="CommentDelete">
 					<input type="hidden" name="community_num" value="<%=num %>">
 					<input type="hidden" name="comment_num" value="<%=al2.get(i).getComment_num() %>">
-					<input type="submit" value="삭제">
+					<input class="commentbtn" type="submit" value="삭제">
 					</form> </td>
 					
 				<% }%>
@@ -380,11 +403,12 @@ ArrayList<CommentDTO> al2 = commudao.comment_select(num);
 			<!-- 댓글입력란 -->
 			<div>
 			<form action="Comment" method="post">
-			<table border="1">
-			<tr> <td> <input type="hidden" name="community_num" value="<%=num %>"> </td>
-			<td> <input type="text" name="comment_content"> </td> </tr>
+			<table class="list" border="1">
+			<tr> <td colspan="3" width="1500px" align="center"> <input type="hidden" name="community_num" value="<%=num %>"> </td>
+			<td> <input type="text" name="comment_content"> </td> 
+			<td align="right"><input type="submit" value="등록" style="margin-left : 550px"></td>
+			</tr>
 			</table>
-			<input type="submit" value="등록">
 			</form>
 			
 			
