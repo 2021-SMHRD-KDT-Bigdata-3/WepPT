@@ -376,7 +376,6 @@ margin-left: 700px;
 										<td>제목</td>
 										<td>아이디</td>
 										<td>날짜</td>
-										<td></td>
 									</tr>
 									<%
 									for(int i = 0; i<al.size(); i++){
@@ -386,12 +385,6 @@ margin-left: 700px;
 										<td><a href="CommunityView.jsp?num=<%=al.get(i).getNum()%>"><%= al.get(i).getTitle()%></a>  </td>
 										<td><%= al.get(i).getId() %></td>
 										<td><%= al.get(i).getDay() %></td>
-										<%if(al.get(i).getId().equals(dto.getId())){ %>
-										<td> <form action="CommunityDelete">
-												<input type="hidden" name="community_num" value="<%=al.get(i).getNum() %>">
-												<input type="submit" value="삭제">
-											</form> </td>
-										<%} %>
 									</tr>
 									<%} %>
 								</table>
