@@ -1,11 +1,12 @@
+<%@page import="java.net.URLEncoder"%>
 <%@page import="model.memberDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+    pageEncoding="euc-kr"%>
 <!DOCTYPE html>
 <html>
 <head>
 		<title>Generic - Phantom by HTML5 UP</title>
-		<meta charset="utf-8" />
+		<meta charset="euc-kr" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -304,7 +305,7 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">
 									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
-									<span class="title">Only <%= dto.getName()%>'s Page<span>
+									<span class="title">Only <%= URLEncoder.encode(dto.getName(), "euc-kr")%>'s Page<span>
 								</a>
 
 							<!-- Nav 옆에 세줄로 된 메뉴바 -->

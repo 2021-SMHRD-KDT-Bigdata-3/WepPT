@@ -42,8 +42,7 @@
 <body>
 
 
-<%
-      memberDTO dto = (memberDTO)session.getAttribute("info");
+<%      memberDTO dto = (memberDTO)session.getAttribute("info");
 %>
 
 
@@ -118,7 +117,7 @@
 								</article>
 								<article id = "article2" class="style2 article">
 									<span class="image">
-										<img src="images/recommend.jpg" alt="" />
+										<img src="images/meal.jpg" alt="" />
 									</span>
 									<% if (dto == null) {
 										out.print("<a href='main.jsp'>");
@@ -133,7 +132,7 @@
 								</article>
 								<article id = "article3" class="style3 article">
 									<span class="image">
-										<img src="images/meal.jpg" alt="" />
+										<img src="images/recommend.jpg" alt="" />
 									</span>
 										<% if (dto == null) {
 										out.print("<a href='main.jsp'>");

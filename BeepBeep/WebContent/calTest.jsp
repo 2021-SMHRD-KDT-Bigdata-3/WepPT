@@ -36,7 +36,10 @@
 %>
 <body>
 
-  <div id='calendar'></div>
+
+            <div id="calendar"></div>
+
+
 
 <script src='test/packages/core/locales/ko.js'></script>
 <script src='test/packages/core/main.js'></script>
@@ -48,6 +51,7 @@
 <script src='test/packages/list/main.js'></script>
 <script src='test/packages/rrule/main.js'></script>
 <script src = 'JS/jquery-3.6.0.js'></script>
+
 <script>
 
 
