@@ -157,7 +157,7 @@
                             <li class="nav-item">
                             </li>
                         </ul>
-                        <form action="http://127.0.0.1:5001/" method="post">
+                        <form action="http://127.0.0.1:5000/" method="post">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">WEB & PT 회원가입</h3>
