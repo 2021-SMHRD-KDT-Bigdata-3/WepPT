@@ -27,7 +27,7 @@
 					
 					
 			body{
-				zoom: 100% !important;
+				transform-origin: 100% 100%;
 				align:'center';
 			}
 			
@@ -153,7 +153,7 @@
 									<% if (dto == null) {
 										out.print("<a href='main.jsp'>");
 									}else{
-										out.print("<a href='calTest.jsp'>");
+										out.print("<a href='calendar.jsp'>");
 									}%>
 										<h2>Ä¶¸°´õ</h2>
 										<div class="content">

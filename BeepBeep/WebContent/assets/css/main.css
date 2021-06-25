@@ -29,8 +29,6 @@ section, summary, time, mark, audio, video {
 
 
 	
-
-/* 돼지시키들 사이즈 조정 */
 span.title{
 	font-size : 50px;
 }
@@ -50,6 +48,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	zoom : 67%;
 
 }
 
