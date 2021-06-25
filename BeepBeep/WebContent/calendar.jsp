@@ -238,7 +238,6 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 <script src='test/packages/testCalendar/js/editEvent.js'></script>
 <script src='test/packages/testCalendar/js/main.js'></script>
 <script src='test/packages/testCalendar/js/etcSetting.js'></script>
-<<<<<<< HEAD
 <script type="text/javascript">
    
 	
