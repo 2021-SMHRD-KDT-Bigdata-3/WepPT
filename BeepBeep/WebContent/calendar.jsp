@@ -348,7 +348,21 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
    </script>
    
    
-   
+  <script>
+  
+
+  
+/*    $.ajax({
+	url: 'calendar',
+	success: function(res){
+		var list = res;
+		console.log(list);
+	); */
+		
+	
+  
+  
+  </script>
    
    
    

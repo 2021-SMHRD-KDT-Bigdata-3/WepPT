@@ -27,6 +27,10 @@
 					
 					
 			body{
+<<<<<<< HEAD
+				transform-origin: 100% 100%;
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/WepPT.git
 				align:'center';
 			}
 			
