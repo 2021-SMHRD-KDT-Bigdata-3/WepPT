@@ -184,5 +184,7 @@ drop table calendar cascade constraints;
 
 select * from calendar;
 
+select * from comment_board;
+delete from comment_board;
 
 
