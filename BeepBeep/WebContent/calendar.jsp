@@ -12,11 +12,7 @@
 <link href='test/packages/testCalendar/css/bootstrap-datetimepicker.min.css' rel='stylesheet' />
 <link href='test/packages/testCalendar/css/fullcalendar.min.css' rel='stylesheet' />
 <link href='test/packages/testCalendar/css/select2.min.css' rel='stylesheet' />
-<style>
-body{
-zoom: 100% !important;
-}
-</style>
+
 </head>
 <body>
 
@@ -242,7 +238,6 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 <script src='test/packages/testCalendar/js/editEvent.js'></script>
 <script src='test/packages/testCalendar/js/main.js'></script>
 <script src='test/packages/testCalendar/js/etcSetting.js'></script>
-<<<<<<< HEAD
 <script type="text/javascript">
    
 	
@@ -352,7 +347,21 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
    </script>
    
    
-   
+  <script>
+  
+
+  
+/*    $.ajax({
+	url: 'calendar',
+	success: function(res){
+		var list = res;
+		console.log(list);
+	); */
+		
+	
+  
+  
+  </script>
    
    
    
