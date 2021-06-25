@@ -1,12 +1,12 @@
 <%@page import="java.net.URLEncoder"%>
 <%@page import="model.memberDTO"%>
-<%@ page language="java" contentType="text/html; charset=euc-kr"
-    pageEncoding="euc-kr"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 		<title>Generic - Phantom by HTML5 UP</title>
-		<meta charset="euc-kr" />
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -305,10 +305,10 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 							<!-- Logo -->
 								<a href="main.jsp" class="logo">
 									<span class="symbol"><img src="images/mainimage.png" alt="" /></span>
-									<span class="title">Only <%= URLEncoder.encode(dto.getName(), "euc-kr")%>'s Page<span>
+									<span class="title">Only <%= dto.getName()%>'s Page<span>
 								</a>
 
-							<!-- Nav ¿·¿¡ ¼¼ÁÙ·Î µÈ ¸Ş´º¹Ù -->
+							<!-- Nav ì˜†ì— ì„¸ì¤„ë¡œ ëœ ë©”ë‰´ë°” -->
 								<nav>
 									<ul>
 										<li><a href="#menu">Menu</a></li>
@@ -322,19 +322,19 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="main.jsp">¸ŞÀÎÈ­¸éÀ¸·Î</a></li>
-							<li><a href="video.jsp">¿µ»ó</a></li>
-							<li><a href="recommend.jsp">½Ä´ÜÃßÃµ</a></li>
-							<li><a href="meal.jsp">½Ä´Ü</a></li>
-							<li><a href="caltest.html">Ä¶¸°´õ</a></li>
+							<li><a href="main.jsp">ë©”ì¸í™”ë©´ìœ¼ë¡œ</a></li>
+							<li><a href="video.jsp">ì˜ìƒ</a></li>
+							<li><a href="recommend.jsp">ì‹ë‹¨ì¶”ì²œ</a></li>
+							<li><a href="meal.jsp">ì‹ë‹¨</a></li>
+							<li><a href="caltest.html">ìº˜ë¦°ë”</a></li>
 						</ul>
 					</nav>
 					
-	<!-- È¸¿øÁ¤º¸Ä­ -->
+	<!-- íšŒì›ì •ë³´ì¹¸ -->
 	
 <div class="back_profile" style="background-color: ghostwhite;">
   <div class="back_img" style="background-image: url('http://file.trip-term.com:81/bamboo.jpg')"></div>
-  <p>¤Ô</p>
+  <p>ã…¤</p>
 <div class="profile_page">
   <div class="profile_bar">
     <div class="profile_img">
@@ -344,22 +344,22 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
     </div>
     <div class="profiles">
       <div class="profile_detail">
-        <h3>ÇöÀç ¸ö¹«°Ô : <%=dto.getWeight() %></h3>
+        <h3>í˜„ì¬ ëª¸ë¬´ê²Œ : <%=dto.getWeight() %></h3>
         <div class="profiles">
-        <h3>¸ñÇ¥ : <%= dto.getTarget()  %></h3><br>
-        <h3>¸ñÇ¥±îÁö! <%= Integer.parseInt(dto.getTarget()) -dto.getWeight() %></h3><br>
+        <h3>ëª©í‘œ : <%= dto.getTarget()  %></h3><br>
+        <h3>ëª©í‘œê¹Œì§€! <%= Integer.parseInt(dto.getTarget()) -dto.getWeight() %></h3><br>
           <p><%
           if(dto.getCategory().equals("0")){
-      		out.print("<h3>Type : ¹úÅ©¾÷</h3>");
+      		out.print("<h3>Type : ë²Œí¬ì—…</h3>");
       	} else if(dto.getCategory().equals("3")){
-      		out.print("<h3>Type : ´ÙÀÌ¾îÆ®</h3>");
+      		out.print("<h3>Type : ë‹¤ì´ì–´íŠ¸</h3>");
       	}
           %></p>
         </div>
       </div>
     </div>
   </div>
-      <p>¤Ô</p>
+      <p>ã…¤</p>
   <div class="user_data">
     <div class="user_basic_header">
     </div>
@@ -367,9 +367,9 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
     <div class="user_basic">
       <div style = 'height:500px;' class="user_category">
         <ul>
-          <li id="h_category1" onclick="change_category('h_category1','h_detail1')">°³ÀÎÁ¤º¸</li>
-          <li id="h_category2" onclick="change_category('h_category2','h_detail2')">È¸¿øÁ¤º¸</li>
-          <li id="h_category3" onclick="change_category('h_category3','h_detail3')">³ªÀÇ»óÅÂ</li>
+          <li id="h_category1" onclick="change_category('h_category1','h_detail1')">ê°œì¸ì •ë³´</li>
+          <li id="h_category2" onclick="change_category('h_category2','h_detail2')">íšŒì›ì •ë³´</li>
+          <li id="h_category3" onclick="change_category('h_category3','h_detail3')">ë‚˜ì˜ìƒíƒœ</li>
         </ul>
       </div>
       <div style = 'height:500px;' class="user_detail">
@@ -382,36 +382,36 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
           </div>
         </div>  
         <div id="h_detail2">
-          <div class="user_detail_head">¸ö¹«°Ô
+          <div class="user_detail_head">ëª¸ë¬´ê²Œ
             <span class="edit_detail"><%= dto.getWeight() %></span>
           </div>
-          <div class="user_detail_head">Å°
+          <div class="user_detail_head">í‚¤
             <span class="edit_detail"><%= dto.getHeight() %></span>
           </div>
         </div>
          <div id="h_detail3">
-          <div class="user_detail_head">³ªÀÇ »óÅÂ <!-- //-> ±×·ì ÀÌ¸§ À¯Áö¾îÅÍ -->
+          <div class="user_detail_head">ë‚˜ì˜ ìƒíƒœ <!-- //-> ê·¸ë£¹ ì´ë¦„ ìœ ì§€ì–´í„° -->
             <span class="edit_detail"><%
             	if(dto.getCategory().equals("0")){
-            		out.print("¹úÅ©¾÷ÀÌ ÇÊ¿äÇØ¿ä!");
+            		out.print("ë²Œí¬ì—…ì´ í•„ìš”í•´ìš”!");
             	} else if(dto.getCategory().equals("3")){
-            		out.print("´ÙÀÌ¾îÆ®°¡ ÇÊ¿äÇØ¿ä!");
+            		out.print("ë‹¤ì´ì–´íŠ¸ê°€ í•„ìš”í•´ìš”!");
             	}
             %></span>
           </div>
-          <div class="user_detail_head"><!-- if¹® µ¹·Á¼­ ±×·ì2°³ ´ÙÀÌ¾îÅÍ, ¹úÅ©¾÷ -> ´ÙÀÌ¾îÆ® = °úÃ¼Áß, ¹úÅ©¾÷ = ÀúÃ¼Áß ´Ü¾î°¡ ¶ß°Ô-->  
+          <div class="user_detail_head"><!-- ifë¬¸ ëŒë ¤ì„œ ê·¸ë£¹2ê°œ ë‹¤ì´ì–´í„°, ë²Œí¬ì—… -> ë‹¤ì´ì–´íŠ¸ = ê³¼ì²´ì¤‘, ë²Œí¬ì—… = ì €ì²´ì¤‘ ë‹¨ì–´ê°€ ëœ¨ê²Œ-->  
             <span class="edit_detail"><%
             		if(dto.getCategory().equals("0")){
-                		out.print("ÀúÃ¼Áß");
+                		out.print("ì €ì²´ì¤‘");
                 	} else if(dto.getCategory().equals("3")){
-                		out.print("°úÁ¦Ãæ");
+                		out.print("ê³¼ì œì¶©");
                 	}
             %></span>
           </div>
-          <div class="user_detail_head">¸ñÇ¥¸ö¹«°Ô <!-- º»ÀÎÀÌ ÀÌ·ç°í ½ÍÀº ¸ö¹«°Ô..¹Ş¾Æ¿Í¾ßÇÏÁö ¾Ê³ª È¸¿ø°¡ÀÔ¿¡¼­ ¹Ş¾Æ¿À±â-->
+          <div class="user_detail_head">ëª©í‘œëª¸ë¬´ê²Œ <!-- ë³¸ì¸ì´ ì´ë£¨ê³  ì‹¶ì€ ëª¸ë¬´ê²Œ..ë°›ì•„ì™€ì•¼í•˜ì§€ ì•Šë‚˜ íšŒì›ê°€ì…ì—ì„œ ë°›ì•„ì˜¤ê¸°-->
             <span class="edit_detail"><%= dto.getTarget() %></span>
           </div>
-          <div class="user_detail_head">ÇöÀçBMIÁö¼ö <!-- ¸ö¹«°Ô¿Í Å°¸¦ ¹Ş¾Æ¿Í¼­ º¸¿©ÁÖ±â -->
+          <div class="user_detail_head">í˜„ì¬BMIì§€ìˆ˜ <!-- ëª¸ë¬´ê²Œì™€ í‚¤ë¥¼ ë°›ì•„ì™€ì„œ ë³´ì—¬ì£¼ê¸° -->
             <span class="edit_detail"><%= dto.getWeight()/(dto.getHeight()/100)*(dto.getHeight()/100) %></span>
           </div>
         </div>
@@ -435,10 +435,10 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
       </div>
     </div>
   </div>
-  <p>¤Ô</p>
+  <p>ã…¤</p>
   <div>
-      <button style = 'font-size:30px; margin-left:150px;'><a href="logout">·Î±×¾Æ¿ô</a></button>
-      <button style = 'font-size:30px; margin-left:100px;'><a href="mypage_update22222.jsp">Á¤º¸ ¼öÁ¤</a></button>
+      <button style = 'font-size:30px; margin-left:150px;'><a href="logout">ë¡œê·¸ì•„ì›ƒ</a></button>
+      <button style = 'font-size:30px; margin-left:100px;'><a href="mypage_update22222.jsp">ì •ë³´ ìˆ˜ì •</a></button>
   </div>
 </div>
   <div class="temporary_footer"></div>
@@ -457,26 +457,26 @@ memberDTO dto = (memberDTO)session.getAttribute("info");
 					<footer id="footer">
 						<div class="inner" >
 							<section>
-								<h2>ºÒÆí»çÇ×À» Àû¾îÁÖ¼¼¿ä</h2>
+								<h2>ë¶ˆí¸ì‚¬í•­ì„ ì ì–´ì£¼ì„¸ìš”</h2>
 								<form method="post" action="#">
 									<div class="fields">
 										<div class="field half">
 											<input style = 'font-size:30px' type="text" name="name" id="name"  placeholder=<%= dto.getId() %> />
 										</div>
 										<div class="field half">
-											<input style = 'font-size:30px' type="email" name="email" id="email" placeholder="Á¦¸ñ" />
+											<input style = 'font-size:30px' type="email" name="email" id="email" placeholder="ì œëª©" />
 										</div>
 										<div class="field">
-											<textarea style = 'font-size:30px; margin-bottom:10px;' name="message" id="message" placeholder="³»¿ë"></textarea>
+											<textarea style = 'font-size:30px; margin-bottom:10px;' name="message" id="message" placeholder="ë‚´ìš©"></textarea>
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Àü¼Û" class="primary" /></li>
+										<li><input type="submit" value="ì „ì†¡" class="primary" /></li>
 									</ul>
 								</form>
 							</section>
 							<section>
-								<h2>pt ¼Ò¼È</h2>
+								<h2>pt ì†Œì…œ</h2>
 								<ul class="icons">
 									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
