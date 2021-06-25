@@ -348,7 +348,7 @@ margin-left: 700px;
 							<li><a href="video.jsp">영상</a></li>
 							<li><a href="recommend.jsp">식단추천</a></li>
 							<li><a href="meal.jsp">식단</a></li>
-							<li><a href="caltest.html">캘린더</a></li>
+							<li><a href="calTest.jsp">캘린더</a></li>
 						</ul>
 					</nav>				
 	

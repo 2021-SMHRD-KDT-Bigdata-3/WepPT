@@ -55,8 +55,11 @@
 <script>
 
 
+// 시부랄 이제야 되네,,,,,,, 
+// 이거 하나라도 지우면 안됩니당 그럼 기능 안먹어요 !
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
+
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
       header: {
@@ -69,6 +72,7 @@
       navLinks: true, 
       selectable: true,
       selectOverlap:function(event){
+    	  
       },
       selectMirror: true,
       select: function(start, end, allDay) {
@@ -86,6 +90,8 @@
       },
       editable: true,
       eventLimit: true,
+      //예로 넣어본 이벤트들
+      //events: function (start, end, timezone, callback) {
     	 events : function( fetchInfo, successCallback, failureCallback ){
     	    $.ajax({
     	        type: "get",
@@ -95,6 +101,14 @@
     	        },
     	        dataType: 'json',
     	        success: function (response) {
+    	          /*var fixedDate = response.map(function (array) {
+    	            if (array.allDay && array.start !== array.end) {
+    	              array.end = moment(array.end).add(1, 'days'); // 이틀 이상 AllDay 일정인 경우 달력에 표기시 하루를 더해야 정상출력
+    	            }
+    	            return array;
+    	          });
+    	          callback(fixedDate);*/
+    	  			
     	  			ret = [];
     	  			for(i=0;i<response.length;i++){
     	  				var tmp={};
@@ -108,6 +122,7 @@
     	        }
     	      });
     	    }
+
   });
     	calendar.render();
   });
