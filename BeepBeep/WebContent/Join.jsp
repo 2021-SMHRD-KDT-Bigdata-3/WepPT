@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,10 +145,10 @@
 <div class="container register" style="max-width: 100%;">
                 <div class="row">
                     <div class="col-md-3 register-left">
-                <p>§‘</p>
+                <p>„Ö§</p>
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                        <h3  style = "font-size : 50px;">«Ô√¢¿«±Ê∑Œ</h3>
-                        <p  style = "font-size : 32px;">øÓµø¿∫ ∏‘±‚ ¿ß«ÿº≠ «œ¥¬∞Õ¿Ã¥Ÿ</p>
+                        <h3  style = "font-size : 50px;">Ìó¨Ï∞ΩÏùòÍ∏∏Î°ú</h3>
+                        <p  style = "font-size : 32px;">Ïö¥ÎèôÏùÄ Î®πÍ∏∞ ÏúÑÌï¥ÏÑú ÌïòÎäîÍ≤ÉÏù¥Îã§</p>
                     </div>
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -160,7 +160,7 @@
                         <form action="http://127.0.0.1:5000/" method="post">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">WEB & PT »∏ø¯∞°¿‘</h3>
+                                <h3 class="register-heading">WEB & PT ÌöåÏõêÍ∞ÄÏûÖ</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -173,19 +173,19 @@
                                             <input style = "font-size : 30px;" type="password" class="form-control" placeholder="password" name="pw" />
                                         </div>
                                         <div class="form-group">
-                                            <input style = "font-size : 30px;" type="text" class="form-control" placeholder="¿Ã∏ß" name="name" />
+                                            <input style = "font-size : 30px;" type="text" class="form-control" placeholder="Ïù¥Î¶Ñ" name="name" />
                                         </div>
                                         <div class="form-group">
-                                            <input style = "font-size : 30px;" type="text" class="form-control"  placeholder="≥™¿Ã" name="age" />
+                                            <input style = "font-size : 30px;" type="text" class="form-control"  placeholder="ÎÇòÏù¥" name="age" />
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl" style = "font-size: 20px;">
                                                 <label class="radio inline"> 
-                                                    <span>§‘§‘§‘§‘ ≥≤¿⁄§‘ </span> 
+                                                    <span>„Ö§„Ö§„Ö§„Ö§ ÎÇ®Ïûê„Ö§ </span> 
                                                     <input style="font-size:17px; width:23px;height:23px" type="radio" name="gender" value="1" checked>
                                                 </label>
                                                 <label class="radio inline"> 
-                                                    <span>§‘§‘ø©¿⁄§‘ </span> 
+                                                    <span>„Ö§„Ö§Ïó¨Ïûê„Ö§ </span> 
                                                     <input style="font-size:17px; width:23px;height:23px" type="radio" name="gender" value="2">
 
                                                 </label>
@@ -194,16 +194,16 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input style = "font-size : 30px;" type="text" class="form-control" placeholder="∏Ò«• ∏ˆπ´∞‘" name="target" />
+                                            <input style = "font-size : 30px;" type="text" class="form-control" placeholder="Î™©Ìëú Î™∏Î¨¥Í≤å" name="target" />
                                         </div>
                                         <div class="form-group">
-                                            <input style = "font-size : 30px;" type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="»ﬁ¥Î∆˘ π¯»£ - πÃ∆˜«‘"  />
+                                            <input style = "font-size : 30px;" type="text" minlength="11" maxlength="11" name="txtEmpPhone" class="form-control" placeholder="Ìú¥ÎåÄÌè∞ Î≤àÌò∏ - ÎØ∏Ìè¨Ìï®"  />
                                         </div>
                                          <div class="form-group">
-                                            <input style = "font-size : 30px;" type="text" class="form-control" placeholder="≈∞" name="height" />
+                                            <input style = "font-size : 30px;" type="text" class="form-control" placeholder="ÌÇ§" name="height" />
                                         </div>
                                          <div class="form-group">
-                                            <input style = "font-size : 30px;" type="text" class="form-control" placeholder="∏ˆπ´∞‘" name="weight" />
+                                            <input style = "font-size : 30px;" type="text" class="form-control" placeholder="Î™∏Î¨¥Í≤å" name="weight" />
                                         </div>
                                        
                                         
