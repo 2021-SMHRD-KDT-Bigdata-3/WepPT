@@ -12,10 +12,7 @@
 <link href='test/packages/testCalendar/css/bootstrap-datetimepicker.min.css' rel='stylesheet' />
 <link href='test/packages/testCalendar/css/fullcalendar.min.css' rel='stylesheet' />
 <link href='test/packages/testCalendar/css/select2.min.css' rel='stylesheet' />
-<style>
-body{
-}
-</style>
+
 </head>
 <body>
 
